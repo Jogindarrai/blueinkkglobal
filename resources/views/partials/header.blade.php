@@ -1,26 +1,41 @@
-   {{-- Top Bar --}}
-    <div class="header-top">
-        <div class="container header-top-inner">
-            <div class="header-top-left">
-                <a href="mailto:info@blueinkkglobal.com">
-                    info@blueinkkglobal.com
-                </a>
-                <a href="tel:+910000000000">
-                    +91 00000 00000
-                </a>
-            </div>
-            <div class="header-top-right">
-                <a href="#">
-                    Client Login
-                </a>
+{{-- Top Bar --}}
+<div class="header-top">
+    <div class="container header-top-inner">
 
-                <a href="#">
-                    Track Application
-                </a>
-            </div>
+        <div class="header-top-left">
+            <a href="mailto:ipr@blueinkk.com">
+                <span class="top-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M4 4h16v16H4z" opacity="0"></path>
+                        <rect x="3" y="5" width="18" height="14" rx="2"></rect>
+                        <path d="M3 7l9 6 9-6"></path>
+                    </svg>
+                </span>
+                ipr@blueinkk.com
+            </a>
 
+            <a href="tel:+91-9958000637">
+                <span class="top-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                    </svg>
+                </span>
+                +91-9958000637
+            </a>
         </div>
+
+        <div class="header-top-right">
+            <span class="top-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="9"></circle>
+                    <path d="M12 7v5l3 3"></path>
+                </svg>
+            </span>
+            09:00 AM - 06:00 PM (Mon - Fri)
+        </div>
+
     </div>
+</div>
 
 
 
