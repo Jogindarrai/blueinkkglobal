@@ -25,13 +25,43 @@
         </div>
 
         <div class="header-top-right">
-            <span class="top-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <circle cx="12" cy="12" r="9"></circle>
-                    <path d="M12 7v5l3 3"></path>
-                </svg>
-            </span>
-            09:00 AM - 06:00 PM (Mon - Fri)
+            <div class="header-top-right">
+    <span class="social-label">Follow Us</span>
+
+    <div class="top-socials">
+
+        <!-- LinkedIn -->
+        <a href="#" aria-label="LinkedIn" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M6.5 8.5H3V21h3.5V8.5ZM4.75 3A2.05 2.05 0 1 0 4.75 7.1 2.05 2.05 0 0 0 4.75 3ZM21 13.9c0-3.77-2.01-5.52-4.69-5.52-2.16 0-3.13 1.19-3.67 2.03V8.5H9.15V21h3.49v-6.19c0-1.63.31-3.21 2.33-3.21 1.99 0 2.02 1.87 2.02 3.32V21H21v-7.1Z"/>
+            </svg>
+        </a>
+
+        <!-- Facebook -->
+        <a href="#" aria-label="Facebook" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M13.5 21v-8h2.7l.4-3h-3.1V8.1c0-.87.24-1.46 1.5-1.46h1.7V3.96c-.29-.04-1.29-.13-2.45-.13-2.43 0-4.1 1.49-4.1 4.22V10H7.4v3h2.75v8h3.35Z"/>
+            </svg>
+        </a>
+
+        <!-- Instagram -->
+        <a href="#" aria-label="Instagram" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+                <rect x="3" y="3" width="18" height="18" rx="5" ry="5"/>
+                <circle cx="12" cy="12" r="4.2"/>
+                <circle class="instagram-dot" cx="17.4" cy="6.6" r="1"/>
+            </svg>
+        </a>
+
+        <!-- YouTube -->
+        <a href="#" aria-label="YouTube" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M21.6 7.2a2.8 2.8 0 0 0-2-2C17.8 4.7 12 4.7 12 4.7s-5.8 0-7.6.5a2.8 2.8 0 0 0-2 2A29 29 0 0 0 1.9 12a29 29 0 0 0 .5 4.8 2.8 2.8 0 0 0 2 2c1.8.5 7.6.5 7.6.5s5.8 0 7.6-.5a2.8 2.8 0 0 0 2-2 29 29 0 0 0 .5-4.8 29 29 0 0 0-.5-4.8ZM10 15.8V8.2l6 3.8-6 3.8Z"/>
+            </svg>
+        </a>
+
+    </div>
+</div>
         </div>
 
     </div>
