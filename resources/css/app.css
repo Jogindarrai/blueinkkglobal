@@ -1,3 +1,633 @@
 @import 'bootstrap/dist/css/bootstrap.min.css';
 
 /* Blueinkk Global Custom CSS */
+/* =========================================================
+   BLUEINKK GLOBAL - PREMIUM HEADER
+   Brand Color: #17124A
+========================================================= */
+/* =========================================================
+   BLUEINKK GLOBAL - HEADER
+========================================================= */
+
+/* =========================================================
+   ROOT COLORS
+========================================================= */
+
+:root {
+    --brand: #17124A;
+    --brand-dark: #100c38;
+    --brand-light: #f4f3fb;
+    --border: #e9e8ef;
+    --text: #24233a;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.site-header {
+    position: relative;
+    z-index: 9999;
+}
+
+
+/* =========================================================
+   NAVBAR
+========================================================= */
+
+.main-navbar {
+    background: #ffffff;
+    min-height: 80px;
+
+    transition:
+        background-color .3s ease,
+        box-shadow .3s ease,
+        transform .3s ease;
+}
+
+
+/* =========================================================
+   STICKY HEADER ON SCROLL
+========================================================= */
+
+.site-header.is-sticky .main-navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    width: 100%;
+
+    background: #ffffff;
+
+    box-shadow: 0 5px 25px rgba(0, 0, 0, .10);
+}
+
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+.brand-logo img {
+    max-height: 55px;
+    width: auto;
+    display: block;
+}
+
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+.main-navbar .navbar-nav {
+    gap: 3px;
+}
+
+.main-navbar .nav-item {
+    position: relative;
+}
+
+.main-navbar .nav-link {
+    position: relative;
+
+    padding: 10px 14px;
+
+    color: #222222;
+
+    font-size: 15px;
+    font-weight: 500;
+
+    transition: color .25s ease;
+}
+
+
+/* Hover - only color change
+   No transform = text will not move */
+.main-navbar .nav-link:hover,
+.main-navbar .nav-link:focus {
+    color: #d7206a;
+}
+
+
+/* =========================================================
+   MEGA MENU
+========================================================= */
+
+.mega-dropdown {
+    position: static !important;
+}
+
+
+.mega-menu {
+    position: absolute;
+
+    top: 100%;
+    left: 0;
+    right: 0;
+
+    width: 100%;
+
+    margin: 0;
+
+    padding: 30px 0;
+
+    border: 0;
+    border-radius: 0;
+
+    background: #ffffff;
+
+    box-shadow: 0 12px 30px rgba(0, 0, 0, .10);
+}
+
+
+/* Bootstrap dropdown hidden */
+.mega-dropdown .mega-menu {
+    display: none;
+}
+
+
+/* Show when Bootstrap adds .show */
+.mega-dropdown .mega-menu.show {
+    display: block;
+}
+
+
+/* =========================================================
+   MEGA MENU CONTENT
+========================================================= */
+
+.mega-title {
+    margin-bottom: 15px;
+
+    color: #222222;
+
+    font-size: 16px;
+    font-weight: 700;
+}
+
+
+.mega-link {
+    display: block;
+
+    padding: 7px 0;
+
+    color: #555555;
+
+    font-size: 14px;
+    text-decoration: none;
+
+    transition:
+        color .25s ease,
+        padding-left .25s ease;
+}
+
+
+.mega-link:hover {
+    color: #d7206a;
+    padding-left: 5px;
+}
+
+
+/* =========================================================
+   CTA BUTTON
+========================================================= */
+
+.header-btn {
+    padding: 10px 18px;
+
+    background: #d7206a;
+    color: #ffffff;
+
+    border-radius: 5px;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    transition: background-color .25s ease;
+}
+
+
+.header-btn:hover {
+    background: #b91958;
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 991.98px) {
+
+    .main-navbar {
+        min-height: 70px;
+    }
+
+
+    .brand-logo img {
+        max-height: 48px;
+    }
+
+
+    .main-navbar .navbar-collapse {
+        margin-top: 10px;
+
+        padding: 15px 0;
+
+        background: #ffffff;
+    }
+
+
+    .main-navbar .navbar-nav {
+        gap: 0;
+
+        align-items: stretch !important;
+    }
+
+
+    .main-navbar .nav-link {
+        padding: 12px 5px;
+    }
+
+
+    /* Mega menu mobile */
+    .mega-menu {
+        position: static;
+
+        width: 100%;
+
+        padding: 15px 10px;
+
+        box-shadow: none;
+        border-top: 1px solid #eeeeee;
+    }
+
+
+    .mega-menu .container {
+        padding: 0;
+    }
+
+
+    .mega-menu .row {
+        --bs-gutter-y: 15px;
+    }
+
+
+    .mega-menu .col-lg-3,
+    .mega-menu .col-lg-4 {
+        width: 100%;
+    }
+
+
+    .mega-title {
+        margin-bottom: 8px;
+        font-size: 15px;
+    }
+
+
+    .mega-link {
+        padding: 6px 0;
+    }
+
+
+    .header-btn {
+        display: inline-block;
+        margin-top: 10px;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE STICKY
+========================================================= */
+
+@media (max-width: 991.98px) {
+
+    .site-header.is-sticky .main-navbar {
+        position: fixed;
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero-section {
+    background: #f7f9fb;
+    padding: 70px 0;
+}
+
+.min-vh-75 {
+    min-height: 75vh;
+}
+
+.hero-tag,
+.section-tag {
+    display: inline-block;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #ff830b;
+}
+
+.hero-section h1 {
+    color: #00293c;
+}
+
+.hero-section h1 span {
+    color: #ff830b;
+}
+
+.hero-section .lead {
+    color: #5f6b73;
+    max-width: 650px;
+}
+
+.btn-primary {
+    background: #ff830b;
+    border-color: #ff830b;
+}
+
+.btn-primary:hover {
+    background: #e87400;
+    border-color: #e87400;
+}
+
+.hero-card {
+    background: #fff;
+    padding: 45px;
+    border-radius: 16px;
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.08);
+}
+
+.hero-icon {
+    width: 70px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff1e4;
+    color: #ff830b;
+    border-radius: 50%;
+    font-size: 32px;
+}
+
+
+/* =========================================================
+   SERVICES
+========================================================= */
+
+.services-section {
+    background: #fff;
+}
+
+.services-section h2,
+.about-section h2,
+.why-us-section h2,
+.cta-section h2 {
+    color: #00293c;
+}
+
+.service-card {
+    padding: 30px;
+    border: 1px solid #e9ecef;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+}
+
+.service-icon {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff1e4;
+    color: #ff830b;
+    border-radius: 10px;
+    font-size: 27px;
+    margin-bottom: 22px;
+}
+
+.service-card h4 {
+    color: #00293c;
+    font-size: 21px;
+    margin-bottom: 15px;
+}
+
+.service-card p {
+    color: #6c757d;
+    line-height: 1.7;
+}
+
+.service-card a {
+    color: #ff830b;
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   ABOUT
+========================================================= */
+
+.about-section {
+    background: #f7f9fb;
+}
+
+.about-image-box {
+    min-height: 400px;
+    background: #00293c;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ff830b;
+    font-size: 100px;
+}
+
+.about-section p {
+    color: #6c757d;
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   WHY US
+========================================================= */
+
+.why-us-section {
+    background: #fff;
+}
+
+.why-card {
+    text-align: center;
+    padding: 40px 30px;
+    border: 1px solid #e9ecef;
+    border-radius: 12px;
+    height: 100%;
+}
+
+.why-card > i {
+    display: inline-flex;
+    width: 65px;
+    height: 65px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #fff1e4;
+    color: #ff830b;
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.why-card h4 {
+    color: #00293c;
+}
+
+.why-card p {
+    color: #6c757d;
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   CTA
+========================================================= */
+
+.cta-section {
+    background: #f7f9fb;
+}
+
+.cta-box {
+    padding: 60px 30px;
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.06);
+}
+
+.cta-box p {
+    color: #6c757d;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.footer-cta {
+    background: #ff830b;
+    color: #fff;
+}
+
+.footer-cta h2 {
+    color: #fff;
+}
+
+.footer-main {
+    background: #00293c;
+    color: #fff;
+}
+
+.footer-main p {
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.7;
+}
+
+.footer-main h5 {
+    color: #fff;
+}
+
+.footer-links li {
+    margin-bottom: 10px;
+}
+
+.footer-links a {
+    color: rgba(255, 255, 255, 0.7);
+    transition: 0.2s;
+}
+
+.footer-links a:hover {
+    color: #ff830b;
+}
+
+.footer-contact {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.social-links a {
+    width: 38px;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    color: #fff;
+}
+
+.social-links a:hover {
+    background: #ff830b;
+    border-color: #ff830b;
+}
+
+.footer-bottom {
+    background: #001e2c;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.footer-bottom a {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 991px) {
+
+    .hero-section {
+        padding: 50px 0;
+    }
+
+    .hero-section h1 {
+        font-size: 42px;
+    }
+
+    .about-image-box {
+        min-height: 300px;
+    }
+
+}
+
+@media (max-width: 575px) {
+
+    .top-bar .container > div {
+        gap: 10px;
+    }
+
+    .hero-section h1 {
+        font-size: 34px;
+    }
+
+    .hero-card {
+        padding: 30px;
+    }
+
+}
