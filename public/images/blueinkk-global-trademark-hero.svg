@@ -1,0 +1,56 @@
+<svg width="760" height="620" viewBox="0 0 760 620" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Global Trademark and IPR Protection</title>
+  <desc id="desc">A transparent navy and indigo illustration featuring a globe, trademark shield, legal scales, courthouse, documents and global location markers.</desc>
+  <defs>
+    <linearGradient id="globeFill" x1="195" y1="94" x2="567" y2="486" gradientUnits="userSpaceOnUse"><stop stop-color="#FFFFFF" stop-opacity="0.96"/><stop offset="1" stop-color="#F2F1FA" stop-opacity="0.92"/></linearGradient>
+    <linearGradient id="shieldFill" x1="339" y1="220" x2="430" y2="384" gradientUnits="userSpaceOnUse"><stop stop-color="#2A2470"/><stop offset="1" stop-color="#17124A"/></linearGradient>
+    <filter id="softShadow" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="16" stdDeviation="18" flood-color="#17124A" flood-opacity="0.12"/></filter>
+    <filter id="smallShadow" x="-40%" y="-40%" width="180%" height="180%"><feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#17124A" flood-opacity="0.14"/></filter>
+    <clipPath id="globeClip"><circle cx="390" cy="294" r="185"/></clipPath>
+  </defs>
+  <path d="M120 323C145 154 292 60 454 86C594 108 685 231 659 365" stroke="#DCD9F2" stroke-width="2" stroke-dasharray="9 12"/>
+  <path d="M95 372C145 506 298 573 444 542C576 515 655 424 663 320" stroke="#E8E6F4" stroke-width="2" stroke-dasharray="7 11"/>
+  <g filter="url(#softShadow)"><circle cx="390" cy="294" r="185" fill="url(#globeFill)" stroke="#17124A" stroke-width="7"/></g>
+  <g clip-path="url(#globeClip)">
+    <path d="M254 187C275 153 316 139 346 155C367 166 378 183 373 202C367 222 340 224 326 244C315 261 323 282 310 297C292 318 261 305 247 282C233 259 239 211 254 187Z" fill="#E9E7F5"/>
+    <path d="M454 159C481 147 526 164 543 190C554 207 545 229 522 232C501 235 493 253 489 271C484 292 467 301 451 292C431 280 432 260 417 247C399 231 398 207 415 190C426 178 439 166 454 159Z" fill="#E3E0F1"/>
+    <path d="M469 324C495 311 530 319 545 342C558 362 548 385 528 397C512 407 507 427 490 438C467 452 438 434 438 408C439 385 448 353 469 324Z" fill="#ECEAF7"/>
+    <path d="M274 345C296 331 321 340 330 360C339 381 326 406 309 420C289 437 258 424 252 400C248 379 255 358 274 345Z" fill="#E5E2F2"/>
+    <ellipse cx="390" cy="294" rx="88" ry="185" stroke="#4A429A" stroke-width="3.5" opacity="0.72"/>
+    <ellipse cx="390" cy="294" rx="142" ry="185" stroke="#8C86B8" stroke-width="2.5" opacity="0.5"/>
+    <path d="M208 255H572" stroke="#4A429A" stroke-width="3.5" opacity="0.72"/>
+    <path d="M211 333H569" stroke="#4A429A" stroke-width="3.5" opacity="0.72"/>
+    <path d="M390 109V479" stroke="#4A429A" stroke-width="3.5" opacity="0.72"/>
+  </g>
+  <g filter="url(#smallShadow)">
+    <path d="M390 208L474 240V306C474 374 441 424 390 449C339 424 306 374 306 306V240L390 208Z" fill="url(#shieldFill)"/>
+    <path d="M390 224L457 250V304C457 359 431 399 390 421C349 399 323 359 323 304V250L390 224Z" stroke="#FFFFFF" stroke-opacity="0.38" stroke-width="3"/>
+    <circle cx="390" cy="316" r="47" fill="#FFFFFF"/>
+    <path d="M365 316L383 334L417 296" stroke="#17124A" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <g filter="url(#smallShadow)"><circle cx="573" cy="158" r="51" fill="#FFFFFF" stroke="#17124A" stroke-width="5"/><text x="573" y="174" text-anchor="middle" fill="#17124A" font-size="46" font-family="Arial, sans-serif" font-weight="700">®</text></g>
+  <g>
+    <path d="M158 195C158 169 178 149 204 149C230 149 250 169 250 195C250 230 204 268 204 268C204 268 158 230 158 195Z" fill="#4A429A"/><circle cx="204" cy="194" r="14" fill="#FFFFFF"/>
+    <path d="M586 290C586 268 603 251 625 251C647 251 664 268 664 290C664 320 625 351 625 351C625 351 586 320 586 290Z" fill="#2A2470"/><circle cx="625" cy="289" r="12" fill="#FFFFFF"/>
+    <path d="M511 462C511 444 525 430 543 430C561 430 575 444 575 462C575 487 543 513 543 513C543 513 511 487 511 462Z" fill="#6D66A5"/><circle cx="543" cy="461" r="10" fill="#FFFFFF"/>
+  </g>
+  <path d="M172 132C280 62 456 61 570 126" stroke="#8E88BA" stroke-width="3" stroke-dasharray="8 10"/>
+  <g transform="translate(359 72) rotate(9)"><path d="M0 17L68 0L51 19L73 27L65 37L39 28L26 46L14 44L21 24L0 17Z" fill="#17124A"/></g>
+  <g filter="url(#smallShadow)">
+    <rect x="92" y="403" width="160" height="132" rx="18" fill="#FFFFFF" stroke="#17124A" stroke-width="4"/>
+    <path d="M125 445H218" stroke="#4A429A" stroke-width="6" stroke-linecap="round"/>
+    <path d="M125 472H202" stroke="#A19CC8" stroke-width="5" stroke-linecap="round"/>
+    <path d="M125 499H184" stroke="#A19CC8" stroke-width="5" stroke-linecap="round"/>
+    <circle cx="208" cy="497" r="21" fill="#17124A"/><path d="M198 497L205 504L218 490" stroke="#FFFFFF" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <g transform="translate(486 403)" stroke="#17124A" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M64 0V102"/><path d="M21 22H107"/><path d="M64 0L79 18H49L64 0Z" fill="#17124A" stroke="none"/>
+    <path d="M21 22L2 61"/><path d="M21 22L40 61"/><path d="M2 61H40C39 79 28 88 21 88C14 88 3 79 2 61Z" fill="#F4F3FB"/>
+    <path d="M107 22L88 61"/><path d="M107 22L126 61"/><path d="M88 61H126C125 79 114 88 107 88C100 88 89 79 88 61Z" fill="#F4F3FB"/><path d="M36 102H92"/>
+  </g>
+  <g transform="translate(576 394)" filter="url(#smallShadow)">
+    <path d="M67 0L126 34H8L67 0Z" fill="#17124A"/><rect x="15" y="39" width="104" height="12" rx="4" fill="#4A429A"/>
+    <rect x="23" y="52" width="14" height="66" rx="4" fill="#E6E4F2"/><rect x="50" y="52" width="14" height="66" rx="4" fill="#E6E4F2"/><rect x="77" y="52" width="14" height="66" rx="4" fill="#E6E4F2"/><rect x="104" y="52" width="14" height="66" rx="4" fill="#E6E4F2"/><rect x="9" y="118" width="116" height="13" rx="4" fill="#17124A"/>
+  </g>
+  <circle cx="112" cy="306" r="7" fill="#A49FCA"/><circle cx="145" cy="343" r="4" fill="#4A429A"/><circle cx="665" cy="185" r="6" fill="#8C86B8"/><circle cx="690" cy="221" r="4" fill="#17124A"/>
+</svg>

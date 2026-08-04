@@ -1,76 +1,105 @@
 @extends('layouts.app')
-
 @section('title', 'Blueinkk Global | Global Trademark Solutions')
-
 @section('meta_description', 'Blueinkk Global provides professional trademark registration, search, renewal and global brand protection services.')
-
 @section('content')
-
-
+{{-- =========================================================
+     SIMPLE HERO SECTION
+========================================================= --}}
 {{-- =========================================================
      HERO SECTION
 ========================================================= --}}
-
 <section class="hero-section">
 
     <div class="container">
 
-        <div class="row align-items-center min-vh-75">
+        <div class="row align-items-center hero-row">
 
-            <div class="col-lg-7">
+            {{-- =================================================
+                 LEFT CONTENT
+            ================================================= --}}
+            <div class="col-lg-6">
 
-                <span class="hero-tag">
-                    GLOBAL TRADEMARK SOLUTIONS
-                </span>
+                <div class="hero-content">
 
-                <h1 class="display-4 fw-bold mt-3 mb-4">
-                    Protect Your Brand.
-                    <span>Grow Globally.</span>
-                </h1>
+                    <span class="hero-tag">
+                        Global Trademark & IPR Solutions
+                    </span>
 
-                <p class="lead mb-4">
-                    Professional trademark registration and brand protection
-                    solutions designed to help businesses secure their
-                    intellectual property worldwide.
-                </p>
+                    <h1 class="hero-title">
+                        Protect Your Brand.
+                        <span>Grow Globally.</span>
+                    </h1>
 
-                <div class="d-flex flex-wrap gap-3">
+                    <p class="hero-description">
+                        Professional trademark registration, brand protection
+                        and intellectual property services for businesses
+                        expanding across India and international markets.
+                    </p>
 
-                    <a
-                        href="#contact"
-                        class="btn btn-primary btn-lg px-4"
-                    >
-                        Get Started
-                    </a>
+                    {{-- =================================================
+                         HERO STATS
+                    ================================================= --}}
+                    <div class="hero-stats">
 
-                    <a
-                        href="#services"
-                        class="btn btn-outline-dark btn-lg px-4"
-                    >
-                        Explore Services
-                    </a>
+                        <div class="hero-stat-item">
+                            <strong>40,000+</strong>
+                            <span>Clients Helped</span>
+                        </div>
+
+                        <div class="hero-stat-item">
+                            <strong>15+</strong>
+                            <span>Years Legal Experience</span>
+                        </div>
+
+                        <div class="hero-stat-item">
+                            <strong>100+</strong>
+                            <span>Countries</span>
+                        </div>
+
+                    </div>
+
+                    {{-- =================================================
+                         HERO BUTTONS
+                    ================================================= --}}
+                    <div class="hero-actions">
+
+                        <button
+                            type="button"
+                            class="btn hero-primary-btn"
+                            data-bs-toggle="modal"
+                            data-bs-target="#enquiryModal">
+
+                            Get Free Consultation
+
+                            <i class="bi bi-arrow-right"></i>
+
+                        </button>
+
+                        <a
+                            href="{{ url('/countries') }}"
+                            class="btn hero-outline-btn">
+
+                            View All Countries
+
+                        </a>
+
+                    </div>
 
                 </div>
 
             </div>
 
+            {{-- =================================================
+                 RIGHT SVG IMAGE
+            ================================================= --}}
+            <div class="col-lg-6 mt-4 mt-lg-0">
 
-            <div class="col-lg-5 mt-5 mt-lg-0">
+                <div class="hero-image-wrapper">
 
-                <div class="hero-card">
-
-                    <div class="hero-icon mb-3">
-                        <i class="bi bi-shield-check"></i>
-                    </div>
-
-                    <h3 class="fw-bold">
-                        Your Brand Deserves Protection
-                    </h3>
-
-                    <p class="text-muted mb-0">
-                        From trademark search to registration and ongoing
-                        protection, we help you safeguard your brand.
-                    </p>
+                    <img
+                        src="{{ asset('images/tm-hero.webp') }}"
+                        alt="Global trademark and intellectual property protection"
+                        class="hero-image">
 
                 </div>
 
@@ -82,24 +111,108 @@
 
 </section>
 
+{{-- =========================================================
+     TRUSTED CLIENTS
+========================================================= --}}
+<section class="clients-section" id="clients">
 
+    <div class="container">
 
+        {{-- Section Heading --}}
+      <h2 class="clients-title mb-4 h4 fw-bold">
+    Brands That Trust BlueInkk
+</h2>
+
+        {{-- Logo Slider --}}
+        <div class="splide clients-slider">
+
+            <div class="splide__track">
+
+                <ul class="splide__list">
+
+                    <li class="splide__slide">
+                        <div class="client-logo">
+                            <img src="{{ asset('images/clients/air-arabia.webp') }}" alt="Client 1">
+                        </div>
+                    </li>
+
+                    <li class="splide__slide">
+                        <div class="client-logo">
+                            <img src="{{ asset('images/clients/ajay-devgn-film.webp') }}" alt="Client 2">
+                        </div>
+                    </li>
+
+                    <li class="splide__slide">
+                        <div class="client-logo">
+                            <img src="{{ asset('images/clients/anil-sharma-productions.webp') }}" alt="Client 3">
+                        </div>
+                    </li>
+
+                    <li class="splide__slide">
+                        <div class="client-logo">
+                            <img src="{{ asset('images/clients/haldiram.webp') }}" alt="Client 4">
+                        </div>
+                    </li>
+
+                    <li class="splide__slide">
+                        <div class="client-logo">
+                            <img src="{{ asset('images/clients/lotus-herbals.webp') }}" alt="Client 5">
+                        </div>
+                    </li>
+
+                    <li class="splide__slide">
+                        <div class="client-logo">
+                            <img src="{{ asset('images/clients/micromax.webp') }}" alt="Client 6">
+                        </div>
+                    </li>
+
+                    <li class="splide__slide">
+                        <div class="client-logo">
+                            <img src="{{ asset('images/clients/milk-basket.webp') }}" alt="Client 7">
+                        </div>
+                    </li>
+
+                    <li class="splide__slide">
+                        <div class="client-logo">
+                            <img src="{{ asset('images/clients/ntpc.webp') }}" alt="Client 8">
+                        </div>
+                    </li>
+                      <li class="splide__slide">
+                        <div class="client-logo">
+                            <img src="{{ asset('images/clients/premanand-ji-maharaj.webp') }}" alt="Client 8">
+                        </div>
+                    </li>
+                     <li class="splide__slide">
+                        <div class="client-logo">
+                            <img src="{{ asset('images/clients/steelbird-international.webp') }}" alt="Client 8">
+                        </div>
+                    </li>
+                     <li class="splide__slide">
+                        <div class="client-logo">
+                            <img src="{{ asset('images/clients/wakefit.webp') }}" alt="Client 8">
+                        </div>
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
 {{-- =========================================================
      SERVICES
 ========================================================= --}}
-
 <section
     class="services-section py-5"
-    id="services"
->
+    id="services">
 
     <div class="container py-lg-5">
 
         <div class="text-center mb-5">
 
-            <span class="section-tag">
-                OUR SERVICES
-            </span>
 
             <h2 class="fw-bold mt-2">
                 Complete Trademark Solutions
@@ -232,127 +345,142 @@
     </div>
 
 </section>
-
-
-
 {{-- =========================================================
-     ABOUT
+     ABOUT SECTION
 ========================================================= --}}
+<section class="about-section" id="about">
 
-<section
-    class="about-section py-5"
-    id="about"
->
-
-    <div class="container py-lg-5">
+    <div class="container">
 
         <div class="row align-items-center g-5">
 
+            {{-- Left Image --}}
             <div class="col-lg-6">
 
-                <div class="about-image">
+                <div class="about-image-wrap">
 
-                    <div class="about-image-box">
+                    <img
+                        src="{{ asset('images/about-us.webp') }}"
+                        alt="Blue Inkk intellectual property legal team"
+                        class="about-image"
+                        loading="lazy">
 
-                        <i class="bi bi-globe2"></i>
+                    <div class="about-image-content">
 
+                        <strong>360° IP Protection</strong>
+
+                        <span>
+                            Creation, protection, enforcement and monetisation
+                            of intellectual property.
+                        </span>
+
+                    </div>
+
+                </div>
+
+                <div class="about-stats">
+
+                    <div>
+                        <strong>40,000+</strong>
+                        <span>Clients Served</span>
+                    </div>
+
+                    <div>
+                        <strong>100+</strong>
+                        <span>Countries</span>
+                    </div>
+
+                    <div>
+                        <strong>Top 15</strong>
+                        <span>Domestic IP Firms</span>
                     </div>
 
                 </div>
 
             </div>
 
-
+            {{-- Right Content --}}
             <div class="col-lg-6">
 
-                <span class="section-tag">
-                    ABOUT BLUEINKK GLOBAL
-                </span>
+                <div class="about-content">
 
-                <h2 class="fw-bold mt-2 mb-4">
-                    Helping Businesses Protect Their Most Valuable Asset
-                </h2>
+                    <span class="fw-bold">
+                        About Blue Inkk
+                    </span>
 
-                <p>
-                    Your brand represents your business, reputation and
-                    relationship with customers. Protecting it is an
-                    important part of building a successful business.
-                </p>
+                    <h2>
+                        Strategic IP Protection for
+                        <span>Modern Businesses</span>
+                    </h2>
 
-                <p>
-                    Blueinkk Global provides trademark and intellectual
-                    property support to help businesses secure their brands
-                    and confidently expand into new markets.
-                </p>
+                    <p class="about-lead">
+                        Blue Inkk is a full-service Intellectual Property law
+                        firm delivering strategic and business-driven IP
+                        solutions to innovators across the globe.
+                    </p>
 
+                    <p>
+                        Founded in October 2019, we follow a 360° IP Protection
+                        Approach covering creation, protection, enforcement and
+                        monetisation of intellectual property.
+                    </p>
 
-                <div class="row mt-4">
+                    <p>
+                        Our team handles domestic and international trademark
+                        filings, Madrid Protocol applications, renewals,
+                        portfolio management, enforcement and advisory across
+                        more than 100 countries.
+                    </p>
 
-                    <div class="col-sm-6 mb-3">
+                    <div class="about-points">
 
-                        <div class="d-flex gap-3">
+                        <div>
+                            <i class="bi bi-check-circle-fill"></i>
+                            Global Trademark Filing
+                        </div>
 
-                            <i class="bi bi-check-circle-fill text-primary"></i>
+                        <div>
+                            <i class="bi bi-check-circle-fill"></i>
+                            End-to-End IP Support
+                        </div>
 
-                            <span>
-                                Professional Support
-                            </span>
+                        <div>
+                            <i class="bi bi-check-circle-fill"></i>
+                            Business-Focused Strategy
+                        </div>
 
+                        <div>
+                            <i class="bi bi-check-circle-fill"></i>
+                            Transparent Legal Process
                         </div>
 
                     </div>
 
-                    <div class="col-sm-6 mb-3">
+                    <div class="about-actions">
 
-                        <div class="d-flex gap-3">
+                        <a
+                            href="{{ url('/about-us') }}"
+                            class="btn about-btn">
 
-                            <i class="bi bi-check-circle-fill text-primary"></i>
+                            Know More
 
-                            <span>
-                                Global Solutions
-                            </span>
+                            <i class="bi bi-arrow-right"></i>
 
-                        </div>
+                        </a>
 
-                    </div>
+                        <button
+                            type="button"
+                            class="btn about-link"
+                            data-bs-toggle="modal"
+                            data-bs-target="#enquiryModal">
 
-                    <div class="col-sm-6">
+                            Talk to an IP Expert
 
-                        <div class="d-flex gap-3">
-
-                            <i class="bi bi-check-circle-fill text-primary"></i>
-
-                            <span>
-                                Transparent Process
-                            </span>
-
-                        </div>
-
-                    </div>
-
-                    <div class="col-sm-6">
-
-                        <div class="d-flex gap-3">
-
-                            <i class="bi bi-check-circle-fill text-primary"></i>
-
-                            <span>
-                                Client Focused
-                            </span>
-
-                        </div>
+                        </button>
 
                     </div>
 
                 </div>
-
-
-                <a
-                    href="#contact"
-                    class="btn btn-primary mt-4 px-4"
-                >
-                    Talk to an Expert
-                </a>
 
             </div>
 
@@ -362,32 +490,112 @@
 
 </section>
 
+{{-- =========================================================
+     FOUNDER MESSAGE
+========================================================= --}}
+<section class="founder-section" id="founder">
 
+    <div class="container">
 
+        <div class="row align-items-center g-5">
+
+            {{-- Founder Image --}}
+            <div class="col-lg-5">
+
+                <div class="founder-image-wrap">
+
+                    <img
+                        src="{{ asset('images/founder.webp') }}"
+                        alt="Founder - Blue Inkk"
+                        class="founder-image">
+
+                </div>
+
+            </div>
+
+            {{-- Founder Content --}}
+            <div class="col-lg-7">
+                <div class="founder-content">
+                    <span class="fw-bold">
+                        Founder’s Message
+                    </span>
+                    <h2>
+                        A Vision Built Around
+                        <span>Innovation & Protection</span>
+                    </h2>
+                    <div class="founder-quote">
+
+                        <i class="bi bi-quote"></i>
+
+                    </div>
+                    <p class="founder-lead">
+                        At Blue Inkk, we see intellectual property as the power
+                        to innovate and the commitment to protect that
+                        innovation.
+                    </p>
+                    <p>
+                        Our vision is to deliver globally benchmarked IP
+                        solutions with precision, integrity and strategic
+                        clarity.
+
+                    </p>
+
+                    <p>
+
+                        Trusted by a growing global clientele, we remain focused
+                        on one purpose — protecting innovation, strengthening
+                        brands and enabling long-term value across
+                        jurisdictions.
+
+                    </p>
+
+                    <div class="founder-footer">
+
+                        <div>
+
+                            <h5>
+                                Mayank Goel
+                            </h5>
+
+                            <span>
+                                Founder & Managing Partner
+                            </span>
+
+                        </div>
+
+                        <!-- <a
+                            href="{{ url('/about-us') }}"
+                            class="btn hero-outline-btn">
+
+                            Read More
+
+                            <i class="bi bi-arrow-right"></i>
+
+                        </a> -->
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
 {{-- =========================================================
      WHY US
 ========================================================= --}}
-
-<section
-    class="why-us-section py-5"
-    id="why-us"
->
-
+<section class="why-us-section py-5"
+    id="why-us">
     <div class="container py-lg-5">
-
         <div class="text-center mb-5">
-
-            <span class="section-tag">
-                WHY CHOOSE US
-            </span>
-
             <h2 class="fw-bold mt-2">
                 Why Businesses Choose Blueinkk Global
             </h2>
 
         </div>
-
-
         <div class="row g-4">
 
             <div class="col-lg-4">
@@ -446,51 +654,9 @@
                     </p>
 
                 </div>
-
             </div>
-
         </div>
-
     </div>
-
 </section>
-
-
-
-{{-- =========================================================
-     CTA
-========================================================= --}}
-
-<section class="cta-section py-5">
-
-    <div class="container py-lg-4">
-
-        <div class="cta-box text-center">
-
-            <span class="section-tag">
-                GET STARTED
-            </span>
-
-            <h2 class="fw-bold mt-2">
-                Ready to Protect Your Brand?
-            </h2>
-
-            <p class="mb-4">
-                Start your trademark journey with Blueinkk Global today.
-            </p>
-
-            <a
-                href="#contact"
-                class="btn btn-primary btn-lg px-5"
-            >
-                Get Started
-            </a>
-
-        </div>
-
-    </div>
-
-</section>
-
 
 @endsection

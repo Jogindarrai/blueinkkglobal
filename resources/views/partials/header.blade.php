@@ -1,9 +1,8 @@
 {{-- Top Bar --}}
 <div class="header-top">
     <div class="container header-top-inner">
-
         <div class="header-top-left">
-            <a href="mailto:ipr@blueinkk.com">
+            <a href="mailto:global.ipr@blueinkk.com">
                 <span class="top-icon">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <path d="M4 4h16v16H4z" opacity="0"></path>
@@ -11,7 +10,7 @@
                         <path d="M3 7l9 6 9-6"></path>
                     </svg>
                 </span>
-                ipr@blueinkk.com
+                global.ipr@blueinkk.com
             </a>
 
             <a href="tel:+91-9958000637">
@@ -23,67 +22,58 @@
                 +91-9958000637
             </a>
         </div>
-
         <div class="header-top-right">
             <div class="header-top-right">
-    <span class="social-label">Follow Us</span>
+                <span class="social-label">Follow Us</span>
+                <div class="top-socials">
+                    <!-- LinkedIn -->
+                    <a href="#" aria-label="LinkedIn" target="_blank" rel="noopener">
+                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M6.5 8.5H3V21h3.5V8.5ZM4.75 3A2.05 2.05 0 1 0 4.75 7.1 2.05 2.05 0 0 0 4.75 3ZM21 13.9c0-3.77-2.01-5.52-4.69-5.52-2.16 0-3.13 1.19-3.67 2.03V8.5H9.15V21h3.49v-6.19c0-1.63.31-3.21 2.33-3.21 1.99 0 2.02 1.87 2.02 3.32V21H21v-7.1Z" />
+                        </svg>
+                    </a>
 
-    <div class="top-socials">
+                    <!-- Facebook -->
+                    <a href="#" aria-label="Facebook" target="_blank" rel="noopener">
+                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M13.5 21v-8h2.7l.4-3h-3.1V8.1c0-.87.24-1.46 1.5-1.46h1.7V3.96c-.29-.04-1.29-.13-2.45-.13-2.43 0-4.1 1.49-4.1 4.22V10H7.4v3h2.75v8h3.35Z" />
+                        </svg>
+                    </a>
 
-        <!-- LinkedIn -->
-        <a href="#" aria-label="LinkedIn" target="_blank" rel="noopener">
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M6.5 8.5H3V21h3.5V8.5ZM4.75 3A2.05 2.05 0 1 0 4.75 7.1 2.05 2.05 0 0 0 4.75 3ZM21 13.9c0-3.77-2.01-5.52-4.69-5.52-2.16 0-3.13 1.19-3.67 2.03V8.5H9.15V21h3.49v-6.19c0-1.63.31-3.21 2.33-3.21 1.99 0 2.02 1.87 2.02 3.32V21H21v-7.1Z"/>
-            </svg>
-        </a>
+                    <!-- Instagram -->
+                    <a href="#" aria-label="Instagram" target="_blank" rel="noopener">
+                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                            <rect x="3" y="3" width="18" height="18" rx="5" ry="5" />
+                            <circle cx="12" cy="12" r="4.2" />
+                            <circle class="instagram-dot" cx="17.4" cy="6.6" r="1" />
+                        </svg>
+                    </a>
 
-        <!-- Facebook -->
-        <a href="#" aria-label="Facebook" target="_blank" rel="noopener">
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M13.5 21v-8h2.7l.4-3h-3.1V8.1c0-.87.24-1.46 1.5-1.46h1.7V3.96c-.29-.04-1.29-.13-2.45-.13-2.43 0-4.1 1.49-4.1 4.22V10H7.4v3h2.75v8h3.35Z"/>
-            </svg>
-        </a>
+                    <!-- YouTube -->
+                    <a href="#" aria-label="YouTube" target="_blank" rel="noopener">
+                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M21.6 7.2a2.8 2.8 0 0 0-2-2C17.8 4.7 12 4.7 12 4.7s-5.8 0-7.6.5a2.8 2.8 0 0 0-2 2A29 29 0 0 0 1.9 12a29 29 0 0 0 .5 4.8 2.8 2.8 0 0 0 2 2c1.8.5 7.6.5 7.6.5s5.8 0 7.6-.5a2.8 2.8 0 0 0 2-2 29 29 0 0 0 .5-4.8 29 29 0 0 0-.5-4.8ZM10 15.8V8.2l6 3.8-6 3.8Z" />
+                        </svg>
+                    </a>
 
-        <!-- Instagram -->
-        <a href="#" aria-label="Instagram" target="_blank" rel="noopener">
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-                <rect x="3" y="3" width="18" height="18" rx="5" ry="5"/>
-                <circle cx="12" cy="12" r="4.2"/>
-                <circle class="instagram-dot" cx="17.4" cy="6.6" r="1"/>
-            </svg>
-        </a>
-
-        <!-- YouTube -->
-        <a href="#" aria-label="YouTube" target="_blank" rel="noopener">
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M21.6 7.2a2.8 2.8 0 0 0-2-2C17.8 4.7 12 4.7 12 4.7s-5.8 0-7.6.5a2.8 2.8 0 0 0-2 2A29 29 0 0 0 1.9 12a29 29 0 0 0 .5 4.8 2.8 2.8 0 0 0 2 2c1.8.5 7.6.5 7.6.5s5.8 0 7.6-.5a2.8 2.8 0 0 0 2-2 29 29 0 0 0 .5-4.8 29 29 0 0 0-.5-4.8ZM10 15.8V8.2l6 3.8-6 3.8Z"/>
-            </svg>
-        </a>
-
-    </div>
-</div>
+                </div>
+            </div>
         </div>
-
     </div>
 </div>
-
-
 
 {{-- =========================================================
     MAIN HEADER
 ========================================================= --}}
 <header class="site-header">
-
     <nav class="navbar navbar-expand-lg main-navbar">
         <div class="container">
-
             {{-- Logo --}}
             <a href="{{ url('/') }}" class="navbar-brand brand-logo">
                 <img
                     src="{{ asset('images/logo.webp') }}"
                     alt="Blueinkk Global">
             </a>
-
             {{-- Mobile Toggle --}}
             <button
                 class="navbar-toggler"
@@ -96,127 +86,100 @@
 
                 <span class="navbar-toggler-icon"></span>
             </button>
-
-
             {{-- Navigation --}}
             <div class="collapse navbar-collapse" id="mainNavbar">
-
                 <ul class="navbar-nav ms-auto align-items-lg-center">
-
                     {{-- Home --}}
                     <li class="nav-item">
                         <a href="{{ url('/') }}" class="nav-link">
                             Home
                         </a>
                     </li>
-
-
-                    {{-- ABOUT --}}
                     <li class="nav-item dropdown mega-dropdown">
-
                         <a
+                            class="nav-link global-trademark-link dropdown-toggle"
                             href="#"
-                            class="nav-link dropdown-toggle"
+                            role="button"
                             data-bs-toggle="dropdown"
                             aria-expanded="false">
-
-                            About
+                            <span class="global-trademark-icon">🌐</span>
+                            Global Trademark
                         </a>
 
-
-                        {{-- Mega Menu --}}
                         <div class="dropdown-menu mega-menu">
-
                             <div class="container">
 
-                                <div class="row g-4">
-
-                                    {{-- Column 1 --}}
-                                    <div class="col-lg-4">
-
-                                        <h6 class="mega-title">
-                                            About Us
-                                        </h6>
-
-                                        <a href="#" class="mega-link">
-                                            Company Overview
-                                        </a>
-
-                                        <a href="#" class="mega-link">
-                                            Our Story
-                                        </a>
-
-                                        <a href="#" class="mega-link">
-                                            Our Mission
-                                        </a>
-
-                                        <a href="#" class="mega-link">
-                                            Leadership Team
-                                        </a>
-
+                                <div class="mega-header">
+                                    <div>
+                                        <span class="mega-eyebrow">GLOBAL TRADEMARK SERVICES</span>
+                                        <h3>Trademark Registration by Country</h3>
+                                        <p>
+                                            Protect your brand across 80+ countries worldwide.
+                                        </p>
                                     </div>
 
+                                    <a href="#" class="mega-view-all">
+                                        View All Countries →
+                                    </a>
+                                </div>
 
-                                    {{-- Column 2 --}}
-                                    <div class="col-lg-4">
+                                <div class="row g-0">
 
-                                        <h6 class="mega-title">
-                                            Our Expertise
-                                        </h6>
-
-                                        <a href="#" class="mega-link">
-                                            Trademark
-                                        </a>
-
-                                        <a href="#" class="mega-link">
-                                            Copyright
-                                        </a>
-
-                                        <a href="#" class="mega-link">
-                                            Patent
-                                        </a>
-
-                                        <a href="#" class="mega-link">
-                                            Design Registration
-                                        </a>
-
+                                    <div class="col-lg-3 col-md-6">
+                                        <div class="country-group">
+                                            <h4>Asia Pacific</h4>
+                                            <a href="#" class="mega-link"> <span class="fi fi-np"></span> Nepal</a>
+                                            <a href="#" class="mega-link"> <span class="fi fi-in"></span> India</a>
+                                            <a href="#" class="mega-link"> <span class="fi fi-au"></span> Australia</a>
+                                            <!-- <a href="#" class="mega-link"> <span class="fi fi-sg"></span>  Singapore</a> -->
+                                            <a href="#" class="mega-link"> <span class="fi fi-ae"></span> UAE</a>
+                                        </div>
                                     </div>
 
+                                    <div class="col-lg-3 col-md-6">
+                                        <div class="country-group">
+                                            <h4>Popular Destinations</h4>
 
-                                    {{-- Column 3 --}}
-                                    <div class="col-lg-4">
-
-                                        <h6 class="mega-title">
-                                            Quick Links
-                                        </h6>
-
-                                        <a href="#" class="mega-link">
-                                            Resources
-                                        </a>
-
-                                        <a href="#" class="mega-link">
-                                            Blog
-                                        </a>
-
-                                        <a href="#" class="mega-link">
-                                            FAQs
-                                        </a>
-
-                                        <a href="#" class="mega-link">
-                                            Contact Us
-                                        </a>
-
+                                            <a href="#" class="mega-link"> <span class="fi fi-cn"></span> China</a>
+                                            <a href="#" class="mega-link"> <span class="fi fi-jp"></span> Japan</a>
+                                            <a href="#" class="mega-link"> <span class="fi fi-kr"></span> South Korea</a>
+                                            <a href="#" class="mega-link"> <span class="fi fi-za"></span> South Africa</a>
+                                        </div>
                                     </div>
+
+                                    <div class="col-lg-3 col-md-6">
+                                        <div class="country-group">
+                                            <h4>North America</h4>
+
+                                            <a href="#" class="mega-link"> <span class="fi fi-us"></span> USA</a>
+                                            <a href="#" class="mega-link"> <span class="fi fi-ca"></span> Canada</a>
+                                            <a href="#" class="mega-link"> <span class="fi fi-mx"></span> Mexico</a>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-3 col-md-6">
+                                        <div class="country-group">
+                                            <h4>Europe</h4>
+
+                                            <a href="#" class="mega-link"> <span class="fi fi-gb"></span> United Kingdom</a>
+                                            <a href="#" class="mega-link"> <span class="fi fi-de"></span> Germany</a>
+                                            <a href="#" class="mega-link"> <span class="fi fi-fr"></span> France</a>
+                                            <a href="#" class="mega-link"> <span class="fi fi-it"></span> Italy</a>
+                                        </div>
+                                    </div>
+
 
                                 </div>
 
                             </div>
-
                         </div>
-
                     </li>
-
-
+                    {{-- About Us --}}
+                    <li class="nav-item">
+                        <a href="{{ url('/') }}" class="nav-link">
+                            About Us
+                        </a>
+                    </li>
                     {{-- SERVICES --}}
                     <li class="nav-item dropdown mega-dropdown">
 
@@ -326,38 +289,28 @@
                         </div>
 
                     </li>
-
-
-                    {{-- BLOG --}}
+                    {{-- Our Team --}}
                     <li class="nav-item">
                         <a href="#" class="nav-link">
-                            Blog
+                            Our Team
                         </a>
                     </li>
-
-
                     {{-- CONTACT --}}
                     <li class="nav-item">
                         <a href="#" class="nav-link">
-                            Contact
+                            Contact us
                         </a>
                     </li>
-
-
                     {{-- CTA --}}
                     <li class="nav-item ms-lg-3">
 
-                        <a href="#" class="btn header-btn">
+                        <a href="#" class="btn header-btn" data-bs-toggle="modal" data-bs-target="#enquiryModal">
                             Get Started
                         </a>
 
                     </li>
-
                 </ul>
-
             </div>
-
         </div>
     </nav>
-
 </header>
