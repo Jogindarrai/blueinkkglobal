@@ -300,6 +300,7 @@ svg {
 
 .mega-dropdown .mega-menu.show {
     display: block;
+    margin-top: -1px;
 }
 
 .mega-menu {

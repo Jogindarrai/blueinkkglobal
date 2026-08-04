@@ -114,7 +114,7 @@
                                         <span class="mega-eyebrow">GLOBAL TRADEMARK SERVICES</span>
                                         <h3>Trademark Registration by Country</h3>
                                         <p>
-                                            Protect your brand across 80+ countries worldwide.
+                                            Protect your brand across 100+ countries worldwide.
                                         </p>
                                     </div>
 

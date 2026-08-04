@@ -405,7 +405,7 @@
                 <div class="about-content">
 
                     <span class="fw-bold">
-                        About Blue Inkk
+                        About BlueInkk
                     </span>
 
                     <h2>
@@ -414,7 +414,7 @@
                     </h2>
 
                     <p class="about-lead">
-                        Blue Inkk is a full-service Intellectual Property law
+                        BlueInkk is a full-service Intellectual Property law
                         firm delivering strategic and business-driven IP
                         solutions to innovators across the globe.
                     </p>
@@ -529,7 +529,7 @@
 
                     </div>
                     <p class="founder-lead">
-                        At Blue Inkk, we see intellectual property as the power
+                        At BlueInkk, we see intellectual property as the power
                         to innovate and the commitment to protect that
                         innovation.
                     </p>
