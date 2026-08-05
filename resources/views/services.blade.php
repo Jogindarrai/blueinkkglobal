@@ -105,10 +105,10 @@
                         </p>
                     </div>
 
-                    <a href="#" class="service-directory-link">
+                    <!-- <a href="#" class="service-directory-link">
                         Explore Service
                         <i class="bi bi-arrow-right"></i>
-                    </a>
+                    </a> -->
 
                 </article>
             </div>
@@ -132,10 +132,10 @@
                         </p>
                     </div>
 
-                    <a href="#" class="service-directory-link">
+                    <!-- <a href="#" class="service-directory-link">
                         Explore Service
                         <i class="bi bi-arrow-right"></i>
-                    </a>
+                    </a> -->
 
                 </article>
             </div>
@@ -158,10 +158,10 @@
                         </p>
                     </div>
 
-                    <a href="#" class="service-directory-link">
+                    <!-- <a href="#" class="service-directory-link">
                         Explore Service
                         <i class="bi bi-arrow-right"></i>
-                    </a>
+                    </a> -->
 
                 </article>
             </div>
@@ -183,11 +183,11 @@
                             protection for inventions and technical innovation.
                         </p>
                     </div>
-
+<!--
                     <a href="#" class="service-directory-link">
                         Explore Service
                         <i class="bi bi-arrow-right"></i>
-                    </a>
+                    </a> -->
 
                 </article>
             </div>
@@ -210,10 +210,10 @@
                         </p>
                     </div>
 
-                    <a href="#" class="service-directory-link">
+                    <!-- <a href="#" class="service-directory-link">
                         Explore Service
                         <i class="bi bi-arrow-right"></i>
-                    </a>
+                    </a> -->
 
                 </article>
             </div>
@@ -236,10 +236,10 @@
                         </p>
                     </div>
 
-                    <a href="#" class="service-directory-link">
+                    <!-- <a href="#" class="service-directory-link">
                         Explore Service
                         <i class="bi bi-arrow-right"></i>
-                    </a>
+                    </a> -->
 
                 </article>
             </div>
@@ -262,10 +262,10 @@
                         </p>
                     </div>
 
-                    <a href="#" class="service-directory-link">
+                    <!-- <a href="#" class="service-directory-link">
                         Explore Service
                         <i class="bi bi-arrow-right"></i>
-                    </a>
+                    </a> -->
 
                 </article>
             </div>
@@ -289,10 +289,10 @@
                         </p>
                     </div>
 
-                    <a href="#" class="service-directory-link">
+                    <!-- <a href="#" class="service-directory-link">
                         Explore Service
                         <i class="bi bi-arrow-right"></i>
-                    </a>
+                    </a> -->
 
                 </article>
             </div>
@@ -315,10 +315,10 @@
                         </p>
                     </div>
 
-                    <a href="#" class="service-directory-link">
+                    <!-- <a href="#" class="service-directory-link">
                         Explore Service
                         <i class="bi bi-arrow-right"></i>
-                    </a>
+                    </a> -->
 
                 </article>
             </div>
@@ -341,10 +341,10 @@
                         </p>
                     </div>
 
-                    <a href="#" class="service-directory-link">
+                    <!-- <a href="#" class="service-directory-link">
                         Explore Service
                         <i class="bi bi-arrow-right"></i>
-                    </a>
+                    </a> -->
 
                 </article>
             </div>
