@@ -1,41 +1,6 @@
 <footer class="footer-section">
 
-    {{-- CTA --}}
-    <section class="footer-cta py-5">
 
-        <div class="container">
-
-            <div class="row align-items-center">
-
-                <div class="col-lg-8 mb-3 mb-lg-0">
-
-                    <h2 class="fw-bold mb-2">
-                        Ready to Protect Your Brand?
-                    </h2>
-
-                    <p class="mb-0">
-                        Get professional trademark and global brand protection
-                        support from our experts.
-                    </p>
-
-                </div>
-
-                <div class="col-lg-4 text-lg-end">
-
-                    <a
-                        href="#contact"
-                        class="btn btn-light px-4 py-2"
-                    data-bs-toggle="modal" data-bs-target="#enquiryModal">
-                        Get Started
-                    </a>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
 
 
     {{-- Main Footer --}}
@@ -94,19 +59,38 @@
                     <ul class="list-unstyled footer-links">
 
                         <li>
-                            <a href="{{ url('/') }}">Home</a>
+                            <a href="{{ url('/') }}">
+                                <i class="bi bi-house-door me-2"></i>
+                                Home
+                            </a>
                         </li>
 
                         <li>
-                            <a href="#about">About Us</a>
+                            <a  href="{{ url('/about-us') }}">
+                                <i class="bi bi-info-circle me-2"></i>
+                                About Us
+                            </a>
                         </li>
 
                         <li>
-                            <a href="#why-us">Why Us</a>
+                            <a  href="{{ url('/our-team') }}">
+                                <i class="bi bi-people me-2"></i>
+                                Our Team
+                            </a>
                         </li>
 
                         <li>
-                            <a href="#contact">Contact</a>
+                            <a href="{{ url('/our-services') }}">
+                                <i class="bi bi-grid me-2"></i>
+                                Our Services
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="{{ url('/contact-us') }}">
+                                <i class="bi bi-envelope me-2"></i>
+                                Contact Us
+                            </a>
                         </li>
 
                     </ul>
@@ -124,26 +108,44 @@
                     <ul class="list-unstyled footer-links">
 
                         <li>
-                            <a href="#">
+                            <a  href="{{ url('/our-services') }}">
+                                <i class="bi bi-patch-check me-2"></i>
                                 Trademark Registration
                             </a>
                         </li>
 
                         <li>
-                            <a href="#">
-                                Trademark Search
+                            <a href="{{ url('/our-services') }}">
+                                <i class="bi bi-c-circle me-2"></i>
+                                Copyright
                             </a>
                         </li>
 
                         <li>
-                            <a href="#">
-                                Trademark Renewal
+                            <a href="{{ url('/our-services') }}">
+                                <i class="bi bi-bezier2 me-2"></i>
+                                Design
                             </a>
                         </li>
 
                         <li>
-                            <a href="#">
-                                Global Trademark Services
+                            <a href="{{ url('/our-services') }}">
+                                <i class="bi bi-lightbulb me-2"></i>
+                                Patent
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="{{ url('/our-services') }}">
+                                <i class="bi bi-file-earmark-text me-2"></i>
+                                Contracts &amp; Agreements
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="{{ url('/our-services') }}">
+                                <i class="bi bi-bar-chart-line me-2"></i>
+                                IP Valuation &amp; Due Diligence
                             </a>
                         </li>
 
@@ -403,56 +405,59 @@
 
                             <label
                                 for="enquiry-service"
-                                class="form-label">
-
+                                class="form-label"
+                            >
                                 Service Required
-
                             </label>
 
                             <select
                                 id="enquiry-service"
                                 name="service"
                                 class="form-select"
-                                required>
-
+                                required
+                            >
                                 <option value="" selected disabled>
                                     Select service
                                 </option>
 
-                                <option value="Trademark Search">
-                                    Trademark Search
+                                <option value="Trademark">
+                                    Trademark
                                 </option>
 
-                                <option value="Trademark Registration">
-                                    Trademark Registration
+                                <option value="Copyright">
+                                    Copyright
                                 </option>
 
-                                <option value="International Trademark Registration">
-                                    International Trademark Registration
+                                <option value="Design">
+                                    Design
                                 </option>
 
-                                <option value="Trademark Renewal">
-                                    Trademark Renewal
+                                <option value="Patent">
+                                    Patent
                                 </option>
 
-                                <option value="Trademark Opposition">
-                                    Trademark Opposition
+                                <option value="Contracts & Agreements">
+                                    Contracts &amp; Agreements
                                 </option>
 
-                                <option value="Trademark Objection Reply">
-                                    Trademark Objection Reply
+                                <option value="IP Valuation & Due Diligence">
+                                    IP Valuation &amp; Due Diligence
                                 </option>
 
-                                <option value="Brand Protection">
-                                    Brand Protection
+                                <option value="Commercial Litigation">
+                                    Commercial Litigation
                                 </option>
 
-                                <option value="Copyright Registration">
-                                    Copyright Registration
+                                <option value="Criminal Litigation">
+                                    Criminal Litigation
                                 </option>
 
-                                <option value="Patent Services">
-                                    Patent Services
+                                <option value="Arbitration & Conciliation">
+                                    Arbitration &amp; Conciliation
+                                </option>
+
+                                <option value="IP Enforcement & Anti Counterfeiting">
+                                    IP Enforcement &amp; Anti Counterfeiting
                                 </option>
 
                             </select>

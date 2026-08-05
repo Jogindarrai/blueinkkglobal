@@ -22,8 +22,7 @@
                 +91-9958000637
             </a>
         </div>
-        <div class="header-top-right">
-            <div class="header-top-right">
+    <div class="header-top-right">
                 <span class="social-label">Follow Us</span>
                 <div class="top-socials">
                     <!-- LinkedIn -->
@@ -58,7 +57,6 @@
 
                 </div>
             </div>
-        </div>
     </div>
 </div>
 
@@ -118,9 +116,10 @@
                                         </p>
                                     </div>
 
-                                    <a href="#" class="mega-view-all">
+                                    <a href="{{ url('/trademark-registration-countries') }}" class="mega-view-all">
                                         View All Countries →
                                     </a>
+
                                 </div>
 
                                 <div class="row g-0">
@@ -128,7 +127,7 @@
                                     <div class="col-lg-3 col-md-6">
                                         <div class="country-group">
                                             <h4>Asia Pacific</h4>
-                                            <a href="#" class="mega-link"> <span class="fi fi-np"></span> Nepal</a>
+                                            <a href="/trademark-registration-nepal" class="mega-link"> <span class="fi fi-np"></span> Nepal</a>
                                             <a href="#" class="mega-link"> <span class="fi fi-in"></span> India</a>
                                             <a href="#" class="mega-link"> <span class="fi fi-au"></span> Australia</a>
                                             <!-- <a href="#" class="mega-link"> <span class="fi fi-sg"></span>  Singapore</a> -->
@@ -176,12 +175,18 @@
                     </li>
                     {{-- About Us --}}
                     <li class="nav-item">
-                        <a href="{{ url('/') }}" class="nav-link">
+                        <a href="{{ url('/about-us') }}" class="nav-link">
                             About Us
                         </a>
                     </li>
                     {{-- SERVICES --}}
-                    <li class="nav-item dropdown mega-dropdown">
+                      <li class="nav-item">
+                        <a href="{{ url('/our-services') }}" class="nav-link">
+                           Our Services
+                        </a>
+                    </li>
+
+                    <!-- <li class="nav-item dropdown mega-dropdown">
 
                         <a
                             href="#"
@@ -288,22 +293,21 @@
 
                         </div>
 
-                    </li>
+                    </li> -->
                     {{-- Our Team --}}
                     <li class="nav-item">
-                        <a href="#" class="nav-link">
+                       <a href="{{ url('/our-team') }}" class="nav-link">
                             Our Team
                         </a>
                     </li>
                     {{-- CONTACT --}}
                     <li class="nav-item">
-                        <a href="#" class="nav-link">
+                       <a href="{{ url('/contact-us') }}" class="nav-link">
                             Contact us
                         </a>
                     </li>
                     {{-- CTA --}}
                     <li class="nav-item ms-lg-3">
-
                         <a href="#" class="btn header-btn" data-bs-toggle="modal" data-bs-target="#enquiryModal">
                             Get Started
                         </a>

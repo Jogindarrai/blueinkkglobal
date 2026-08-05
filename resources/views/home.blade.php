@@ -110,7 +110,6 @@
     </div>
 
 </section>
-
 {{-- =========================================================
      TRUSTED CLIENTS
 ========================================================= --}}
@@ -119,9 +118,9 @@
     <div class="container">
 
         {{-- Section Heading --}}
-      <h2 class="clients-title mb-4 h4 fw-bold">
-    Brands That Trust BlueInkk
-</h2>
+        <h2 class="clients-title mb-4 h4 fw-bold">
+            Brands That Trust BlueInkk
+        </h2>
 
         {{-- Logo Slider --}}
         <div class="splide clients-slider">
@@ -177,17 +176,17 @@
                             <img src="{{ asset('images/clients/ntpc.webp') }}" alt="Client 8">
                         </div>
                     </li>
-                      <li class="splide__slide">
+                    <li class="splide__slide">
                         <div class="client-logo">
                             <img src="{{ asset('images/clients/premanand-ji-maharaj.webp') }}" alt="Client 8">
                         </div>
                     </li>
-                     <li class="splide__slide">
+                    <li class="splide__slide">
                         <div class="client-logo">
                             <img src="{{ asset('images/clients/steelbird-international.webp') }}" alt="Client 8">
                         </div>
                     </li>
-                     <li class="splide__slide">
+                    <li class="splide__slide">
                         <div class="client-logo">
                             <img src="{{ asset('images/clients/wakefit.webp') }}" alt="Client 8">
                         </div>
@@ -202,22 +201,99 @@
     </div>
 
 </section>
+<section class="award-section py-5">
+    <div class="container">
+        <div class="award-card">
+            <div class="row align-items-center g-0">
+                <!-- Award Image -->
+                <div class="col-lg-5">
+                    <div class="award-image-wrap">
+                        <img
+                            src="{{ asset('images/trademark-law-firm-award.webp') }}"
+                            alt="Trademark Law Firm of the Year Award - Blue Inkk"
+                            class="img-fluid award-image"
+                        >
+
+                        <div class="award-year-badge">
+                            <span>Winner</span>
+                            <strong>2026</strong>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Award Content -->
+                <div class="col-lg-7">
+                    <div class="award-content">
+                        <span class="award-eyebrow">
+                            <i class="bi bi-award-fill"></i>
+                            Award & Recognition
+                        </span>
+
+                        <h2>Trademark Law Firm of the Year</h2>
+
+                        <p>
+                            Blue Inkk was recognised as
+                            <strong>Trademark Law Firm of the Year</strong>
+                            at the 28th IIPLA 2026 Conference, organised by the
+                            International Intellectual Property Law Association
+                            (IIPLA).
+                        </p>
+
+                        <p>
+                            The conference was held in Dubai on
+                            <strong>19–20 January 2026</strong> at the
+                            Radisson Blu Hotel, Dubai Waterfront, recognising
+                            Blue Inkk’s excellence in trademark prosecution,
+                            enforcement, and strategic advisory services.
+                        </p>
+
+                        <div class="award-meta">
+                            <div class="award-meta-item">
+                                <span class="award-meta-icon">
+                                    <i class="bi bi-calendar-event"></i>
+                                </span>
+
+                                <div>
+                                    <small>Event Date</small>
+                                    <strong>19–20 January 2026</strong>
+                                </div>
+                            </div>
+
+                            <div class="award-meta-item">
+                                <span class="award-meta-icon">
+                                    <i class="bi bi-geo-alt-fill"></i>
+                                </span>
+
+                                <div>
+                                    <small>Location</small>
+                                    <strong>Dubai, UAE</strong>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- <a href="#" class="btn award-btn">
+                            View Recognition
+                            <i class="bi bi-arrow-up-right"></i>
+                        </a> -->
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
 {{-- =========================================================
      SERVICES
 ========================================================= --}}
 <section
     class="services-section py-5"
     id="services">
-
     <div class="container py-lg-5">
-
         <div class="text-center mb-5">
-
-
             <h2 class="fw-bold mt-2">
                 Complete Trademark Solutions
             </h2>
-
             <p class="text-muted mx-auto" style="max-width: 700px;">
                 Everything you need to protect, manage and grow your brand
                 in India and international markets.
@@ -225,122 +301,104 @@
 
         </div>
 
+<div class="row g-4">
 
-        <div class="row g-4">
+    {{-- Service 1 --}}
+    <div class="col-lg-3 col-md-6">
+        <div class="service-card h-100">
 
-
-            {{-- Service 1 --}}
-            <div class="col-lg-3 col-md-6">
-
-                <div class="service-card h-100">
-
-                    <div class="service-icon">
-                        <i class="bi bi-file-earmark-text"></i>
-                    </div>
-
-                    <h4>
-                        Trademark Registration
-                    </h4>
-
-                    <p>
-                        Protect your brand name, logo and identity through
-                        professional trademark registration services.
-                    </p>
-
-                    <a href="#">
-                        Learn More
-                        <i class="bi bi-arrow-right ms-1"></i>
-                    </a>
-
-                </div>
-
+            <div class="service-icon">
+                <i class="bi bi-patch-check"></i>
             </div>
 
+            <h4>Trademark </h4>
 
-            {{-- Service 2 --}}
-            <div class="col-lg-3 col-md-6">
+            <p>
+                Secure your brand name, logo and identity with professional
+                trademark registration and filing support.
+            </p>
 
-                <div class="service-card h-100">
-
-                    <div class="service-icon">
-                        <i class="bi bi-search"></i>
-                    </div>
-
-                    <h4>
-                        Trademark Search
-                    </h4>
-
-                    <p>
-                        Identify potential conflicts and evaluate your brand
-                        before filing a trademark application.
-                    </p>
-
-                    <a href="#">
-                        Learn More
-                        <i class="bi bi-arrow-right ms-1"></i>
-                    </a>
-
-                </div>
-
-            </div>
-
-
-            {{-- Service 3 --}}
-            <div class="col-lg-3 col-md-6">
-
-                <div class="service-card h-100">
-
-                    <div class="service-icon">
-                        <i class="bi bi-arrow-repeat"></i>
-                    </div>
-
-                    <h4>
-                        Trademark Renewal
-                    </h4>
-
-                    <p>
-                        Keep your trademark protected by managing renewal
-                        requirements and important deadlines.
-                    </p>
-
-                    <a href="#">
-                        Learn More
-                        <i class="bi bi-arrow-right ms-1"></i>
-                    </a>
-
-                </div>
-
-            </div>
-
-
-            {{-- Service 4 --}}
-            <div class="col-lg-3 col-md-6">
-
-                <div class="service-card h-100">
-
-                    <div class="service-icon">
-                        <i class="bi bi-globe2"></i>
-                    </div>
-
-                    <h4>
-                        Global Trademark Services
-                    </h4>
-
-                    <p>
-                        Expand your brand internationally with trademark
-                        solutions across global markets.
-                    </p>
-
-                    <a href="#">
-                        Learn More
-                        <i class="bi bi-arrow-right ms-1"></i>
-                    </a>
-
-                </div>
-
-            </div>
+            <a href="#">
+                Learn More
+                <i class="bi bi-arrow-right ms-1"></i>
+            </a>
 
         </div>
+    </div>
+
+
+    {{-- Service 2 --}}
+    <div class="col-lg-3 col-md-6">
+        <div class="service-card h-100">
+
+            <div class="service-icon">
+                <i class="bi bi-c-circle"></i>
+            </div>
+
+            <h4>Copyright</h4>
+
+            <p>
+                Protect your original content, artwork, software and creative
+                works through reliable copyright services.
+            </p>
+
+            <a href="#">
+                Learn More
+                <i class="bi bi-arrow-right ms-1"></i>
+            </a>
+
+        </div>
+    </div>
+
+
+    {{-- Service 3 --}}
+    <div class="col-lg-3 col-md-6">
+        <div class="service-card h-100">
+
+            <div class="service-icon">
+                <i class="bi bi-bezier2"></i>
+            </div>
+
+            <h4>Design</h4>
+
+            <p>
+                Safeguard the unique visual appearance, shape and design of
+                your products with design registration support.
+            </p>
+
+            <a href="#">
+                Learn More
+                <i class="bi bi-arrow-right ms-1"></i>
+            </a>
+
+        </div>
+    </div>
+
+
+    {{-- Service 4 --}}
+    <div class="col-lg-3 col-md-6">
+        <div class="service-card h-100">
+
+            <div class="service-icon">
+                <i class="bi bi-lightbulb"></i>
+            </div>
+
+            <h4>Patent</h4>
+
+            <p>
+                Protect your inventions and innovative ideas with professional
+                patent filing, prosecution and advisory services.
+            </p>
+
+            <a href="#">
+                Learn More
+                <i class="bi bi-arrow-right ms-1"></i>
+            </a>
+
+        </div>
+    </div>
+
+</div>
 
     </div>
 
@@ -658,5 +716,40 @@
         </div>
     </div>
 </section>
+   {{-- CTA --}}
+    <section class="footer-cta py-5">
 
+        <div class="container">
+
+            <div class="row align-items-center">
+
+                <div class="col-lg-8 mb-3 mb-lg-0">
+
+                    <h2 class="fw-bold mb-2">
+                        Ready to Protect Your Brand?
+                    </h2>
+
+                    <p class="mb-0">
+                        Get professional trademark and global brand protection
+                        support from our experts.
+                    </p>
+
+                </div>
+
+                <div class="col-lg-4 text-lg-end">
+
+                    <a
+                        href="#contact"
+                        class="btn btn-light px-4 py-2"
+                    data-bs-toggle="modal" data-bs-target="#enquiryModal">
+                        Get Started
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
 @endsection
