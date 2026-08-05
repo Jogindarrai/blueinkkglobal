@@ -9,26 +9,37 @@
      HERO SECTION
 ========================================================= --}}
 <section class="hero-section">
-
     <div class="container">
 
-        <div class="row align-items-center hero-row">
+        <div class="row g-4 g-xl-5 align-items-stretch hero-row">
 
             {{-- =================================================
                  LEFT CONTENT
             ================================================= --}}
-            <div class="col-lg-6">
+            <div class="col-xl-7 col-lg-7 d-flex">
 
-                <div class="hero-content">
+                <div class="hero-content w-100">
 
                     <span class="hero-tag">
-                        Global Trademark & IPR Solutions
+                        Global Trademark &amp; IPR Solutions
                     </span>
 
                     <h1 class="hero-title">
                         Protect Your Brand.
                         <span>Grow Globally.</span>
                     </h1>
+
+                    {{-- Country Search --}}
+                    @php
+                        $countries = config('trademark_countries', []);
+                    @endphp
+
+                    <div class="hero-country-search">
+                        <x-country-search
+                            :countries="$countries"
+                            input-id="heroCountrySearch"
+                        />
+                    </div>
 
                     <p class="hero-description">
                         Professional trademark registration, brand protection
@@ -67,48 +78,45 @@
                             type="button"
                             class="btn hero-primary-btn"
                             data-bs-toggle="modal"
-                            data-bs-target="#enquiryModal">
-
+                            data-bs-target="#enquiryModal"
+                        >
                             Get Free Consultation
-
                             <i class="bi bi-arrow-right"></i>
-
                         </button>
 
                         <a
-                            href="{{ url('/countries') }}"
-                            class="btn hero-outline-btn">
-
+                            href="{{ url('/trademark-registration-countries') }}"
+                            class="btn hero-outline-btn"
+                        >
                             View All Countries
-
                         </a>
 
                     </div>
 
                 </div>
-
             </div>
 
+
             {{-- =================================================
-                 RIGHT SVG IMAGE
+                RIGHT IMAGE
             ================================================= --}}
-            <div class="col-lg-6 mt-4 mt-lg-0">
+            <div class="col-xl-5 col-lg-5 d-flex">
 
                 <div class="hero-image-wrapper">
 
                     <img
                         src="{{ asset('images/tm-hero.webp') }}"
                         alt="Global trademark and intellectual property protection"
-                        class="hero-image">
+                        class="hero-image"
+                        loading="eager"
+                    >
 
                 </div>
 
             </div>
 
         </div>
-
     </div>
-
 </section>
 {{-- =========================================================
      TRUSTED CLIENTS

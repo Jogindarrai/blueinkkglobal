@@ -186,103 +186,275 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 
-function initializeCountryDirectory() {
-    const directory = document.getElementById('countriesGrid');
-    const searchInput = document.getElementById('countrySearch');
-    const resultCount = document.getElementById('visibleCountryCount');
-    const emptyState = document.getElementById('countriesEmptyState');
-
-    if (!directory || !searchInput || !resultCount || !emptyState) {
-        return;
-    }
-
-    /*
-     * Vite HMR या duplicate initialization से बचाता है.
-     */
-    if (directory.dataset.filterInitialized === 'true') {
-        return;
-    }
-
-    directory.dataset.filterInitialized = 'true';
-
-    const filterButtons = Array.from(
-        document.querySelectorAll('.country-filter-btn')
+function initializeCountrySearchComponents() {
+    const components = document.querySelectorAll(
+        '[data-country-search-component]'
     );
 
-    const countryColumns = Array.from(
-        directory.querySelectorAll('.country-column')
-    );
+    components.forEach(function (component) {
+        if (component.dataset.searchInitialized === 'true') {
+            return;
+        }
 
-    let selectedRegion = 'all';
+        component.dataset.searchInitialized = 'true';
 
-    function filterCountries() {
-        const searchValue = searchInput.value
-            .trim()
-            .toLocaleLowerCase();
+        const input = component.querySelector(
+            '[data-country-search-input]'
+        );
 
-        let visibleCount = 0;
+        const suggestions = component.querySelector(
+            '[data-country-search-suggestions]'
+        );
 
-        countryColumns.forEach(function (column) {
-            const countryName = (
-                column.dataset.name || ''
-            ).toLocaleLowerCase();
+        const clearButton = component.querySelector(
+            '[data-country-search-clear]'
+        );
 
-            const countryRegion = column.dataset.region || '';
+        const suggestionCount = component.querySelector(
+            '[data-country-suggestion-count]'
+        );
 
-            const matchesSearch =
-                searchValue === '' ||
-                countryName.includes(searchValue);
+        const suggestionEmpty = component.querySelector(
+            '[data-country-search-suggestion-empty]'
+        );
 
-            const matchesRegion =
-                selectedRegion === 'all' ||
-                countryRegion === selectedRegion;
+        const options = Array.from(
+            component.querySelectorAll(
+                '[data-country-search-option]'
+            )
+        );
 
-            const shouldShow = matchesSearch && matchesRegion;
+        const directorySelector =
+            component.dataset.directoryTarget || '';
 
-            column.classList.toggle('is-hidden', !shouldShow);
+        const directory = directorySelector
+            ? document.querySelector(directorySelector)
+            : null;
 
-            if (shouldShow) {
-                visibleCount += 1;
+        const countryColumns = directory
+            ? Array.from(
+                directory.querySelectorAll('.country-column')
+            )
+            : [];
+
+        const filterButtons = directory
+            ? Array.from(
+                document.querySelectorAll('.country-filter-btn')
+            )
+            : [];
+
+        const directoryResultCount =
+            document.getElementById('visibleCountryCount');
+
+        const directoryEmpty =
+            document.getElementById('countriesEmptyState');
+
+        let selectedRegion = 'all';
+
+        if (!input || !suggestions) {
+            return;
+        }
+
+        function normalizeValue(value) {
+            return String(value || '')
+                .trim()
+                .toLocaleLowerCase();
+        }
+
+        function openSuggestions() {
+            suggestions.classList.add('is-open');
+            input.setAttribute('aria-expanded', 'true');
+        }
+
+        function closeSuggestions() {
+            suggestions.classList.remove('is-open');
+            input.setAttribute('aria-expanded', 'false');
+        }
+
+        function updateSearch() {
+            const searchValue = normalizeValue(input.value);
+
+            let visibleSuggestions = 0;
+            let visibleDirectoryCountries = 0;
+
+            /*
+             * Dropdown suggestions
+             */
+            options.forEach(function (option) {
+                const countryName = normalizeValue(
+                    option.dataset.name
+                );
+
+                const countryRegion =
+                    option.dataset.region || '';
+
+                const matchesName =
+                    searchValue === '' ||
+                    countryName.includes(searchValue);
+
+                const matchesRegion =
+                    selectedRegion === 'all' ||
+                    countryRegion === selectedRegion;
+
+                const shouldShow =
+                    matchesName && matchesRegion;
+
+                option.hidden = !shouldShow;
+
+                if (shouldShow) {
+                    visibleSuggestions += 1;
+                }
+            });
+
+            if (suggestionCount) {
+                suggestionCount.textContent =
+                    String(visibleSuggestions);
+            }
+
+            if (suggestionEmpty) {
+                suggestionEmpty.hidden =
+                    visibleSuggestions !== 0;
+            }
+
+            if (clearButton) {
+                clearButton.hidden = searchValue === '';
+            }
+
+            /*
+             * Directory country cards
+             */
+            countryColumns.forEach(function (column) {
+                const countryName = normalizeValue(
+                    column.dataset.name
+                );
+
+                const countryRegion =
+                    column.dataset.region || '';
+
+                const matchesName =
+                    searchValue === '' ||
+                    countryName.includes(searchValue);
+
+                const matchesRegion =
+                    selectedRegion === 'all' ||
+                    countryRegion === selectedRegion;
+
+                const shouldShow =
+                    matchesName && matchesRegion;
+
+                column.classList.toggle(
+                    'is-hidden',
+                    !shouldShow
+                );
+
+                if (shouldShow) {
+                    visibleDirectoryCountries += 1;
+                }
+            });
+
+            if (
+                directory &&
+                directoryResultCount
+            ) {
+                directoryResultCount.textContent =
+                    String(visibleDirectoryCountries);
+            }
+
+            if (
+                directory &&
+                directoryEmpty
+            ) {
+                directoryEmpty.classList.toggle(
+                    'show',
+                    visibleDirectoryCountries === 0
+                );
+            }
+        }
+
+        input.addEventListener('focus', function () {
+            updateSearch();
+            openSuggestions();
+        });
+
+        input.addEventListener('input', function () {
+            updateSearch();
+            openSuggestions();
+        });
+
+        input.addEventListener('keydown', function (event) {
+            if (event.key === 'Escape') {
+                closeSuggestions();
+                input.blur();
+                return;
+            }
+
+            if (event.key === 'Enter') {
+                const firstVisibleOption =
+                    options.find(function (option) {
+                        return !option.hidden;
+                    });
+
+                if (firstVisibleOption) {
+                    event.preventDefault();
+                    window.location.href =
+                        firstVisibleOption.href;
+                }
             }
         });
 
-        resultCount.textContent = String(visibleCount);
-
-        emptyState.classList.toggle(
-            'show',
-            visibleCount === 0
-        );
-    }
-
-    searchInput.addEventListener('input', filterCountries);
-
-    filterButtons.forEach(function (button) {
-        button.addEventListener('click', function () {
-            selectedRegion = button.dataset.region || 'all';
-
-            filterButtons.forEach(function (filterButton) {
-                filterButton.classList.remove('active');
-                filterButton.setAttribute(
-                    'aria-pressed',
-                    'false'
-                );
+        if (clearButton) {
+            clearButton.addEventListener('click', function () {
+                input.value = '';
+                updateSearch();
+                openSuggestions();
+                input.focus();
             });
+        }
 
-            button.classList.add('active');
-            button.setAttribute('aria-pressed', 'true');
+        filterButtons.forEach(function (button) {
+            button.addEventListener('click', function () {
+                selectedRegion =
+                    button.dataset.region || 'all';
 
-            filterCountries();
+                filterButtons.forEach(
+                    function (filterButton) {
+                        filterButton.classList.remove(
+                            'active'
+                        );
+
+                        filterButton.setAttribute(
+                            'aria-pressed',
+                            'false'
+                        );
+                    }
+                );
+
+                button.classList.add('active');
+
+                button.setAttribute(
+                    'aria-pressed',
+                    'true'
+                );
+
+                updateSearch();
+            });
         });
-    });
 
-    filterCountries();
+        document.addEventListener('click', function (event) {
+            if (!component.contains(event.target)) {
+                closeSuggestions();
+            }
+        });
+
+        updateSearch();
+    });
 }
 
 if (document.readyState === 'loading') {
     document.addEventListener(
         'DOMContentLoaded',
-        initializeCountryDirectory
+        initializeCountrySearchComponents
     );
 } else {
-    initializeCountryDirectory();
+    initializeCountrySearchComponents();
 }
