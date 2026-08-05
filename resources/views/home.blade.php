@@ -318,7 +318,7 @@
                 trademark registration and filing support.
             </p>
 
-            <a href="#">
+            <a href="{{ url('/our-services') }}">
                 Learn More
                 <i class="bi bi-arrow-right ms-1"></i>
             </a>
@@ -342,7 +342,7 @@
                 works through reliable copyright services.
             </p>
 
-            <a href="#">
+            <a href="{{ url('/our-services') }}">
                 Learn More
                 <i class="bi bi-arrow-right ms-1"></i>
             </a>
@@ -366,7 +366,7 @@
                 your products with design registration support.
             </p>
 
-            <a href="#">
+            <a href="{{ url('/our-services') }}">
                 Learn More
                 <i class="bi bi-arrow-right ms-1"></i>
             </a>
@@ -390,7 +390,7 @@
                 patent filing, prosecution and advisory services.
             </p>
 
-            <a href="#">
+           <a href="{{ url('/our-services') }}">
                 Learn More
                 <i class="bi bi-arrow-right ms-1"></i>
             </a>
