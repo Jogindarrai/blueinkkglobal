@@ -4690,7 +4690,7 @@ text-align:center;
 .countries-hero {
     position: relative;
     padding: 70px 0;
-    overflow: hidden;
+    /* overflow: hidden; */
     background: var(--brand-light1);
     border-bottom: 1px solid var(--border);
 }
@@ -4897,6 +4897,7 @@ text-align:center;
 .country-region-filters {
     display: flex;
     align-items: center;
+    justify-content: center;
     flex-wrap: wrap;
     gap: 9px;
     margin-bottom: 22px;
@@ -5439,7 +5440,7 @@ text-align:center;
     top: calc(100% + 9px);
     right: 0;
     left: 0;
-    z-index: 50;
+    z-index: 150;
     max-height: 355px;
     overflow: hidden;
     visibility: hidden;
