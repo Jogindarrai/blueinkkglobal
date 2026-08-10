@@ -2362,239 +2362,149 @@ text-align:center;
 /* =========================================
    AWARD SECTION
 ========================================= */
+
 /* =========================================
    AWARD SECTION
 ========================================= */
 
 .award-section {
-    padding: 70px 0;
-    background: var(--surface);
-}
-
-/* Main white card */
-
-.award-card {
+    padding: 0px 0;
     overflow: hidden;
-    background: var(--white);
-    border: 1px solid var(--border);
-    border-radius: 14px;
-    box-shadow: var(--shadow-md);
+    background-image: var(--award-bg);
+     background-repeat: no-repeat;
+    background-position: center right;
+    background-size:contain;
+    background-color:#F3F1EF;
+
 }
 
-/* =========================================
-   AWARD IMAGE
-========================================= */
+/* Light overlay only on content side for readability */
 
-.award-image-wrap {
-    position: relative;
-    height: 100%;
-    min-height: 430px;
-    padding: 14px;
-    overflow: hidden;
-    background: var(--brand-light);
-    border-right: 1px solid var(--border);
-}
 
-/* Subtle texture */
-
-.award-image-wrap::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    opacity: 0.45;
-    pointer-events: none;
-    background-image:
-        linear-gradient(
-            45deg,
-            rgba(42, 36, 112, 0.035) 25%,
-            transparent 25%
-        ),
-        linear-gradient(
-            -45deg,
-            rgba(42, 36, 112, 0.035) 25%,
-            transparent 25%
-        );
-    background-size: 18px 18px;
-}
-
-/* Inner outline */
-
-.award-image-wrap::after {
-    content: "";
-    position: absolute;
-    inset: 24px;
-    z-index: 2;
-    border: 1px solid rgba(255, 255, 255, 0.75);
-    border-radius: 8px;
-    pointer-events: none;
-}
-
-.award-image {
-    position: relative;
-    z-index: 1;
-    width: 100%;
-    height: 100%;
-    min-height: 402px;
-    display: block;
-    object-fit: cover;
-    object-position: center;
-    border: 1px solid var(--border);
-    border-radius: 9px;
-    box-shadow: var(--shadow-sm);
-    filter: contrast(1.03) saturate(1.03);
-    transition:
-        transform 0.45s ease,
-        filter 0.45s ease,
-        box-shadow 0.45s ease;
-}
-
-.award-card:hover .award-image {
-    transform: scale(1.025);
-    filter: contrast(1.05) saturate(1.06);
-    box-shadow: var(--shadow-md);
-}
-
-/* Year badge */
+/* Winner badge */
 
 .award-year-badge {
     position: absolute;
     right: 30px;
-    bottom: 30px;
-    z-index: 3;
-    min-width: 92px;
-    padding: 10px 16px;
+    bottom: 32px;
+    min-width: 100px;
+    padding: 11px 18px;
     text-align: center;
-    background: var(--white);
-    border: 1px solid var(--border);
+    background: linear-gradient(135deg, #d39a31, #f0c96c);
+    border: 1px solid rgba(255, 255, 255, 0.55);
     border-radius: 8px;
-    box-shadow: var(--shadow-sm);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.22);
 }
 
 .award-year-badge span {
     display: block;
     margin-bottom: 2px;
-    color: var(--warning);
+    color: #17124a;
     font-size: 10px;
-    font-weight: 700;
-    letter-spacing: 0.8px;
+    font-weight: 800;
+    letter-spacing: 1px;
     text-transform: uppercase;
 }
 
 .award-year-badge strong {
     display: block;
-    color: var(--heading);
-    font-size: 22px;
-    font-weight: 700;
-    line-height: 1.1;
+    color: #17124a;
+    font-size: 24px;
+    font-weight: 800;
+    line-height: 1;
 }
 
 /* =========================================
-   AWARD CONTENT
+   RIGHT CONTENT
 ========================================= */
 
-.award-content {
-    height: 100%;
-    padding: 45px 50px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
 
-/* Small heading badge */
 
 .award-eyebrow {
     display: inline-flex;
     align-items: center;
-    align-self: flex-start;
-    gap: 7px;
-    margin-bottom: 15px;
-    padding: 7px 11px;
-    color: var(--accent);
+    gap: 9px;
+    margin-bottom: 20px;
+    padding: 9px 18px;
+    color: var(--white);
     font-size: 12px;
     font-weight: 700;
-    letter-spacing: 0.7px;
+    letter-spacing: 0.6px;
     text-transform: uppercase;
-    background: var(--brand-light);
-    border: 1px solid var(--surface-strong);
+    background:#002F86;
     border-radius: 30px;
 }
 
 .award-eyebrow i {
-    color: var(--warning);
+    color: #e5b84d;
     font-size: 16px;
 }
 
 .award-content h2 {
-    margin: 0 0 20px;
+    margin: 0;
     color: var(--heading);
-    font-size: 38px;
     font-weight: 700;
-    line-height: 1.2;
-    letter-spacing: -0.5px;
+    line-height: 1.02;
+    letter-spacing: -1.5px;
 }
 
-.award-content p {
-    margin: 0 0 14px;
-    color: var(--muted);
-    font-size: 15px;
-    line-height: 1.75;
+
+.award-title-line {
+    width: 90px;
+    height: 5px;
+    display: block;
+    margin: 23px 0;
+    background: linear-gradient(90deg, #b77b1f, #e7bd59);
+    border-radius: 10px;
 }
 
-.award-content p strong {
-    color: var(--text);
-    font-weight: 600;
-}
+
 
 /* =========================================
-   AWARD META
+   DATE AND LOCATION
 ========================================= */
 
 .award-meta {
+    max-width: 440px;
+    margin-top: 15px;
+    padding: 8px 20px;
     display: flex;
-    flex-wrap: wrap;
-    gap: 25px;
-    margin-top: 25px;
-    padding-top: 22px;
-    border-top: 1px solid var(--border);
+    align-items: center;
+    background: rgba(255, 255, 255, 0.88);
+    border: 1px solid rgba(23, 18, 74, 0.12);
+    border-radius: 12px;
+    box-shadow: 0 12px 30px rgba(23, 18, 74, 0.12);
+    backdrop-filter: blur(5px);
 }
 
 .award-meta-item {
+    min-width: 0;
+    flex: 1;
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 12px;
 }
 
 .award-meta-icon {
-    width: 40px;
-    height: 40px;
-    flex: 0 0 40px;
-    display: flex;
+    width: 44px;
+    height: 44px;
+    flex: 0 0 44px;
+    display: inline-flex;
     align-items: center;
     justify-content: center;
-    color: var(--accent);
-    font-size: 17px;
+    color: var(--brand-secondary);
+    font-size: 21px;
     background: var(--brand-light);
-    border: 1px solid var(--surface-strong);
     border-radius: 50%;
-    transition:
-        color var(--transition),
-        background-color var(--transition),
-        transform var(--transition);
-}
-
-.award-meta-item:hover .award-meta-icon {
-    color: var(--white);
-    background: var(--accent);
-    transform: translateY(-2px);
 }
 
 .award-meta-item small {
     display: block;
-    margin-bottom: 2px;
-    color: var(--brand-soft);
+    margin-bottom: 3px;
+    color: var(--brand-secondary);
     font-size: 10px;
-    font-weight: 600;
-    letter-spacing: 0.5px;
+    font-weight: 700;
+    letter-spacing: 0.6px;
     text-transform: uppercase;
 }
 
@@ -2602,128 +2512,16 @@ text-align:center;
     display: block;
     color: var(--text);
     font-size: 13px;
-    font-weight: 600;
+    font-weight: 700;
 }
 
-/* =========================================
-   AWARD BUTTON
-========================================= */
-
-.award-btn {
-    display: inline-flex;
-    align-items: center;
-    align-self: flex-start;
-    gap: 8px;
-    margin-top: 25px;
-    padding: 11px 18px;
-    color: var(--white);
-    font-size: 14px;
-    font-weight: 600;
-    text-decoration: none;
-    background: var(--brand);
-    border: 1px solid var(--brand);
-    border-radius: 6px;
-    transition:
-        color var(--transition),
-        background-color var(--transition),
-        border-color var(--transition),
-        transform var(--transition),
-        box-shadow var(--transition);
+.award-meta-divider {
+    width: 1px;
+    height: 46px;
+    margin: 0 20px;
+    background: var(--border);
 }
 
-.award-btn:hover {
-    color: var(--white);
-    background: var(--accent);
-    border-color: var(--accent);
-    box-shadow: var(--shadow-sm);
-    transform: translateY(-2px);
-}
-
-.award-btn i {
-    transition: transform var(--transition);
-}
-
-.award-btn:hover i {
-    transform: translate(2px, -2px);
-}
-
-/* =========================================
-   RESPONSIVE
-========================================= */
-
-@media (max-width: 991.98px) {
-    .award-image-wrap {
-        min-height: 380px;
-        border-right: 0;
-        border-bottom: 1px solid var(--border);
-    }
-
-    .award-image {
-        min-height: 352px;
-    }
-
-    .award-content {
-        padding: 40px 35px;
-    }
-
-    .award-content h2 {
-        font-size: 32px;
-    }
-}
-
-@media (max-width: 575.98px) {
-    .award-section {
-        padding: 40px 0;
-    }
-
-    .award-card {
-        border-radius: 10px;
-    }
-
-    .award-image-wrap {
-        min-height: 290px;
-        padding: 10px;
-    }
-
-    .award-image-wrap::after {
-        inset: 18px;
-    }
-
-    .award-image {
-        min-height: 270px;
-        border-radius: 7px;
-    }
-
-    .award-year-badge {
-        right: 22px;
-        bottom: 22px;
-        min-width: 82px;
-        padding: 9px 13px;
-    }
-
-    .award-year-badge strong {
-        font-size: 20px;
-    }
-
-    .award-content {
-        padding: 30px 22px;
-    }
-
-    .award-content h2 {
-        margin-bottom: 16px;
-        font-size: 27px;
-    }
-
-    .award-content p {
-        font-size: 14px;
-        line-height: 1.7;
-    }
-
-    .award-meta {
-        flex-direction: column;
-        gap: 16px;
-    }
-}
 
 /* ------------------------------------------------country page css -------------------------------- */
 

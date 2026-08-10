@@ -209,88 +209,84 @@
     </div>
 
 </section>
-<section class="award-section py-5">
+<section class="award-section" style="--award-bg: url('{{ asset('images/award-banner-bg.webp') }}')">
     <div class="container">
-        <div class="award-card">
-            <div class="row align-items-center g-0">
-                <!-- Award Image -->
-                <div class="col-lg-5">
-                    <div class="award-image-wrap">
-                        <img
-                            src="{{ asset('images/trademark-law-firm-award.webp') }}"
-                            alt="Trademark Law Firm of the Year Award - Blue Inkk"
-                            class="img-fluid award-image"
-                        >
+        <div class="row g-0 align-items-center award-row">
 
-                        <div class="award-year-badge">
-                            <span>Winner</span>
-                            <strong>2026</strong>
-                        </div>
-                    </div>
+            <!-- Left image -->
+            <div class="col-lg-6">
+                <div class="award-image-wrap">
+                    <img
+                        src="{{ asset('images/award.webp') }}"
+                        class="award-image"
+                        alt="Trademark Law Firm of the Year Award"
+                    >
                 </div>
-
-                <!-- Award Content -->
-                <div class="col-lg-7">
-                    <div class="award-content">
-                        <span class="award-eyebrow">
-                            <i class="bi bi-award-fill"></i>
-                            Award & Recognition
-                        </span>
-
-                        <h2>Trademark Law Firm of the Year</h2>
-
-                        <p>
-                            Blue Inkk was recognised as
-                            <strong>Trademark Law Firm of the Year</strong>
-                            at the 28th IIPLA 2026 Conference, organised by the
-                            International Intellectual Property Law Association
-                            (IIPLA).
-                        </p>
-
-                        <p>
-                            The conference was held in Dubai on
-                            <strong>19–20 January 2026</strong> at the
-                            Radisson Blu Hotel, Dubai Waterfront, recognising
-                            Blue Inkk’s excellence in trademark prosecution,
-                            enforcement, and strategic advisory services.
-                        </p>
-
-                        <div class="award-meta">
-                            <div class="award-meta-item">
-                                <span class="award-meta-icon">
-                                    <i class="bi bi-calendar-event"></i>
-                                </span>
-
-                                <div>
-                                    <small>Event Date</small>
-                                    <strong>19–20 January 2026</strong>
-                                </div>
-                            </div>
-
-                            <div class="award-meta-item">
-                                <span class="award-meta-icon">
-                                    <i class="bi bi-geo-alt-fill"></i>
-                                </span>
-
-                                <div>
-                                    <small>Location</small>
-                                    <strong>Dubai, UAE</strong>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- <a href="#" class="btn award-btn">
-                            View Recognition
-                            <i class="bi bi-arrow-up-right"></i>
-                        </a> -->
-                    </div>
-                </div>
-
             </div>
+
+            <!-- Right content -->
+            <div class="col-lg-6">
+               <div class="award-content mt-3 mb-3">
+                    <span class="award-eyebrow">
+                        <i class="bi bi-trophy-fill"></i>
+                        Award &amp; Recognition
+                    </span>
+
+                    <h2>
+                        Trademark Law Firm
+                        <span>of the Year</span>
+                    </h2>
+
+                    <span class="award-title-line"></span>
+
+                    <p>
+                        <strong>Blue Inkk</strong> was recognised as
+                        <strong>Trademark Law Firm of the Year</strong>
+                        at the 28th IIPLA 2026 Conference, organised by the
+                        International Intellectual Property Law Association
+                        (IIPLA).
+                    </p>
+
+                    <p>
+                        The conference was held in Dubai on
+                        <strong>19–20 January 2026</strong> at the
+                        Radisson Blu Hotel, Dubai Waterfront, recognising
+                        Blue Inkk’s excellence in trademark prosecution,
+                        enforcement, and strategic advisory services.
+                    </p>
+
+                    <div class="award-meta">
+                        <div class="award-meta-item">
+                            <span class="award-meta-icon">
+                                <i class="bi bi-calendar3"></i>
+                            </span>
+
+                            <div>
+                                <small>Event Date</small>
+                                <strong>19–20 January 2026</strong>
+                            </div>
+                        </div>
+
+                        <span class="award-meta-divider"></span>
+
+                        <div class="award-meta-item">
+                            <span class="award-meta-icon">
+                                <i class="bi bi-geo-alt-fill"></i>
+                            </span>
+
+                            <div>
+                                <small>Location</small>
+                                <strong>Dubai, UAE</strong>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
         </div>
     </div>
 </section>
-
 {{-- =========================================================
      SERVICES
 ========================================================= --}}
