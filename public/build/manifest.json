@@ -2180,6 +2180,11 @@
     "src": "resources/css/app.css",
     "isEntry": true
   },
+  "resources/css/filament/admin/theme.css": {
+    "file": "assets/theme-DWQNBwhl.css",
+    "src": "resources/css/filament/admin/theme.css",
+    "isEntry": true
+  },
   "resources/js/app.js": {
     "file": "assets/app-BXO0gCTT.js",
     "name": "app",
