@@ -61,36 +61,35 @@
 
                 </div>
             </div>
-
         </div>
         <!-- CTA -->
         <div class="row mt-4 mb-4">
             <div class="col-12">
-           <div class="country-cta">
-                <div class="country-cta-content">
-                    <span class="country-cta-icon">
-                        <i class="bi bi-shield-check"></i>
-                    </span>
+                <div class="country-cta">
+                    <div class="country-cta-content">
+                        <span class="country-cta-icon">
+                            <i class="bi bi-shield-check"></i>
+                        </span>
 
-                    <div>
-                        <h3>Protect Your Trademark in Nepal</h3>
+                        <div>
+                            <h3>Protect Your Trademark in Nepal</h3>
 
-                        <p>
-                            Have a mark you’d like to protect in Nepal?
-                            Write to us at
-                            <a href="mailto:global.ipr@blueinkk.com">
-                                global.ipr@blueinkk.com
-                            </a>
-                            or fill out our Connect With Us form and our team will get in touch.
-                        </p>
+                            <p>
+                                Have a mark you’d like to protect in Nepal?
+                                Write to us at
+                                <a href="mailto:global.ipr@blueinkk.com">
+                                    global.ipr@blueinkk.com
+                                </a>
+                                or fill out our Connect With Us form and our team will get in touch.
+                            </p>
+                        </div>
                     </div>
-                </div>
 
-                <a href="#" class="country-cta-btn" data-bs-toggle="modal" data-bs-target="#enquiryModal">
-                    Connect With Us
-                    <i class="bi bi-arrow-right"></i>
-                </a>
-             </div>
+                    <a href="#" class="country-cta-btn" data-bs-toggle="modal" data-bs-target="#enquiryModal">
+                        Connect With Us
+                        <i class="bi bi-arrow-right"></i>
+                    </a>
+                </div>
 
             </div>
 
@@ -101,9 +100,7 @@
 <section class="why-register-section">
     <div class="container">
         <div class="why-register-box">
-
             <h2>Why Register Your Trademark in Nepal?</h2>
-
             <ul class="why-register-list">
                 <li>
                     <span class="why-register-check">
@@ -153,7 +150,6 @@
 <section class="legal-info-section">
     <div class="container">
         <div class="row g-4">
-
             <!-- Governing Law -->
             <div class="col-lg-5">
                 <div class="legal-info-card h-100">
@@ -223,14 +219,15 @@
         </div>
     </div>
 </section>
+
+
+
 <section class="documents-section">
     <div class="container">
-
         <div class="documents-header">
             <span class="documents-header-icon">
                 <i class="bi bi-files"></i>
             </span>
-
             <div>
                 <h2>Documents Required for Filing</h2>
 
@@ -489,6 +486,8 @@
 
     </div>
 </section>
+
+
 <section class="fees-timeline-section">
     <div class="container">
         <div class="row g-4">
@@ -830,7 +829,6 @@
                                 agents in Nepal
                             </span>
                         </li>
-
                         <li>
                             <span class="blueinkk-help-check">
                                 <i class="bi bi-check-lg"></i>
@@ -841,7 +839,6 @@
                                 opposition proceedings
                             </span>
                         </li>
-
                         <li>
                             <span class="blueinkk-help-check">
                                 <i class="bi bi-check-lg"></i>
@@ -852,23 +849,17 @@
                                 never lapses
                             </span>
                         </li>
-
                     </ul>
                 </div>
-
             </div>
-
             <!-- Final CTA -->
             <div class="blueinkk-final-cta">
-
                 <div class="blueinkk-final-cta-content">
                     <span class="blueinkk-final-cta-icon">
                         <i class="bi bi-chat-dots"></i>
                     </span>
-
                     <div>
                         <h3>Protect Your Trademark in Nepal</h3>
-
                         <p>
                             If you’re an Indian brand looking to protect your
                             trademark in Nepal, get in touch with our team for
@@ -882,37 +873,26 @@
                         </p>
                     </div>
                 </div>
-
                 <a
                     href="#connect-with-us"
-                    class="blueinkk-final-cta-btn" data-bs-toggle="modal" data-bs-target="#enquiryModal"
-                >
+                    class="blueinkk-final-cta-btn" data-bs-toggle="modal" data-bs-target="#enquiryModal">
                     Connect With Us
                     <i class="bi bi-arrow-right"></i>
                 </a>
-
             </div>
-
         </div>
-
         <!-- Legal Disclaimer -->
         <div class="country-legal-disclaimer">
-
             <span class="country-disclaimer-icon">
                 <i class="bi bi-info-circle"></i>
             </span>
-
             <p>
                 This page is for general informational purposes and does not
                 constitute legal advice. Filing requirements and timelines are
                 subject to change under Nepali law and DOI practice; please
                 consult us for the latest position before filing.
             </p>
-
         </div>
-
     </div>
 </section>
-
-
 @endsection

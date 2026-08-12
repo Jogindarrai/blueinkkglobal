@@ -122,53 +122,51 @@
 
                                 </div>
 
-                                <div class="row g-0">
+@php
+    $menuGroups = [
+        'asia_pacific' => 'Asia Pacific',
+        'popular_destinations' => 'Popular Destinations',
+        'north_america' => 'North America',
+        'europe' => 'Europe',
+    ];
+@endphp
 
-                                    <div class="col-lg-3 col-md-6">
-                                        <div class="country-group">
-                                            <h4>Asia Pacific</h4>
-                                            <a href="/trademark-registration-nepal" class="mega-link"> <span class="fi fi-np"></span> Nepal</a>
-                                            <a href="#" class="mega-link"> <span class="fi fi-in"></span> India</a>
-                                            <a href="#" class="mega-link"> <span class="fi fi-au"></span> Australia</a>
-                                            <!-- <a href="#" class="mega-link"> <span class="fi fi-sg"></span>  Singapore</a> -->
-                                            <a href="#" class="mega-link"> <span class="fi fi-ae"></span> UAE</a>
-                                        </div>
-                                    </div>
+<div class="row g-0">
 
-                                    <div class="col-lg-3 col-md-6">
-                                        <div class="country-group">
-                                            <h4>Popular Destinations</h4>
+    @foreach($menuGroups as $regionKey => $regionLabel)
+        @php
+            $countries = $regionKey === 'popular_destinations'
+                ? $popularCountries
+                : $countriesByRegion->get($regionKey, collect());
+        @endphp
 
-                                            <a href="#" class="mega-link"> <span class="fi fi-cn"></span> China</a>
-                                            <a href="#" class="mega-link"> <span class="fi fi-jp"></span> Japan</a>
-                                            <a href="#" class="mega-link"> <span class="fi fi-kr"></span> South Korea</a>
-                                            <a href="#" class="mega-link"> <span class="fi fi-za"></span> South Africa</a>
-                                        </div>
-                                    </div>
+        @if($countries->isNotEmpty())
+            <div class="col-lg-3 col-md-6">
+                <div class="country-group">
 
-                                    <div class="col-lg-3 col-md-6">
-                                        <div class="country-group">
-                                            <h4>North America</h4>
+                    <h4>{{ $regionLabel }}</h4>
 
-                                            <a href="#" class="mega-link"> <span class="fi fi-us"></span> USA</a>
-                                            <a href="#" class="mega-link"> <span class="fi fi-ca"></span> Canada</a>
-                                            <a href="#" class="mega-link"> <span class="fi fi-mx"></span> Mexico</a>
-                                        </div>
-                                    </div>
+                    @foreach($countries as $country)
+                        <a
+                            href="{{ route('country.show', $country->slug) }}"
+                            class="mega-link"
+                        >
+                            @if(filled($country->country_flag))
+                                <span
+                                    class="fi fi-{{ strtolower($country->country_flag) }}"
+                                ></span>
+                            @endif
 
-                                    <div class="col-lg-3 col-md-6">
-                                        <div class="country-group">
-                                            <h4>Europe</h4>
+                            {{ $country->country_name }}
+                        </a>
+                    @endforeach
 
-                                            <a href="#" class="mega-link"> <span class="fi fi-gb"></span> United Kingdom</a>
-                                            <a href="#" class="mega-link"> <span class="fi fi-de"></span> Germany</a>
-                                            <a href="#" class="mega-link"> <span class="fi fi-fr"></span> France</a>
-                                            <a href="#" class="mega-link"> <span class="fi fi-it"></span> Italy</a>
-                                        </div>
-                                    </div>
+                </div>
+            </div>
+        @endif
+    @endforeach
 
-
-                                </div>
+</div>
 
                             </div>
                         </div>

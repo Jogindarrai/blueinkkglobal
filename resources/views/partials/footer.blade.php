@@ -17,8 +17,7 @@
                         src="{{ asset('images/logo.webp') }}"
                         alt="Blueinkk Global"
                         class="img-fluid mb-3"
-                        style="max-width: 120px;"
-                    >
+                        style="max-width: 120px;">
 
                     <p>
                         Blueinkk Global provides professional trademark and
@@ -66,14 +65,14 @@
                         </li>
 
                         <li>
-                            <a  href="{{ url('/about-us') }}">
+                            <a href="{{ url('/about-us') }}">
                                 <i class="bi bi-info-circle me-2"></i>
                                 About Us
                             </a>
                         </li>
 
                         <li>
-                            <a  href="{{ url('/our-team') }}">
+                            <a href="{{ url('/our-team') }}">
                                 <i class="bi bi-people me-2"></i>
                                 Our Team
                             </a>
@@ -108,7 +107,7 @@
                     <ul class="list-unstyled footer-links">
 
                         <li>
-                            <a  href="{{ url('/our-services') }}">
+                            <a href="{{ url('/our-services') }}">
                                 <i class="bi bi-patch-check me-2"></i>
                                 Trademark Registration
                             </a>
@@ -236,16 +235,12 @@
     tabindex="-1"
     aria-labelledby="enquiryModalLabel"
     aria-hidden="true">
-
     <div class="modal-dialog modal-dialog-centered modal-lg">
-
         <div class="modal-content enquiry-modal-content">
-
             {{-- Modal Header --}}
             <div class="modal-header">
 
                 <div>
-
                     <span class="modal-small-title">
                         Get Expert Assistance
                     </span>
@@ -270,252 +265,12 @@
             </div>
 
             {{-- Modal Form --}}
-            <form
-                action="{{ url('/enquiry-submit') }}"
-                method="POST">
-
-                @csrf
-
-                <div class="modal-body">
-
-                    <div class="row g-3">
-
-                        {{-- Full Name --}}
-                        <div class="col-md-6">
-
-                            <label
-                                for="enquiry-name"
-                                class="form-label">
-
-                                Full Name
-
-                            </label>
-
-                            <input
-                                type="text"
-                                id="enquiry-name"
-                                name="name"
-                                class="form-control"
-                                placeholder="Enter your full name"
-                                required>
-
-                        </div>
-
-                        {{-- Email --}}
-                        <div class="col-md-6">
-
-                            <label
-                                for="enquiry-email"
-                                class="form-label">
-
-                                Email Address
-
-                            </label>
-
-                            <input
-                                type="email"
-                                id="enquiry-email"
-                                name="email"
-                                class="form-control"
-                                placeholder="Enter your email address"
-                                required>
-
-                        </div>
-
-                        {{-- Phone --}}
-                        <div class="col-md-6">
-
-                            <label
-                                for="enquiry-phone"
-                                class="form-label">
-
-                                Phone Number
-
-                            </label>
-
-                            <input
-                                type="tel"
-                                id="enquiry-phone"
-                                name="phone"
-                                class="form-control"
-                                placeholder="Enter your phone number"
-                                required>
-
-                        </div>
-
-                        {{-- Country --}}
-                        <div class="col-md-6">
-
-                            <label
-                                for="enquiry-country"
-                                class="form-label">
-
-                                Country
-
-                            </label>
-
-                            <select
-                                id="enquiry-country"
-                                name="country"
-                                class="form-select"
-                                required>
-
-                                <option value="" selected disabled>
-                                    Select country
-                                </option>
-
-                                <option value="India">
-                                    India
-                                </option>
-
-                                <option value="Nepal">
-                                    Nepal
-                                </option>
-
-                                <option value="United States">
-                                    United States
-                                </option>
-
-                                <option value="United Kingdom">
-                                    United Kingdom
-                                </option>
-
-                                <option value="United Arab Emirates">
-                                    United Arab Emirates
-                                </option>
-
-                                <option value="Singapore">
-                                    Singapore
-                                </option>
-
-                                <option value="Australia">
-                                    Australia
-                                </option>
-
-                                <option value="Canada">
-                                    Canada
-                                </option>
-
-                            </select>
-
-                        </div>
-
-                        {{-- Service --}}
-                        <div class="col-12">
-
-                            <label
-                                for="enquiry-service"
-                                class="form-label"
-                            >
-                                Service Required
-                            </label>
-
-                            <select
-                                id="enquiry-service"
-                                name="service"
-                                class="form-select"
-                                required
-                            >
-                                <option value="" selected disabled>
-                                    Select service
-                                </option>
-
-                                <option value="Trademark">
-                                    Trademark
-                                </option>
-
-                                <option value="Copyright">
-                                    Copyright
-                                </option>
-
-                                <option value="Design">
-                                    Design
-                                </option>
-
-                                <option value="Patent">
-                                    Patent
-                                </option>
-
-                                <option value="Contracts & Agreements">
-                                    Contracts &amp; Agreements
-                                </option>
-
-                                <option value="IP Valuation & Due Diligence">
-                                    IP Valuation &amp; Due Diligence
-                                </option>
-
-                                <option value="Commercial Litigation">
-                                    Commercial Litigation
-                                </option>
-
-                                <option value="Criminal Litigation">
-                                    Criminal Litigation
-                                </option>
-
-                                <option value="Arbitration & Conciliation">
-                                    Arbitration &amp; Conciliation
-                                </option>
-
-                                <option value="IP Enforcement & Anti Counterfeiting">
-                                    IP Enforcement &amp; Anti Counterfeiting
-                                </option>
-
-                            </select>
-
-                        </div>
-
-                        {{-- Message --}}
-                        <div class="col-12">
-
-                            <label
-                                for="enquiry-message"
-                                class="form-label">
-
-                                Your Requirement
-
-                            </label>
-
-                            <textarea
-                                id="enquiry-message"
-                                name="message"
-                                class="form-control"
-                                rows="4"
-                                placeholder="Tell us briefly about your requirement"></textarea>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-                {{-- Modal Footer --}}
-                <div class="modal-footer">
-
-                    <button
-                        type="button"
-                        class="btn btn-light"
-                        data-bs-dismiss="modal">
-
-                        Cancel
-
-                    </button>
-
-                    <button
-                        type="submit"
-                        class="btn modal-submit-btn">
-
-                        Submit Enquiry
-
-                        <i class="bi bi-send ms-1"></i>
-
-                    </button>
-
-                </div>
-
-            </form>
+            <div class="modal-body">
+               @include('partials.enquiry-modal', [
+                    'formLocation' => 'modal'
+                ])
+            </div>
 
         </div>
-
     </div>
-
 </div>

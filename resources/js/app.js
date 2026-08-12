@@ -1,4 +1,7 @@
 import './bootstrap';
+
+import * as Bootstrap from 'bootstrap';
+window.bootstrap = Bootstrap;
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import { Splide } from '@splidejs/splide';

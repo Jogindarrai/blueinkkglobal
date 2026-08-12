@@ -35,10 +35,7 @@
                     @endphp
 
                     <div class="hero-country-search">
-                        <x-country-search
-                            :countries="$countries"
-                            input-id="heroCountrySearch"
-                        />
+                     <x-country-search input-id="heroCountrySearch" />
                     </div>
 
                     <p class="hero-description">

@@ -1,9 +1,7 @@
 @props([
-    'countries' => [],
     'directoryTarget' => null,
     'inputId' => 'countrySearch',
 ])
-
 <div
     class="country-search-feature country-search-feature-compact"
     data-country-search-component
