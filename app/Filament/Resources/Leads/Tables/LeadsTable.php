@@ -34,7 +34,9 @@ class LeadsTable
                 TextColumn::make('ip_address')
                     ->searchable(),
                 TextColumn::make('created_at')
-                    ->dateTime()
+                    ->label('Received')
+                    ->since()
+                    ->timezone('Asia/Kolkata')
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
                 TextColumn::make('updated_at')

@@ -124,7 +124,7 @@
                                     Submitted At
                                 </td>
                                 <td style="padding: 12px; border-bottom: 1px solid #eeeeee;">
-                                    {{ $lead->created_at?->format('d M Y, h:i A') ?? 'N/A' }}
+                                    {{ $lead->created_at?->timezone('Asia/Kolkata')->format('d M Y, h:i A') ?? 'N/A' }}
                                 </td>
                             </tr>
 
