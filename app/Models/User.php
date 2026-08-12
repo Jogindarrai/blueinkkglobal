@@ -13,11 +13,29 @@ class User extends Authenticatable implements FilamentUser
 {
     use HasFactory, Notifiable, HasRoles;
 
+    /**
+     * Spatie Permission guard.
+     */
+    protected string $guard_name = 'web';
+
     protected $fillable = [
         'name',
         'email',
         'password',
     ];
+
+    protected $hidden = [
+        'password',
+        'remember_token',
+    ];
+
+    protected function casts(): array
+    {
+        return [
+            'email_verified_at' => 'datetime',
+            'password' => 'hashed',
+        ];
+    }
 
     public function canAccessPanel(Panel $panel): bool
     {

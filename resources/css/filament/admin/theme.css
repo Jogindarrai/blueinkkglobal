@@ -1,0 +1,153 @@
+@import '../../../../vendor/filament/filament/resources/css/theme.css';
+
+@source '../../../../app/Filament/**/*';
+@source '../../../../resources/views/filament/**/*';
+
+/* Dashboard background */
+.fi-main {
+    background:
+        radial-gradient(circle at top right, rgba(200, 145, 55, 0.08), transparent 30%),
+        #f8f9fb;
+}
+
+/* Dashboard heading */
+.fi-header-heading {
+    font-size: 2rem !important;
+    font-weight: 750 !important;
+    letter-spacing: -0.04em;
+    color: #171721;
+}
+
+/* Dashboard widgets spacing */
+.fi-page-main > .fi-section-content,
+.fi-wi {
+    position: relative;
+}
+
+/* Stats cards */
+.fi-wi-stats-overview-stat {
+    position: relative;
+    overflow: hidden;
+    min-height: 175px;
+    padding: 1.6rem !important;
+    border: 1px solid #e8e8ed !important;
+    border-radius: 18px !important;
+    background: #ffffff !important;
+    box-shadow:
+        0 1px 2px rgba(16, 24, 40, 0.04),
+        0 8px 24px rgba(16, 24, 40, 0.06) !important;
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        border-color 0.25s ease;
+}
+
+/* Decorative circle */
+.fi-wi-stats-overview-stat::after {
+    content: "";
+    position: absolute;
+    top: -55px;
+    right: -55px;
+    width: 145px;
+    height: 145px;
+    border-radius: 50%;
+    background: rgba(198, 125, 25, 0.07);
+    pointer-events: none;
+}
+
+.fi-wi-stats-overview-stat:hover {
+    transform: translateY(-5px);
+    border-color: rgba(198, 125, 25, 0.35) !important;
+    box-shadow:
+        0 2px 4px rgba(16, 24, 40, 0.04),
+        0 18px 38px rgba(16, 24, 40, 0.11) !important;
+}
+
+/* Card title */
+.fi-wi-stats-overview-stat-label {
+    color: #686875 !important;
+    font-size: 0.95rem !important;
+    font-weight: 600 !important;
+}
+
+/* Card count */
+.fi-wi-stats-overview-stat-value {
+    margin-top: 0.65rem;
+    color: #171721 !important;
+    font-size: 2.4rem !important;
+    line-height: 1 !important;
+    font-weight: 750 !important;
+    letter-spacing: -0.05em;
+}
+
+/* Card description */
+.fi-wi-stats-overview-stat-description {
+    margin-top: 1rem !important;
+    font-size: 0.88rem !important;
+    font-weight: 500 !important;
+}
+
+/* Account/Welcome widget */
+.fi-wi-account {
+    overflow: hidden;
+    border: 1px solid #e8e8ed !important;
+    border-radius: 18px !important;
+    background:
+        linear-gradient(
+            120deg,
+            #ffffff 0%,
+            #ffffff 65%,
+            rgba(198, 125, 25, 0.08) 100%
+        ) !important;
+    box-shadow: 0 8px 24px rgba(16, 24, 40, 0.06) !important;
+}
+
+/* Sidebar */
+.fi-sidebar {
+    border-right: 1px solid #ededf1;
+    background: #ffffff !important;
+}
+
+.fi-sidebar-item-button {
+    margin-bottom: 4px;
+    border-radius: 12px !important;
+    transition: all 0.2s ease;
+}
+
+.fi-sidebar-item-button:hover {
+    background: #f7f3ec !important;
+    transform: translateX(3px);
+}
+
+/* Active sidebar item */
+.fi-sidebar-item.fi-active > .fi-sidebar-item-button {
+    background: linear-gradient(
+        90deg,
+        rgba(198, 125, 25, 0.14),
+        rgba(198, 125, 25, 0.05)
+    ) !important;
+    box-shadow: inset 3px 0 0 #c67d19;
+}
+
+/* Top header */
+.fi-topbar {
+    border-bottom: 1px solid #ededf1 !important;
+    background: rgba(255, 255, 255, 0.94) !important;
+    backdrop-filter: blur(14px);
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+    .fi-header-heading {
+        font-size: 1.65rem !important;
+    }
+
+    .fi-wi-stats-overview-stat {
+        min-height: 155px;
+        padding: 1.25rem !important;
+    }
+
+    .fi-wi-stats-overview-stat-value {
+        font-size: 2rem !important;
+    }
+}
