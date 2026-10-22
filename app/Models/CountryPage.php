@@ -11,6 +11,11 @@ class CountryPage extends Model
         'country_adjective',
         'slug',
         'country_code',
+        'country_flag',
+        'menu_region',
+        'is_popular_destination',
+        'show_in_menu',
+        'menu_order',
         'meta_title',
         'meta_description',
         'hero_description',
@@ -57,32 +62,34 @@ class CountryPage extends Model
         'help_cta_button_text',
         'help_cta_button_url',
         'legal_disclaimer',
-        'country_name',
-        'country_flag',
-        'menu_region',
-        'is_popular_destination',
-        'show_in_menu',
-        'menu_order',
-
-
-
         'is_active',
         'sort_order',
     ];
 
-    protected $casts = [
-        'is_active' => 'boolean',
-        'sort_order' => 'integer',
-        'why_register_items' => 'array',
-        'documents_items' => 'array',
-         'filing_process_steps' => 'array',
-         'government_fees_items' => 'array',
-         'registration_time_items' => 'array',
-         'renewal_items' => 'array',
-         'refusal_items' => 'array',
-         'help_items' => 'array',
-         'is_popular_destination' => 'boolean',
-        'show_in_menu' => 'boolean',
-        'menu_order' => 'integer',
+    protected $attributes = [
+        'is_active' => false,
+        'is_popular_destination' => false,
+        'show_in_menu' => true,
+        'sort_order' => 0,
+        'menu_order' => 0,
     ];
+
+    protected function casts(): array
+    {
+        return [
+            'is_active' => 'boolean',
+            'is_popular_destination' => 'boolean',
+            'show_in_menu' => 'boolean',
+            'sort_order' => 'integer',
+            'menu_order' => 'integer',
+            'why_register_items' => 'array',
+            'documents_items' => 'array',
+            'filing_process_steps' => 'array',
+            'government_fees_items' => 'array',
+            'registration_time_items' => 'array',
+            'renewal_items' => 'array',
+            'refusal_items' => 'array',
+            'help_items' => 'array',
+        ];
+    }
 }

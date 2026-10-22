@@ -51,19 +51,18 @@ return new class extends Migration
 
     public function down(): void
     {
-        Schema::table('country_pages', function (Blueprint $table) {
-            $table->dropColumn([
-                'help_label',
-                'help_heading',
-                'help_content',
-                'help_items',
-                'help_cta_heading',
-                'help_cta_content',
-                'help_cta_email',
-                'help_cta_button_text',
-                'help_cta_button_url',
-                'legal_disclaimer',
-            ]);
-        });
+        $columns = [
+            'help_label', 'help_heading', 'help_content', 'help_items',
+            'help_cta_heading', 'help_cta_content', 'help_cta_email',
+            'help_cta_button_text', 'help_cta_button_url', 'legal_disclaimer',
+        ];
+
+        foreach ($columns as $column) {
+            if (Schema::hasColumn('country_pages', $column)) {
+                Schema::table('country_pages', function (Blueprint $table) use ($column) {
+                    $table->dropColumn($column);
+                });
+            }
+        }
     }
 };

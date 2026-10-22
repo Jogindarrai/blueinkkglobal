@@ -81,7 +81,7 @@ class CountryPageForm
 
                         Toggle::make('is_active')
                             ->label('Published')
-                            ->default(true)
+                            ->default(false)
                             ->inline(false),
 
                         TextInput::make('sort_order')
@@ -104,17 +104,10 @@ Section::make('Country & Menu Settings')
     ->columnSpanFull()
     ->columns(3)
     ->schema([
-        TextInput::make('country_name')
-            ->label('Country Name')
-            ->placeholder('Nepal')
-            ->required()
-            ->maxLength(100),
-
         TextInput::make('country_flag')
             ->label('Country Flag')
             ->placeholder('🇳🇵')
             ->helperText('Country flag emoji enter karein.')
-            ->required()
             ->maxLength(20),
 
          Select::make('menu_region')
@@ -130,7 +123,7 @@ Section::make('Country & Menu Settings')
             ])
             ->native(false)
             ->searchable()
-            ->required(),
+,
 
         Toggle::make('is_popular_destination')
             ->label('Popular Destination')
@@ -167,7 +160,6 @@ Section::make('Country & Menu Settings')
                             ->placeholder(
                                 'Trademark Registration in Nepal'
                             )
-                            ->required()
                             ->maxLength(255)
                             ->columnSpanFull(),
 
@@ -176,7 +168,6 @@ Section::make('Country & Menu Settings')
                             ->placeholder(
                                 'Nepal is one of India’s closest trade partners...'
                             )
-                            ->required()
                             ->toolbarButtons([
                                 ['bold', 'italic', 'underline'],
                                 ['bulletList', 'orderedList'],
@@ -187,25 +178,21 @@ Section::make('Country & Menu Settings')
                         TextInput::make('trademark_authority')
                             ->label('Trademark Authority')
                             ->placeholder('Department of Industry')
-                            ->required()
                             ->maxLength(255),
 
                         TextInput::make('application_type')
                             ->label('Application Type')
                             ->placeholder('Single Class')
-                            ->required()
                             ->maxLength(100),
 
                         TextInput::make('local_agent')
                             ->label('Local Agent')
                             ->placeholder('Required')
-                            ->required()
                             ->maxLength(100),
 
                         TextInput::make('registration_validity')
                             ->label('Registration Validity')
                             ->placeholder('7 Years')
-                            ->required()
                             ->maxLength(100),
                     ]),
 
@@ -225,7 +212,6 @@ Section::make('Country & Menu Settings')
                         TextInput::make('why_register_heading')
                             ->label('Section Heading')
                             ->placeholder('Why Register a Trademark in Nepal?')
-                            ->required()
                             ->maxLength(255)
                             ->columnSpanFull(),
 
@@ -237,13 +223,12 @@ Section::make('Country & Menu Settings')
                                     ->placeholder(
                                         'Growing consumer market with strong cultural and trade ties to India'
                                     )
-                                    ->required()
                                     ->rows(2)
                                     ->maxLength(500)
                                     ->columnSpanFull(),
                             ])
-                            ->defaultItems(4)
-                            ->minItems(1)
+                            ->defaultItems(0)
+                            ->minItems(0)
                             ->maxItems(12)
                             ->addActionLabel('Add New List Point')
                             ->reorderable()
@@ -276,7 +261,6 @@ Section::make('Country & Menu Settings')
                                     ->label('Heading')
                                     ->placeholder('Governing Law')
                                     ->default('Governing Law')
-                                    ->required()
                                     ->maxLength(255),
 
                                 RichEditor::make('governing_law_content')
@@ -284,7 +268,6 @@ Section::make('Country & Menu Settings')
                                     ->placeholder(
                                         'Trademarks in Nepal are governed by...'
                                     )
-                                    ->required()
                                     ->toolbarButtons([
                                         ['bold', 'italic', 'underline'],
                                         ['bulletList', 'orderedList'],
@@ -305,7 +288,6 @@ Section::make('Country & Menu Settings')
                                     ->label('Heading')
                                     ->placeholder('Who Can Apply')
                                     ->default('Who Can Apply')
-                                    ->required()
                                     ->maxLength(255),
 
                                 RichEditor::make('who_can_apply_content')
@@ -313,7 +295,6 @@ Section::make('Country & Menu Settings')
                                     ->placeholder(
                                         'Any individual or business entity can apply...'
                                     )
-                                    ->required()
                                     ->toolbarButtons([
                                         ['bold', 'italic', 'underline'],
                                         ['bulletList', 'orderedList'],
@@ -346,7 +327,6 @@ Section::make('Country & Menu Settings')
                             ->label('Section Heading')
                             ->placeholder('Documents Required')
                             ->default('Documents Required')
-                            ->required()
                             ->maxLength(255)
                             ->columnSpanFull(),
 
@@ -355,7 +335,6 @@ Section::make('Country & Menu Settings')
                             ->placeholder(
                                 'To file a trademark application in Nepal, the following documents are generally required:'
                             )
-                            ->required()
                             ->toolbarButtons([
                                 ['bold', 'italic', 'underline'],
                                 ['link', 'undo', 'redo'],
@@ -368,7 +347,6 @@ Section::make('Country & Menu Settings')
                                 TextInput::make('title')
                                     ->label('Document Title')
                                     ->placeholder('Power of Attorney')
-                                    ->required()
                                     ->maxLength(255)
                                     ->columnSpanFull(),
 
@@ -377,13 +355,12 @@ Section::make('Country & Menu Settings')
                                     ->placeholder(
                                         'Executed by the applicant, signed and attested before witnesses...'
                                     )
-                                    ->required()
                                     ->rows(3)
                                     ->maxLength(1500)
                                     ->columnSpanFull(),
                                ])
-                            ->defaultItems(7)
-                            ->minItems(1)
+                            ->defaultItems(0)
+                            ->minItems(0)
                             ->maxItems(20)
                             ->addActionLabel('Add New Document')
                             ->reorderable()
@@ -419,7 +396,6 @@ Section::make('Country & Menu Settings')
             ->label('Section Heading')
             ->placeholder('Step-by-Step Filing Process')
             ->default('Step-by-Step Filing Process')
-            ->required()
             ->maxLength(255)
             ->columnSpanFull(),
 
@@ -429,7 +405,6 @@ Section::make('Country & Menu Settings')
                 TextInput::make('title')
                     ->label('Step Heading')
                     ->placeholder('Clearance search')
-                    ->required()
                     ->maxLength(255)
                     ->columnSpanFull(),
 
@@ -438,13 +413,12 @@ Section::make('Country & Menu Settings')
                     ->placeholder(
                         'A preliminary search is recommended to check for identical or deceptively similar marks...'
                     )
-                    ->required()
                     ->rows(4)
                     ->maxLength(2000)
                     ->columnSpanFull(),
             ])
-            ->defaultItems(7)
-            ->minItems(1)
+            ->defaultItems(0)
+            ->minItems(0)
             ->maxItems(20)
             ->addActionLabel('Add New Step')
             ->reorderable()
@@ -477,7 +451,6 @@ Section::make('Country & Menu Settings')
                     ->label('Section Heading')
                     ->placeholder('Government Fees')
                     ->default('Government Fees')
-                    ->required()
                     ->maxLength(255),
 
                 Repeater::make('government_fees_items')
@@ -486,13 +459,11 @@ Section::make('Country & Menu Settings')
                         TextInput::make('label')
                             ->label('Fee Name')
                             ->placeholder('Filing fee')
-                            ->required()
                             ->maxLength(255),
 
                         TextInput::make('amount')
                             ->label('Fee Amount')
                             ->placeholder('NPR 1,000')
-                            ->required()
                             ->maxLength(100),
 
                         Textarea::make('description')
@@ -500,14 +471,13 @@ Section::make('Country & Menu Settings')
                             ->placeholder(
                                 'Payable per class at the time of filing...'
                             )
-                            ->required()
                             ->rows(3)
                             ->maxLength(1000)
                             ->columnSpanFull(),
                     ])
                     ->columns(2)
-                    ->defaultItems(2)
-                    ->minItems(1)
+                    ->defaultItems(0)
+                    ->minItems(0)
                     ->maxItems(15)
                     ->addActionLabel('Add New Fee')
                     ->reorderable()
@@ -532,7 +502,6 @@ Section::make('Country & Menu Settings')
                     ->label('Section Heading')
                     ->placeholder('Time Period for Registration')
                     ->default('Time Period for Registration')
-                    ->required()
                     ->maxLength(255),
 
                 Repeater::make('registration_time_items')
@@ -541,25 +510,22 @@ Section::make('Country & Menu Settings')
                         TextInput::make('duration')
                             ->label('Duration')
                             ->placeholder('12–14')
-                            ->required()
                             ->maxLength(100),
 
                         TextInput::make('unit')
                             ->label('Duration Unit')
                             ->placeholder('Months')
-                            ->required()
                             ->maxLength(100),
 
                         TextInput::make('label')
                             ->label('Summary Label')
                             ->placeholder('Without opposition')
-                            ->required()
                             ->maxLength(255)
                             ->columnSpanFull(),
                     ])
                     ->columns(2)
-                    ->defaultItems(2)
-                    ->minItems(1)
+                    ->defaultItems(0)
+                    ->minItems(0)
                     ->maxItems(6)
                     ->addActionLabel('Add Timeline Item')
                     ->reorderable()
@@ -607,26 +573,22 @@ Section::make('Country & Menu Settings')
                     ->label('Section Heading')
                     ->placeholder('Validity and Renewal')
                     ->default('Validity and Renewal')
-                    ->required()
                     ->maxLength(255)
                     ->columnSpanFull(),
 
                 TextInput::make('validity_duration')
                     ->label('Validity Duration')
                     ->placeholder('7')
-                    ->required()
                     ->maxLength(100),
 
                 TextInput::make('validity_unit')
                     ->label('Duration Unit')
                     ->placeholder('Years')
-                    ->required()
                     ->maxLength(100),
 
                 TextInput::make('validity_label')
                     ->label('Validity Label')
                     ->placeholder('Registration validity')
-                    ->required()
                     ->maxLength(255)
                     ->columnSpanFull(),
             ]),
@@ -647,13 +609,12 @@ Section::make('Country & Menu Settings')
                             ->placeholder(
                                 'A trademark registered in Nepal is valid for 7 years...'
                             )
-                            ->required()
                             ->rows(3)
                             ->maxLength(2000)
                             ->columnSpanFull(),
                     ])
-                    ->defaultItems(6)
-                    ->minItems(1)
+                    ->defaultItems(0)
+                    ->minItems(0)
                     ->maxItems(20)
                     ->addActionLabel('Add Renewal Point')
                     ->reorderable()
@@ -680,7 +641,6 @@ Section::make('Grounds for Refusal Section')
             ->label('Section Heading')
             ->placeholder('Grounds for Refusal')
             ->default('Grounds for Refusal')
-            ->required()
             ->maxLength(255)
             ->columnSpanFull(),
 
@@ -689,7 +649,6 @@ Section::make('Grounds for Refusal Section')
             ->placeholder(
                 'The DOI can refuse an application where the mark:'
             )
-            ->required()
             ->rows(2)
             ->maxLength(1000)
             ->columnSpanFull(),
@@ -702,13 +661,12 @@ Section::make('Grounds for Refusal Section')
                     ->placeholder(
                         'Is identical or confusingly similar to an existing registered trademark'
                     )
-                    ->required()
                     ->rows(3)
                     ->maxLength(2000)
                     ->columnSpanFull(),
             ])
-            ->defaultItems(4)
-            ->minItems(1)
+            ->defaultItems(0)
+            ->minItems(0)
             ->maxItems(20)
             ->addActionLabel('Add Refusal Ground')
             ->reorderable()
@@ -763,13 +721,12 @@ Section::make('Grounds for Refusal Section')
                             ->placeholder(
                                 'Conducting a trademark availability search before filing'
                             )
-                            ->required()
                             ->rows(3)
                             ->maxLength(2000)
                             ->columnSpanFull(),
                     ])
-                    ->defaultItems(5)
-                    ->minItems(1)
+                    ->defaultItems(0)
+                    ->minItems(0)
                     ->maxItems(20)
                     ->addActionLabel('Add Service')
                     ->reorderable()

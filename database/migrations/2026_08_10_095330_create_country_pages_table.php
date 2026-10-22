@@ -39,7 +39,7 @@ public function up(): void
         $table->longText('help_content')->nullable();
         $table->longText('disclaimer_content')->nullable();
 
-        $table->boolean('is_active')->default(true);
+        $table->boolean('is_active')->default(false);
         $table->unsignedInteger('sort_order')->default(0);
 
         $table->timestamps();

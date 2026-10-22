@@ -9,9 +9,6 @@ return new class extends Migration
     public function up(): void
     {
         $columns = [
-            'country_name' => fn (Blueprint $table) =>
-                $table->string('country_name')->nullable(),
-
             'country_flag' => fn (Blueprint $table) =>
                 $table->string('country_flag', 20)->nullable(),
 
@@ -43,7 +40,6 @@ return new class extends Migration
     public function down(): void
     {
         $columns = [
-            'country_name',
             'country_flag',
             'menu_region',
             'is_popular_destination',

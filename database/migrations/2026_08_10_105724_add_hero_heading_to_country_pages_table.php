@@ -11,15 +11,19 @@ return new class extends Migration
      */
 public function up(): void
 {
-    Schema::table('country_pages', function (Blueprint $table) {
-        $table->string('hero_heading')->nullable()->after('meta_description');
-    });
+    if (! Schema::hasColumn('country_pages', 'hero_heading')) {
+        Schema::table('country_pages', function (Blueprint $table) {
+            $table->string('hero_heading')->nullable()->after('meta_description');
+        });
+    }
 }
 
 public function down(): void
 {
-    Schema::table('country_pages', function (Blueprint $table) {
-        $table->dropColumn('hero_heading');
-    });
+    if (Schema::hasColumn('country_pages', 'hero_heading')) {
+        Schema::table('country_pages', function (Blueprint $table) {
+            $table->dropColumn('hero_heading');
+        });
+    }
 }
 };
