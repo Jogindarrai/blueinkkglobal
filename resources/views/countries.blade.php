@@ -209,5 +209,88 @@
 
     </div>
 </section>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const searchInput = document.getElementById('heroCountrySearch');
+    const filterButtons = document.querySelectorAll('.country-filter-btn');
+    const countryColumns = document.querySelectorAll('.country-column');
+    const visibleCount = document.getElementById('visibleCountryCount');
+    const visibleLabel = document.getElementById('visibleCountryLabel');
+    const emptyState = document.getElementById('countriesEmptyState');
 
+    let selectedRegion = 'all';
+
+    function filterCountries() {
+        const searchValue = searchInput
+            ? searchInput.value.trim().toLowerCase()
+            : '';
+
+        let count = 0;
+
+        countryColumns.forEach(function (column) {
+            const countryName = (
+                column.dataset.name || ''
+            ).toLowerCase();
+
+            const countryRegion = (
+                column.dataset.region || ''
+            ).toLowerCase();
+
+            const matchesSearch =
+                searchValue === '' ||
+                countryName.includes(searchValue);
+
+            const matchesRegion =
+                selectedRegion === 'all' ||
+                countryRegion === selectedRegion;
+
+            const shouldShow = matchesSearch && matchesRegion;
+
+            column.hidden = !shouldShow;
+
+            if (shouldShow) {
+                count++;
+            }
+        });
+
+        if (visibleCount) {
+            visibleCount.textContent = count;
+        }
+
+        if (visibleLabel) {
+            visibleLabel.textContent =
+                count === 1 ? 'country' : 'countries';
+        }
+
+        if (emptyState) {
+            emptyState.hidden = count !== 0;
+        }
+    }
+
+    filterButtons.forEach(function (button) {
+        button.addEventListener('click', function () {
+            selectedRegion = (
+                button.dataset.region || 'all'
+            ).toLowerCase();
+
+            filterButtons.forEach(function (item) {
+                item.classList.remove('active');
+                item.setAttribute('aria-pressed', 'false');
+            });
+
+            button.classList.add('active');
+            button.setAttribute('aria-pressed', 'true');
+
+            filterCountries();
+        });
+    });
+
+    if (searchInput) {
+        searchInput.addEventListener('input', filterCountries);
+        searchInput.addEventListener('search', filterCountries);
+    }
+
+    filterCountries();
+});
+</script>
 @endsection
