@@ -36,7 +36,7 @@
                             </h3>
                         </div>
                     </div>
-                   @if(!empty($country->country_overview_items))
+                    @if(!empty($country->country_overview_items))
                         <div class="country-card-list">
                             @foreach($country->country_overview_items as $item)
                                 @if(filled($item['heading'] ?? null) || filled($item['value'] ?? null))
@@ -48,9 +48,28 @@
                                         @endif
 
                                         @if(filled($item['value'] ?? null))
-                                            <strong>
-                                                {{ $item['value'] }}
-                                            </strong>
+                                            @php
+                                                $overviewValue = trim($item['value']);
+                                                $isUrl = filter_var(
+                                                    $overviewValue,
+                                                    FILTER_VALIDATE_URL
+                                                );
+                                            @endphp
+
+                                            @if($isUrl)
+                                                <a
+                                                    href="{{ $overviewValue }}"
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
+                                                    class="country-overview-link">
+                                                    Visit Official Website
+                                                    <i class="bi bi-box-arrow-up-right"></i>
+                                                </a>
+                                            @else
+                                                <strong>
+                                                    {{ $overviewValue }}
+                                                </strong>
+                                            @endif
                                         @endif
                                     </div>
                                 @endif

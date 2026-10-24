@@ -7406,3 +7406,25 @@ text-align:center;
         width: 100%;
     }
 }
+.country-overview-link {
+    color: #21186f;
+    font-weight: 700;
+    text-decoration: none;
+    text-align: right;
+    display: inline-flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 6px;
+    max-width: 58%;
+    overflow-wrap: anywhere;
+}
+
+.country-overview-link:hover {
+    color: #e46f25;
+    text-decoration: underline;
+}
+
+.country-card-item strong {
+    max-width: 58%;
+    overflow-wrap: anywhere;
+}
