@@ -27,6 +27,7 @@ class CountryPage extends Model
         'registration_validity',
         'overview_content',
         'why_register_heading',
+        'why_register_subheading',
         'why_register_items',
         'governing_law_heading',
         'governing_law_content',

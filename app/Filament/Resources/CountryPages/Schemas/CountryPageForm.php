@@ -303,6 +303,13 @@ RichEditor::make('hero_description')
                             ->placeholder('Why Register a Trademark in Nepal?')
                             ->maxLength(255)
                             ->columnSpanFull(),
+                            Textarea::make('why_register_subheading')
+                            ->label('Subheading / Introduction')
+                            ->placeholder(
+                                'Explain briefly why trademark registration is important...'
+                            )
+                            ->rows(3)
+                            ->columnSpanFull(),
 
                         Repeater::make('why_register_items')
                             ->label('List Points')

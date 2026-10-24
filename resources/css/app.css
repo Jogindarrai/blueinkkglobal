@@ -7693,3 +7693,18 @@ text-align:center;
         padding: 40px 0;
     }
 }
+
+.why-register-subheading {
+    max-width: 950px;
+    margin: 10px 0 24px;
+    color: var(--muted);
+    font-size: 17px;
+    line-height: 1.7;
+}
+
+@media (max-width: 767px) {
+    .why-register-subheading {
+        margin-bottom: 20px;
+        font-size: 16px;
+    }
+}

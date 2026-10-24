@@ -224,36 +224,47 @@
 @endif
 
 {{-- ================== OVERVIEW SECTION END ================== --}}
-
 {{-- ================ WHY REGISTER SECTION START ================ --}}
+
 @if($hasWhyRegisterItems)
-<section class="why-register-section">
+    <section class="why-register-section">
         <div class="container">
-             <div class="why-register-box">
+            <div class="why-register-box">
+
+                {{-- Heading --}}
                 @if(filled($country->why_register_heading))
                     <h2 class="why-register-heading">
                         {{ $country->why_register_heading }}
                     </h2>
                 @endif
 
-                @if($hasWhyRegisterItems)
-                    <ul class="why-register-list">
-                        @foreach($validWhyRegisterItems as $item)
-                            <li>
-                                <span class="why-register-check">
-                                    <i class="bi bi-check-lg"></i>
-                                </span>
-
-                                <span>{{ $item['text'] }}</span>
-                            </li>
-                        @endforeach
-                    </ul>
+                {{-- Subheading --}}
+                @if(filled($country->why_register_subheading))
+                    <p class="why-register-subheading">
+                        {{ $country->why_register_subheading }}
+                    </p>
                 @endif
+
+                {{-- Items --}}
+                <ul class="why-register-list">
+                    @foreach($validWhyRegisterItems as $item)
+                        <li>
+                            <span class="why-register-check">
+                                <i class="bi bi-check-lg"></i>
+                            </span>
+
+                            <span>
+                                {{ $item['text'] }}
+                            </span>
+                        </li>
+                    @endforeach
+                </ul>
 
             </div>
         </div>
-</section>
+    </section>
 @endif
+
 {{-- ================= WHY REGISTER SECTION END ================= --}}
 
 {{-- ============ GOVERNING LAW / WHO CAN APPLY START ============ --}}
