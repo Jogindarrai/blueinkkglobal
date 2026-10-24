@@ -7446,23 +7446,240 @@ text-align:center;
     overflow-wrap: anywhere;
 }
 
+/* =========================================================
+   RICH EDITOR CONTENT
+========================================================= */
+
 .country-rich-content {
     overflow-x: auto;
+    color: var(--muted);
+    font-size: 17px;
+    line-height: 1.75;
 }
 
+/* Paragraph */
+.country-rich-content p {
+    margin: 0 0 14px;
+    color: var(--muted);
+    font-size: 17px;
+    line-height: 1.75;
+}
+
+/* Headings */
+.country-rich-content h1,
+.country-rich-content h2,
+.country-rich-content h3,
+.country-rich-content h4,
+.country-rich-content h5,
+.country-rich-content h6 {
+    margin-top: 26px;
+    margin-bottom: 12px;
+    color: var(--text);
+    font-weight: 700;
+    line-height: 1.25;
+}
+
+.country-rich-content h1 {
+    font-size: 36px;
+}
+
+.country-rich-content h2 {
+    font-size: 31px;
+}
+
+.country-rich-content h3 {
+    font-size: 26px;
+}
+
+.country-rich-content h4 {
+    font-size: 22px;
+}
+
+.country-rich-content h5 {
+    font-size: 19px;
+}
+
+.country-rich-content h6 {
+    font-size: 17px;
+}
+
+/* First element ke upar extra gap remove */
+.country-rich-content > :first-child {
+    margin-top: 0;
+}
+
+/* Last element ke neeche extra gap remove */
+.country-rich-content > :last-child {
+    margin-bottom: 0;
+}
+
+/* Links */
+.country-rich-content a {
+    color: #0d6efd;
+    font-weight: 500;
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
+    overflow-wrap: anywhere;
+    transition:
+        color 0.2s ease,
+        text-decoration-color 0.2s ease;
+}
+
+.country-rich-content a:hover {
+    color: var(--primary);
+    text-decoration-color: var(--primary);
+}
+
+/* Bold text */
+.country-rich-content strong,
+.country-rich-content b {
+    color: var(--text);
+    font-weight: 700;
+}
+
+/* Italic text */
+.country-rich-content em,
+.country-rich-content i {
+    line-height: inherit;
+}
+
+/* Lists */
+.country-rich-content ul,
+.country-rich-content ol {
+    margin: 10px 0 18px;
+    padding-left: 26px;
+}
+
+.country-rich-content li {
+    margin-bottom: 7px;
+    padding-left: 4px;
+    color: var(--muted);
+    font-size: 17px;
+    line-height: 1.65;
+}
+
+.country-rich-content li:last-child {
+    margin-bottom: 0;
+}
+
+/* Nested lists */
+.country-rich-content li ul,
+.country-rich-content li ol {
+    margin-top: 7px;
+    margin-bottom: 7px;
+}
+
+/* Blockquote */
+.country-rich-content blockquote {
+    margin: 20px 0;
+    padding: 14px 18px;
+    border-left: 4px solid var(--primary);
+    border-radius: 0 8px 8px 0;
+    background: #f5f4fb;
+    color: var(--muted);
+}
+
+.country-rich-content blockquote p:last-child {
+    margin-bottom: 0;
+}
+
+/* Images */
 .country-rich-content img {
+    display: block;
     max-width: 100%;
     height: auto;
+    margin: 20px auto;
     border-radius: 12px;
 }
 
+/* Tables */
 .country-rich-content table {
     width: 100%;
+    min-width: 600px;
+    margin: 20px 0;
     border-collapse: collapse;
+    background: #ffffff;
 }
 
 .country-rich-content th,
 .country-rich-content td {
-    padding: 10px;
+    padding: 12px;
     border: 1px solid #dddddd;
+    text-align: left;
+    vertical-align: top;
+}
+
+.country-rich-content th {
+    color: var(--text);
+    font-weight: 700;
+    background: #f5f4fb;
+}
+
+/* Horizontal rule */
+.country-rich-content hr {
+    margin: 25px 0;
+    border: 0;
+    border-top: 1px solid #dedbea;
+}
+
+/* =========================================================
+   MOBILE RESPONSIVE
+========================================================= */
+
+@media (max-width: 767px) {
+    .country-rich-content {
+        font-size: 16px;
+        line-height: 1.7;
+    }
+
+    .country-rich-content p,
+    .country-rich-content li {
+        font-size: 16px;
+    }
+
+    .country-rich-content h1 {
+        font-size: 29px;
+    }
+
+    .country-rich-content h2 {
+        font-size: 26px;
+    }
+
+    .country-rich-content h3 {
+        font-size: 23px;
+    }
+
+    .country-rich-content h4 {
+        font-size: 20px;
+    }
+
+    .country-rich-content h5 {
+        font-size: 18px;
+    }
+
+    .country-rich-content h6 {
+        font-size: 16px;
+    }
+
+    .country-rich-content h1,
+    .country-rich-content h2,
+    .country-rich-content h3,
+    .country-rich-content h4,
+    .country-rich-content h5,
+    .country-rich-content h6 {
+        margin-top: 22px;
+        margin-bottom: 10px;
+    }
+
+    .country-rich-content ul,
+    .country-rich-content ol {
+        padding-left: 22px;
+    }
+
+    .country-rich-content th,
+    .country-rich-content td {
+        padding: 10px;
+        font-size: 14px;
+    }
 }
