@@ -231,6 +231,31 @@ RichEditor::make('hero_description')
     ->fileAttachmentsVisibility('public')
     ->columnSpanFull(),
 
+    Section::make('Country Overview Content')
+    ->description(
+        'Country overview ka complete formatted content yahan add karein.'
+    )
+    ->icon('heroicon-o-document-text')
+    ->columnSpanFull()
+    ->schema([
+        RichEditor::make('overview_content')
+            ->label('Overview Content')
+            ->placeholder(
+                'Country trademark registration overview content...'
+            )
+            ->toolbarButtons([
+                ['bold', 'italic', 'underline', 'strike'],
+                ['h2', 'h3', 'h4', 'h5', 'h6'],
+                ['bulletList', 'orderedList', 'blockquote'],
+                ['link', 'table', 'attachFiles'],
+                ['undo', 'redo'],
+            ])
+            ->fileAttachmentsDisk('public')
+            ->fileAttachmentsDirectory('country-pages/overview')
+            ->fileAttachmentsVisibility('public')
+            ->columnSpanFull(),
+    ]),
+
         Repeater::make('country_overview_items')
             ->label('Country Overview Items')
             ->helperText(

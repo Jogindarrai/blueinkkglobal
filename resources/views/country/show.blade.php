@@ -211,6 +211,20 @@
 </section>
 {{-- ===================== HERO SECTION END ===================== --}}
 
+{{-- ================= OVERVIEW SECTION START ================= --}}
+
+@if($hasRichContent($country->overview_content))
+    <section class="country-overview-section">
+        <div class="container">
+            <div class="country-rich-content">
+                {!! $country->overview_content !!}
+            </div>
+        </div>
+    </section>
+@endif
+
+{{-- ================== OVERVIEW SECTION END ================== --}}
+
 {{-- ================ WHY REGISTER SECTION START ================ --}}
 @if($hasWhyRegisterItems)
 <section class="why-register-section">

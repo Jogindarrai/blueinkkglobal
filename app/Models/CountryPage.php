@@ -25,6 +25,7 @@ class CountryPage extends Model
         'application_type',
         'local_agent',
         'registration_validity',
+        'overview_content',
         'why_register_heading',
         'why_register_items',
         'governing_law_heading',
