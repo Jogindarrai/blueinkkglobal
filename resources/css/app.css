@@ -7426,6 +7426,7 @@ text-align:center;
 .country-overview-link {
     color: #21186f;
     font-weight: 700;
+    font-size: 12px;
     text-decoration: none;
     text-align: right;
     display: inline-flex;
