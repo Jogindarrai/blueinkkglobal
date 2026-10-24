@@ -36,45 +36,27 @@
                             </h3>
                         </div>
                     </div>
-                    <div class="country-card-list">
+                   @if(!empty($country->country_overview_items))
+                        <div class="country-card-list">
+                            @foreach($country->country_overview_items as $item)
+                                @if(filled($item['heading'] ?? null) || filled($item['value'] ?? null))
+                                    <div class="country-card-item">
+                                        @if(filled($item['heading'] ?? null))
+                                            <span>
+                                                {{ $item['heading'] }}
+                                            </span>
+                                        @endif
 
-                        @if(filled($country->trademark_authority))
-                        <div class="country-card-item">
-                            <span>Trademark Authority</span>
-                            <strong>
-                                {{ $country->trademark_authority }}
-                            </strong>
+                                        @if(filled($item['value'] ?? null))
+                                            <strong>
+                                                {{ $item['value'] }}
+                                            </strong>
+                                        @endif
+                                    </div>
+                                @endif
+                            @endforeach
                         </div>
-                        @endif
-
-                        @if(filled($country->application_type))
-                        <div class="country-card-item">
-                            <span>Application Type</span>
-                            <strong>
-                                {{ $country->application_type }}
-                            </strong>
-                        </div>
-                        @endif
-
-                        @if(filled($country->local_agent))
-                        <div class="country-card-item">
-                            <span>Local Agent</span>
-                            <strong>
-                                {{ $country->local_agent }}
-                            </strong>
-                        </div>
-                        @endif
-
-                        @if(filled($country->registration_validity))
-                        <div class="country-card-item">
-                            <span>Registration Validity</span>
-                            <strong>
-                                {{ $country->registration_validity }}
-                            </strong>
-                        </div>
-                        @endif
-
-                    </div>
+                    @endif
                 </div>
             </div>
 

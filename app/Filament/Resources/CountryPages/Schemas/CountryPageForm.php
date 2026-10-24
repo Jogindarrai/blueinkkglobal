@@ -146,56 +146,61 @@ Section::make('Country & Menu Settings')
     ]),
 
 
+Section::make('Hero Section')
+    ->description(
+        'Frontend country page ke hero section ka complete content.'
+    )
+    ->icon('heroicon-o-globe-alt')
+    ->columnSpanFull()
+    ->columns(2)
+    ->schema([
+        TextInput::make('hero_heading')
+            ->label('Main Heading')
+            ->placeholder('Trademark Registration in Nepal')
+            ->maxLength(255)
+            ->columnSpanFull(),
 
-                Section::make('Hero Section')
-                    ->description(
-                        'Frontend country page ke hero section ka complete content.'
-                    )
-                    ->icon('heroicon-o-globe-alt')
-                    ->columnSpanFull()
-                    ->columns(2)
-                    ->schema([
-                        TextInput::make('hero_heading')
-                            ->label('Main Heading')
-                            ->placeholder(
-                                'Trademark Registration in Nepal'
-                            )
-                            ->maxLength(255)
-                            ->columnSpanFull(),
+        RichEditor::make('hero_description')
+            ->label('Hero Description')
+            ->placeholder(
+                'Nepal is one of India’s closest trade partners...'
+            )
+            ->toolbarButtons([
+                ['bold', 'italic', 'underline'],
+                ['bulletList', 'orderedList'],
+                ['link', 'undo', 'redo'],
+            ])
+            ->columnSpanFull(),
 
-                        RichEditor::make('hero_description')
-                            ->label('Hero Description')
-                            ->placeholder(
-                                'Nepal is one of India’s closest trade partners...'
-                            )
-                            ->toolbarButtons([
-                                ['bold', 'italic', 'underline'],
-                                ['bulletList', 'orderedList'],
-                                ['link', 'undo', 'redo'],
-                            ])
-                            ->columnSpanFull(),
+        Repeater::make('country_overview_items')
+            ->label('Country Overview Items')
+            ->helperText(
+                'Country overview ke liye heading aur value add karein.'
+            )
+            ->schema([
+                TextInput::make('heading')
+                    ->label('Heading')
+                    ->placeholder('Example: Trademark Authority')
+                    ->maxLength(255),
 
-                        TextInput::make('trademark_authority')
-                            ->label('Trademark Authority')
-                            ->placeholder('Department of Industry')
-                            ->maxLength(255),
-
-                        TextInput::make('application_type')
-                            ->label('Application Type')
-                            ->placeholder('Single Class')
-                            ->maxLength(100),
-
-                        TextInput::make('local_agent')
-                            ->label('Local Agent')
-                            ->placeholder('Required')
-                            ->maxLength(100),
-
-                        TextInput::make('registration_validity')
-                            ->label('Registration Validity')
-                            ->placeholder('7 Years')
-                            ->maxLength(100),
-                    ]),
-
+                TextInput::make('value')
+                    ->label('Value / Subheading')
+                    ->placeholder('Example: Department of Industry')
+                    ->maxLength(500),
+            ])
+            ->columns(2)
+            ->defaultItems(0)
+            ->minItems(0)
+            ->addActionLabel('Add Overview Item')
+            ->reorderable()
+            ->collapsible()
+            ->cloneable()
+            ->itemLabel(
+                fn (array $state): ?string =>
+                    $state['heading'] ?? 'Overview Item'
+            )
+            ->columnSpanFull(),
+    ]),
                 /*
                 |--------------------------------------------------------------------------
                 | Why Register Section
