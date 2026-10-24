@@ -13,7 +13,7 @@
                         {{ $country->hero_heading ?: 'Trademark Registration in ' . $country->country_name }}
                     </h1>
                     @if(filled($country->hero_description))
-                    <div class="country-hero-description">
+                    <div class="country-rich-content">
                         {!! $country->hero_description !!}
                     </div>
                     @endif

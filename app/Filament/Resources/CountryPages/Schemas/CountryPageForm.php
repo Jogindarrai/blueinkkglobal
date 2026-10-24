@@ -3,6 +3,7 @@
 namespace App\Filament\Resources\CountryPages\Schemas;
 
 use Filament\Forms\Components\RichEditor;
+use Filament\Forms\Components\RichEditor\ToolbarButtonGroup;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Toggle;
 use Filament\Schemas\Components\Section;
@@ -160,17 +161,75 @@ Section::make('Hero Section')
             ->maxLength(255)
             ->columnSpanFull(),
 
-        RichEditor::make('hero_description')
-            ->label('Hero Description')
-            ->placeholder(
-                'Nepal is one of India’s closest trade partners...'
-            )
-            ->toolbarButtons([
-                ['bold', 'italic', 'underline'],
-                ['bulletList', 'orderedList'],
-                ['link', 'undo', 'redo'],
-            ])
-            ->columnSpanFull(),
+RichEditor::make('hero_description')
+    ->label('Hero Description')
+    ->placeholder('Country page ka hero description...')
+    ->toolbarButtons([
+        [
+            ToolbarButtonGroup::make('Text Style', [
+                'paragraph',
+                'h1',
+                'h2',
+                'h3',
+                'h4',
+                'h5',
+                'h6',
+                'lead',
+                'small',
+            ])->textualButtons(),
+        ],
+
+        [
+            'bold',
+            'italic',
+            'underline',
+            'strike',
+        ],
+
+        [
+            'alignStart',
+            'alignCenter',
+            'alignEnd',
+            'alignJustify',
+        ],
+
+        [
+            'bulletList',
+            'orderedList',
+            'blockquote',
+        ],
+
+        [
+            'link',
+            'table',
+            'attachFiles',
+        ],
+
+        [
+            'clearFormatting',
+            'undo',
+            'redo',
+        ],
+    ])
+    ->floatingToolbars([
+        'table' => [
+            'tableAddColumnBefore',
+            'tableAddColumnAfter',
+            'tableDeleteColumn',
+            'tableAddRowBefore',
+            'tableAddRowAfter',
+            'tableDeleteRow',
+            'tableMergeCells',
+            'tableSplitCell',
+            'tableToggleHeaderRow',
+            'tableToggleHeaderCell',
+            'tableDelete',
+        ],
+    ])
+    ->fileAttachmentsDisk('public')
+    ->fileAttachmentsDirectory('country-pages/editor')
+    ->fileAttachmentsVisibility('public')
+    ->columnSpanFull(),
 
         Repeater::make('country_overview_items')
             ->label('Country Overview Items')
@@ -200,7 +259,7 @@ Section::make('Hero Section')
                     $state['heading'] ?? 'Overview Item'
             )
             ->columnSpanFull(),
-    ]),
+        ]),
                 /*
                 |--------------------------------------------------------------------------
                 | Why Register Section

@@ -7428,3 +7428,24 @@ text-align:center;
     max-width: 58%;
     overflow-wrap: anywhere;
 }
+
+.country-rich-content {
+    overflow-x: auto;
+}
+
+.country-rich-content img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+}
+
+.country-rich-content table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.country-rich-content th,
+.country-rich-content td {
+    padding: 10px;
+    border: 1px solid #dddddd;
+}
