@@ -507,50 +507,39 @@ RichEditor::make('hero_description')
     ->maxLength(255)
     ->columnSpanFull(),
 
-        Repeater::make('filing_process_steps')
-            ->label('Filing Steps')
-            ->schema([
-                TextInput::make('title')
-                    ->label('Step Heading')
-                    ->placeholder('Clearance search')
-                    ->maxLength(255)
-                    ->columnSpanFull(),
+Repeater::make('filing_process_steps')
+    ->label('Filing Steps')
+    ->schema([
+        TextInput::make('title')
+            ->label('Step Heading')
+            ->maxLength(255)
+            ->columnSpanFull(),
 
-                Textarea::make('description')
-                    ->label('Step Description')
-                    ->placeholder(
-                        'A preliminary search is recommended to check for identical or deceptively similar marks...'
-                    )
-                    ->rows(4)
-                    ->maxLength(2000)
-                    ->columnSpanFull(),
+        Textarea::make('description')
+            ->label('Step Description')
+            ->rows(4)
+            ->columnSpanFull(),
+    ])
+    ->itemLabel(
+        fn (array $state): ?string =>
+            $state['title'] ?? 'New filing step'
+    )
+    ->addActionLabel('Add New Step')
+    ->reorderable()
+    ->collapsible()
+    ->cloneable()
+    ->columnSpanFull(),
 
-                    FileUpload::make('filing_process_images')
-    ->label('Filing Process Images')
-    ->helperText('Maximum 2 images upload karein.')
+FileUpload::make('filing_process_image')
+    ->label('Filing Process Image')
+    ->helperText('Saare filing steps ke baad dikhne wali ek image upload karein.')
     ->image()
-    ->multiple()
-    ->maxFiles(2)
-    ->maxSize(4096)
+    ->maxSize(2048)
     ->disk('public')
     ->directory('country-pages/filing-process')
     ->visibility('public')
-    ->imageEditor()
-    ->reorderable()
     ->columnSpanFull(),
-            ])
-            ->defaultItems(0)
-            ->minItems(0)
-            ->maxItems(20)
-            ->addActionLabel('Add New Step')
-            ->reorderable()
-            ->collapsible()
-            ->cloneable()
-            ->itemLabel(
-                fn (array $state): ?string =>
-                    $state['title'] ?? 'New filing step'
-            )
-            ->columnSpanFull(),
+
     ]),
 
     Section::make('Fees and Registration Timeline')
@@ -914,12 +903,9 @@ Section::make('Grounds for Refusal Section')
                     ->maxLength(5000)
                     ->columnSpanFull(),
             ]),
-    ]),
 
 
-
-
-
+          ]),
             ]);
     }
 }
