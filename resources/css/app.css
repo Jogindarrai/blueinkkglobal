@@ -7737,3 +7737,26 @@ text-align:center;
     font-weight: 700;
     line-height: 1.4;
 }
+
+.filing-process-images {
+    margin-top: 32px;
+}
+
+.filing-process-image-card {
+    height: 100%;
+    padding: 8px;
+    overflow: hidden;
+    background: #ffffff;
+    border: 1px solid #e6e3f0;
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(30, 24, 58, 0.08);
+}
+
+.filing-process-image-card img {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: 500px;
+    object-fit: contain;
+    border-radius: 11px;
+}

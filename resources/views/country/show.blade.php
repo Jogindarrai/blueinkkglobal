@@ -516,6 +516,30 @@
                 @endforeach
 
             </div>
+            {{-- Filing process images --}}
+@php
+    $filingProcessImages = collect(
+        $country->filing_process_images ?? []
+    )->filter()->values();
+@endphp
+
+@if($filingProcessImages->isNotEmpty())
+    <div class="filing-process-images row g-4">
+
+        @foreach($filingProcessImages as $image)
+            <div class="{{ $filingProcessImages->count() === 1 ? 'col-12' : 'col-md-6' }}">
+                <div class="filing-process-image-card">
+                    <img
+                        src="{{ asset('storage/' . $image) }}"
+                        alt="{{ $country->country_name }} trademark filing process"
+                        loading="lazy"
+                    >
+                </div>
+            </div>
+        @endforeach
+
+    </div>
+@endif
 
         </div>
     </section>

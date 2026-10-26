@@ -13,6 +13,7 @@ use Illuminate\Support\Str;
 use Filament\Forms\Components\Repeater;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\Select;
+use Filament\Forms\Components\FileUpload;
 
 
 class CountryPageForm
@@ -523,6 +524,20 @@ RichEditor::make('hero_description')
                     ->rows(4)
                     ->maxLength(2000)
                     ->columnSpanFull(),
+
+                    FileUpload::make('filing_process_images')
+    ->label('Filing Process Images')
+    ->helperText('Maximum 2 images upload karein.')
+    ->image()
+    ->multiple()
+    ->maxFiles(2)
+    ->maxSize(4096)
+    ->disk('public')
+    ->directory('country-pages/filing-process')
+    ->visibility('public')
+    ->imageEditor()
+    ->reorderable()
+    ->columnSpanFull(),
             ])
             ->defaultItems(0)
             ->minItems(0)
