@@ -58,6 +58,7 @@ class CountryPage extends Model
         'refusal_heading',
         'refusal_intro',
         'refusal_items',
+        'additional_content',
         'help_label',
         'help_heading',
         'help_content',

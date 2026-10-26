@@ -822,6 +822,22 @@ if (preg_match('/<(img|table|iframe|video|audio)\b /i', $html)) {
     @endif
     {{-- ================== REFUSAL SECTION END ================== --}}
 
+{{-- ============== ADDITIONAL CONTENT SECTION START ============== --}}
+@if($hasRichContent($country->additional_content))
+    <section class="additional-content-section">
+        <div class="container">
+
+            <div class="country-rich-content additional-content-box">
+                {!! $country->additional_content !!}
+            </div>
+
+        </div>
+    </section>
+@endif
+{{-- =============== ADDITIONAL CONTENT SECTION END =============== --}}
+
+
+
     {{-- ============== HELP AND LEGAL SECTION START ============== --}}
     @php
     $validHelpItems = collect($country->help_items ?? [])

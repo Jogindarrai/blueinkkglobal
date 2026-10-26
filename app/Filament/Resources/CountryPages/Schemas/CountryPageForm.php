@@ -792,6 +792,34 @@ Section::make('Grounds for Refusal Section')
             ->columnSpanFull(),
     ]),
 
+Section::make('Additional Content Section')
+    ->description(
+        'Country page ke liye additional headings, content, tables aur images add karein.'
+    )
+    ->icon('heroicon-o-document-text')
+    ->columnSpanFull()
+    ->schema([
+        RichEditor::make('additional_content')
+            ->label('Additional Content')
+            ->placeholder(
+                'Add headings, paragraphs, lists, tables and images...'
+            )
+            ->toolbarButtons([
+                ['h2', 'h3', 'h4', 'h5', 'h6'],
+                ['bold', 'italic', 'underline', 'strike'],
+                ['bulletList', 'orderedList', 'blockquote'],
+                ['link', 'table', 'attachFiles'],
+                ['undo', 'redo'],
+            ])
+            ->fileAttachmentsDisk('public')
+            ->fileAttachmentsDirectory(
+                'country-pages/additional-content'
+            )
+            ->fileAttachmentsVisibility('public')
+            ->columnSpanFull(),
+    ]),
+
+
     Section::make('Blue Inkk Help and CTA Section')
     ->description(
         'Country-wise filing support, services, CTA and legal disclaimer manage karein.'
