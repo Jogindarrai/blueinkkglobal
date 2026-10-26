@@ -41,6 +41,8 @@ class CountryPage extends Model
         'documents_cta_heading',
         'documents_cta_content',
         'filing_process_heading',
+        'filing_process_subheading',
+        'filing_steps_heading',
         'filing_process_steps',
         'government_fees_heading',
         'government_fees_items',

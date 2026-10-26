@@ -495,6 +495,17 @@ RichEditor::make('hero_description')
             ->maxLength(255)
             ->columnSpanFull(),
 
+        Textarea::make('filing_process_subheading')
+    ->label('Filing Process Subheading')
+    ->placeholder('Briefly explain the trademark filing process.')
+    ->rows(3)
+    ->columnSpanFull(),
+    TextInput::make('filing_steps_heading')
+    ->label('Filing Steps Heading')
+    ->placeholder('Trademark Application Steps')
+    ->maxLength(255)
+    ->columnSpanFull(),
+
         Repeater::make('filing_process_steps')
             ->label('Filing Steps')
             ->schema([

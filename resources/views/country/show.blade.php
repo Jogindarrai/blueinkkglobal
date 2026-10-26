@@ -448,47 +448,74 @@
     <section class="filing-process-section">
         <div class="container">
 
-            @if(filled($country->filing_process_heading))
+            {{-- Main section heading and subheading --}}
+            @if(
+                filled($country->filing_process_heading) ||
+                filled($country->filing_process_subheading)
+            )
                 <div class="filing-process-header">
+
                     <span class="filing-process-icon">
                         <i class="bi bi-list-check"></i>
                     </span>
 
-                    <h2>
-                        {{ $country->filing_process_heading }}
-                    </h2>
-                </div>
-            @endif
+                    <div class="filing-process-title-content">
 
-            @if($hasFilingSteps)
-                <div class="filing-process-timeline">
+                        @if(filled($country->filing_process_heading))
+                            <h2>
+                                {{ $country->filing_process_heading }}
+                            </h2>
+                        @endif
 
-                    @foreach($validFilingSteps as $step)
-                            <div class="filing-process-item">
+                        @if(filled($country->filing_process_subheading))
+                            <p class="filing-process-subheading">
+                                {{ $country->filing_process_subheading }}
+                            </p>
+                        @endif
 
-                                <div class="filing-step-number">
-                                    {{ $loop->iteration }}
-                                </div>
-
-                                <div class="filing-step-content">
-                                    @if(filled($step['title'] ?? null))
-                                        <h3>
-                                            {{ $step['title'] }}
-                                        </h3>
-                                    @endif
-
-                                    @if(filled($step['description'] ?? null))
-                                        <p>
-                                            {{ $step['description'] }}
-                                        </p>
-                                    @endif
-                                </div>
-
-                            </div>
-                    @endforeach
+                    </div>
 
                 </div>
             @endif
+
+            {{-- Filing steps area --}}
+            <div class="filing-process-timeline">
+
+                {{-- Heading before filing steps --}}
+                @if(filled($country->filing_steps_heading))
+                    <h3 class="filing-steps-heading">
+                        {{ $country->filing_steps_heading }}
+                    </h3>
+                @endif
+
+                {{-- Filing steps list --}}
+                @foreach($validFilingSteps as $step)
+                    <div class="filing-process-item">
+
+                        <div class="filing-step-number">
+                            {{ $loop->iteration }}
+                        </div>
+
+                        <div class="filing-step-content">
+
+                            @if(filled($step['title'] ?? null))
+                                <h4>
+                                    {{ $step['title'] }}
+                                </h4>
+                            @endif
+
+                            @if(filled($step['description'] ?? null))
+                                <p>
+                                    {{ $step['description'] }}
+                                </p>
+                            @endif
+
+                        </div>
+
+                    </div>
+                @endforeach
+
+            </div>
 
         </div>
     </section>
