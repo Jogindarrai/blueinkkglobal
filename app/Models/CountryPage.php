@@ -34,6 +34,7 @@ class CountryPage extends Model
         'who_can_apply_heading',
         'who_can_apply_content',
         'who_can_apply_note',
+        'supplementary_content',
         'documents_heading',
         'documents_intro',
         'documents_items',
