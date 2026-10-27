@@ -350,75 +350,88 @@
     @endif
     {{-- ================== DOCUMENTS SECTION END ================== --}}
     {{-- ============== FILING PROCESS SECTION START ============== --}}
-    @if (filled($country->filing_process_heading) ||
-            filled($country->filing_process_subheading) ||
-            filled($country->filing_steps_heading) ||
-            $hasFilingSteps ||
-            filled($country->filing_process_image))
-        <section class="filing-process-section">
-            <div class="container">
-                {{-- Main section heading and subheading --}}
-                @if (filled($country->filing_process_heading) || filled($country->filing_process_subheading))
-                    <div class="filing-process-header">
-                        <span class="filing-process-icon">
-                            <i class="bi bi-list-check"></i>
-                        </span>
-                        <div class="filing-process-title-content">
-                            @if (filled($country->filing_process_heading))
-                                <h2>
-                                    {{ $country->filing_process_heading }}
-                                </h2>
-                            @endif
-                            @if (filled($country->filing_process_subheading))
-                                <p class="filing-process-subheading">
-                                    {{ $country->filing_process_subheading }}
-                                </p>
-                            @endif
-                        </div>
-                    </div>
-                @endif
-                {{-- Filing steps --}}
-                @if ($hasFilingSteps)
-                    <div class="filing-process-timeline">
-                        {{-- Heading before steps --}}
-                        @if (filled($country->filing_steps_heading))
-                            <h3 class="filing-steps-heading">
-                                {{ $country->filing_steps_heading }}
-                            </h3>
+@if(
+    filled($country->filing_process_heading) ||
+    filled($country->filing_process_subheading) ||
+    filled($country->filing_steps_heading) ||
+    $hasFilingSteps ||
+    filled($country->filing_process_image)
+)
+    <section class="filing-process-section">
+        <div class="container">
+            {{-- Main Heading and Subheading --}}
+            @if(
+                filled($country->filing_process_heading) ||
+                filled($country->filing_process_subheading)
+            )
+                <div class="filing-process-header">
+                    <span class="filing-process-icon">
+                        <i class="bi bi-list-check"></i>
+                    </span>
+
+                    <div class="filing-process-title-content">
+                        @if(filled($country->filing_process_heading))
+                            <h2>
+                                {{ $country->filing_process_heading }}
+                            </h2>
                         @endif
-                        {{-- Steps list --}}
-                        @foreach ($validFilingSteps as $step)
-                            <div class="filing-process-item">
-                                <div class="filing-step-number">
-                                    {{ $loop->iteration }}
-                                </div>
-                                <div class="filing-step-content">
-                                    @if (filled($step['title'] ?? null))
-                                        <h4>
-                                            {{ $step['title'] }}
-                                        </h4>
-                                    @endif
-                                    @if (filled($step['description'] ?? null))
-                                        <p>
-                                            {{ $step['description'] }}
-                                        </p>
-                                    @endif
-                                </div>
-                            </div>
-                        @endforeach
+
+                        @if(filled($country->filing_process_subheading))
+                            <p class="filing-process-subheading">
+                                {{ $country->filing_process_subheading }}
+                            </p>
+                        @endif
                     </div>
-                @endif
-            </div>
-        </section>
-        {{-- Single image after all filing steps --}}
-        @if (filled($country->filing_process_image))
-            <div class="filing-process-image">
-                <img src="{{ url('/storage/' . ltrim($country->filing_process_image, '/')) }}"
-                    alt="{{ $country->country_name }} trademark filing process" loading="lazy">
-            </div>
-        @endif
-    @endif
-    {{-- =============== FILING PROCESS SECTION END =============== --}}
+                </div>
+            @endif
+            {{-- Filing Steps --}}
+            @if($hasFilingSteps)
+                <div class="filing-process-timeline">
+                    @if(filled($country->filing_steps_heading))
+                        <h3 class="filing-steps-heading">
+                            {{ $country->filing_steps_heading }}
+                        </h3>
+                    @endif
+
+                    @foreach($validFilingSteps as $step)
+                        <div class="filing-process-item">
+                            <div class="filing-step-number">
+                                {{ $loop->iteration }}
+                            </div>
+
+                            <div class="filing-step-content">
+                                @if(filled($step['title'] ?? null))
+                                    <h4>
+                                        {{ $step['title'] }}
+                                    </h4>
+                                @endif
+
+                                @if($hasRichContent($step['description'] ?? null))
+                                    <div class="filing-step-description country-rich-content">
+                                        {!! $step['description'] !!}
+                                    </div>
+                                @endif
+                            </div>
+                        </div>
+                    @endforeach
+                </div>
+            @endif
+
+            {{-- Single Image After All Filing Steps --}}
+            @if(filled($country->filing_process_image))
+                <div class="filing-process-image">
+                    <img
+                        src="{{ asset('storage/' . ltrim($country->filing_process_image, '/')) }}"
+                        alt="{{ $country->country_name }} trademark filing process"
+                        loading="lazy"
+                    >
+                </div>
+            @endif
+        </div>
+    </section>
+@endif
+{{-- =============== FILING PROCESS SECTION END =============== --}}
+
     {{-- ============ FEES AND TIMELINE SECTION START ============ --}}
     @if ($hasGovernmentFees || $hasRegistrationTimeItems || $hasRichContent($country->registration_time_content))
         <section class="fees-timeline-section">
