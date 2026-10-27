@@ -452,6 +452,33 @@ class CountryPageForm
                             ]),
                     ]),
 
+                Section::make('Supplementary Content Section')
+                ->description(
+                    'Add supplementary headings, paragraphs, lists, tables and images to the country page.'
+                )
+                ->icon('heroicon-o-document-plus')
+                ->columnSpanFull()
+                ->schema([
+                    RichEditor::make('supplementary_content')
+                        ->label('Supplementary Content')
+                        ->placeholder(
+                            'Add supplementary headings, paragraphs, lists, tables and images...'
+                        )
+                        ->toolbarButtons([
+                            ['h2', 'h3', 'h4', 'h5', 'h6'],
+                            ['bold', 'italic', 'underline', 'strike'],
+                            ['bulletList', 'orderedList', 'blockquote'],
+                            ['link', 'table', 'attachFiles'],
+                            ['undo', 'redo'],
+                        ])
+                        ->fileAttachmentsDisk('public')
+                        ->fileAttachmentsDirectory(
+                            'country-pages/supplementary-content'
+                        )
+                        ->fileAttachmentsVisibility('public')
+                        ->columnSpanFull(),
+                ]),
+
                 Section::make('Required Documents Section')
                     ->description(
                         'Manage the section heading, introduction, document list and important note.'

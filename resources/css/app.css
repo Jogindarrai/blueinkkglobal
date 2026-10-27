@@ -7872,3 +7872,9 @@ text-align:center;
 .additional-content-box {
     width: 100%;
 }
+
+
+.supplementary-content-section {
+    padding:40px 0;
+    background: #ffffff;
+}

@@ -265,6 +265,18 @@
         </section>
     @endif
     {{-- ============= GOVERNING LAW / WHO CAN APPLY END ============= --}}
+{{-- ============ SUPPLEMENTARY CONTENT SECTION START ============ --}}
+@if($hasRichContent($country->supplementary_content))
+    <section class="supplementary-content-section">
+        <div class="container">
+            <div class="country-rich-content supplementary-content-box">
+                {!! $country->supplementary_content !!}
+            </div>
+        </div>
+    </section>
+@endif
+{{-- ============= SUPPLEMENTARY CONTENT SECTION END ============= --}}
+
     {{-- ================= DOCUMENTS SECTION START ================= --}}
     @if ($hasRichContent($country->documents_intro) || $hasDocumentItems || $hasRichContent($country->documents_note))
         <section class="documents-section">
