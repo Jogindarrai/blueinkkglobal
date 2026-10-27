@@ -554,10 +554,15 @@ class CountryPageForm
                                     ->maxLength(255)
                                     ->columnSpanFull(),
 
-                                Textarea::make('description')
-                                    ->label('Step Description')
-                                    ->rows(4)
-                                    ->columnSpanFull(),
+                                RichEditor::make('description')
+                                ->label('Step Description')
+                                ->placeholder('Enter the filing step description...')
+                                ->toolbarButtons([
+                                    ['bold', 'italic', 'underline'],
+                                    ['bulletList', 'orderedList'],
+                                    ['link', 'undo', 'redo'],
+                                ])
+                                ->columnSpanFull(),
                             ])
                             ->itemLabel(
                                 fn(array $state): ?string =>
