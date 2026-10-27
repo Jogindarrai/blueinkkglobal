@@ -2,19 +2,18 @@
 
 namespace App\Filament\Resources\CountryPages\Schemas;
 
+use Filament\Forms\Components\FileUpload;
+use Filament\Forms\Components\Repeater;
 use Filament\Forms\Components\RichEditor;
 use Filament\Forms\Components\RichEditor\ToolbarButtonGroup;
+use Filament\Forms\Components\Select;
+use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Toggle;
 use Filament\Schemas\Components\Section;
 use Filament\Schemas\Components\Utilities\Set;
 use Filament\Schemas\Schema;
 use Illuminate\Support\Str;
-use Filament\Forms\Components\Repeater;
-use Filament\Forms\Components\Textarea;
-use Filament\Forms\Components\Select;
-use Filament\Forms\Components\FileUpload;
-
 
 class CountryPageForm
 {
@@ -95,197 +94,237 @@ class CountryPageForm
 
                 /*
                 |--------------------------------------------------------------------------
+                | SEO Settings
+                |--------------------------------------------------------------------------
+                */
+                Section::make('SEO Settings')
+                    ->description(
+                        'Manage the page title and description displayed in search engine results.'
+                    )
+                    ->icon('heroicon-o-magnifying-glass')
+                    ->columnSpanFull()
+                    ->columns(1)
+                    ->schema([
+                        TextInput::make('meta_title')
+                            ->label('Meta Title')
+                            ->placeholder(
+                                'Trademark Registration in USA | Blue Inkk Global'
+                            )
+                            ->helperText(
+                                'Recommended length: 50–60 characters.'
+                            )
+                            ->maxLength(255)
+                            ->columnSpanFull(),
+
+                        Textarea::make('meta_description')
+                            ->label('Meta Description')
+                            ->placeholder(
+                                'Learn about trademark registration requirements, documents, fees, and timelines in the USA.'
+                            )
+                            ->helperText(
+                                'Recommended length: 150–160 characters.'
+                            )
+                            ->rows(4)
+                            ->maxLength(500)
+                            ->columnSpanFull(),
+                    ]),
+
+                /*
+                |--------------------------------------------------------------------------
+                | Country and Menu Settings
+                |--------------------------------------------------------------------------
+                */
+                Section::make('Country & Menu Settings')
+                    ->description(
+                        'Organize and display the country by region in the website mega menu.'
+                    )
+                    ->icon('heroicon-o-bars-3-bottom-left')
+                    ->columnSpanFull()
+                    ->columns(3)
+                    ->schema([
+                        TextInput::make('country_flag')
+                            ->label('Country Flag')
+                            ->placeholder('🇳🇵')
+                            ->helperText('Enter the country flag emoji.')
+                            ->maxLength(20),
+
+                        Select::make('menu_region')
+                            ->label('Menu Region')
+                            ->placeholder('Select region')
+                            ->options([
+                                'asia_pacific' => 'Asia Pacific',
+                                'north_america' => 'North America',
+                                'europe' => 'Europe',
+                                'middle_east' => 'Middle East',
+                                'africa' => 'Africa',
+                                'south_america' => 'South America',
+                            ])
+                            ->native(false)
+                            ->searchable(),
+
+                        Toggle::make('is_popular_destination')
+                            ->label('Popular Destination')
+                            ->helperText(
+                                'Enable this option to display the country under Popular Destinations.'
+                            )
+                            ->default(false),
+
+                        Toggle::make('show_in_menu')
+                            ->label('Show in Mega Menu')
+                            ->helperText('Show or hide the country in the header mega menu.')
+                            ->default(true),
+
+                        TextInput::make('menu_order')
+                            ->label('Menu Order')
+                            ->placeholder('1')
+                            ->numeric()
+                            ->default(0)
+                            ->minValue(0),
+                    ]),
+
+                /*
+                |--------------------------------------------------------------------------
                 | Hero Section
                 |--------------------------------------------------------------------------
                 */
-Section::make('Country & Menu Settings')
-    ->description(
-        'Country ko mega menu mein region-wise organize aur display karein.'
-    )
-    ->icon('heroicon-o-bars-3-bottom-left')
-    ->columnSpanFull()
-    ->columns(3)
-    ->schema([
-        TextInput::make('country_flag')
-            ->label('Country Flag')
-            ->placeholder('🇳🇵')
-            ->helperText('Country flag emoji enter karein.')
-            ->maxLength(20),
+                Section::make('Hero Section')
+                    ->description(
+                        'Manage the complete hero content for the country page.'
+                    )
+                    ->icon('heroicon-o-globe-alt')
+                    ->columnSpanFull()
+                    ->columns(2)
+                    ->schema([
+                        TextInput::make('hero_heading')
+                            ->label('Main Heading')
+                            ->placeholder('Trademark Registration in Nepal')
+                            ->maxLength(255)
+                            ->columnSpanFull(),
 
-         Select::make('menu_region')
-            ->label('Menu Region')
-            ->placeholder('Select region')
-            ->options([
-                'asia_pacific' => 'Asia Pacific',
-                'north_america' => 'North America',
-                'europe' => 'Europe',
-                'middle_east' => 'Middle East',
-                'africa' => 'Africa',
-                'south_america' => 'South America',
-            ])
-            ->native(false)
-            ->searchable()
-,
+                        RichEditor::make('hero_description')
+                            ->label('Hero Description')
+                            ->placeholder('Enter the country page hero description...')
+                            ->toolbarButtons([
+                                [
+                                    ToolbarButtonGroup::make('Text Style', [
+                                        'paragraph',
+                                        'h1',
+                                        'h2',
+                                        'h3',
+                                        'h4',
+                                        'h5',
+                                        'h6',
+                                        'lead',
+                                        'small',
+                                    ])->textualButtons(),
+                                ],
 
-        Toggle::make('is_popular_destination')
-            ->label('Popular Destination')
-            ->helperText(
-                'Enable karne par country Popular Destinations mein dikhega.'
-            )
-            ->default(false),
+                                [
+                                    'bold',
+                                    'italic',
+                                    'underline',
+                                    'strike',
+                                ],
 
-        Toggle::make('show_in_menu')
-            ->label('Show in Mega Menu')
-            ->helperText('Country ko header mega menu mein show/hide karein.')
-            ->default(true),
+                                [
+                                    'alignStart',
+                                    'alignCenter',
+                                    'alignEnd',
+                                    'alignJustify',
+                                ],
 
-        TextInput::make('menu_order')
-            ->label('Menu Order')
-            ->placeholder('1')
-            ->numeric()
-            ->default(0)
-            ->minValue(0),
-    ]),
+                                [
+                                    'bulletList',
+                                    'orderedList',
+                                    'blockquote',
+                                ],
 
+                                [
+                                    'link',
+                                    'table',
+                                    'attachFiles',
+                                ],
 
-Section::make('Hero Section')
-    ->description(
-        'Frontend country page ke hero section ka complete content.'
-    )
-    ->icon('heroicon-o-globe-alt')
-    ->columnSpanFull()
-    ->columns(2)
-    ->schema([
-        TextInput::make('hero_heading')
-            ->label('Main Heading')
-            ->placeholder('Trademark Registration in Nepal')
-            ->maxLength(255)
-            ->columnSpanFull(),
+                                [
+                                    'clearFormatting',
+                                    'undo',
+                                    'redo',
+                                ],
+                            ])
+                            ->floatingToolbars([
+                                'table' => [
+                                    'tableAddColumnBefore',
+                                    'tableAddColumnAfter',
+                                    'tableDeleteColumn',
+                                    'tableAddRowBefore',
+                                    'tableAddRowAfter',
+                                    'tableDeleteRow',
+                                    'tableMergeCells',
+                                    'tableSplitCell',
+                                    'tableToggleHeaderRow',
+                                    'tableToggleHeaderCell',
+                                    'tableDelete',
+                                ],
+                            ])
+                            ->fileAttachmentsDisk('public')
+                            ->fileAttachmentsDirectory('country-pages/editor')
+                            ->fileAttachmentsVisibility('public')
+                            ->columnSpanFull(),
 
-RichEditor::make('hero_description')
-    ->label('Hero Description')
-    ->placeholder('Country page ka hero description...')
-    ->toolbarButtons([
-        [
-            ToolbarButtonGroup::make('Text Style', [
-                'paragraph',
-                'h1',
-                'h2',
-                'h3',
-                'h4',
-                'h5',
-                'h6',
-                'lead',
-                'small',
-            ])->textualButtons(),
-        ],
+                        Section::make('Country Overview Content')
+                            ->description(
+                                'Add the complete formatted country overview content here.'
+                            )
+                            ->icon('heroicon-o-document-text')
+                            ->columnSpanFull()
+                            ->schema([
+                                RichEditor::make('overview_content')
+                                    ->label('Overview Content')
+                                    ->placeholder(
+                                        'Enter the country trademark registration overview content...'
+                                    )
+                                    ->toolbarButtons([
+                                        ['bold', 'italic', 'underline', 'strike'],
+                                        ['h2', 'h3', 'h4', 'h5', 'h6'],
+                                        ['bulletList', 'orderedList', 'blockquote'],
+                                        ['link', 'table', 'attachFiles'],
+                                        ['undo', 'redo'],
+                                    ])
+                                    ->fileAttachmentsDisk('public')
+                                    ->fileAttachmentsDirectory('country-pages/overview')
+                                    ->fileAttachmentsVisibility('public')
+                                    ->columnSpanFull(),
+                            ]),
 
-        [
-            'bold',
-            'italic',
-            'underline',
-            'strike',
-        ],
+                        Repeater::make('country_overview_items')
+                            ->label('Country Overview Items')
+                            ->helperText(
+                                'Add a heading and value for each country overview item.'
+                            )
+                            ->schema([
+                                TextInput::make('heading')
+                                    ->label('Heading')
+                                    ->placeholder('Example: Trademark Authority')
+                                    ->maxLength(255),
 
-        [
-            'alignStart',
-            'alignCenter',
-            'alignEnd',
-            'alignJustify',
-        ],
-
-        [
-            'bulletList',
-            'orderedList',
-            'blockquote',
-        ],
-
-        [
-            'link',
-            'table',
-            'attachFiles',
-        ],
-
-        [
-            'clearFormatting',
-            'undo',
-            'redo',
-        ],
-    ])
-    ->floatingToolbars([
-        'table' => [
-            'tableAddColumnBefore',
-            'tableAddColumnAfter',
-            'tableDeleteColumn',
-            'tableAddRowBefore',
-            'tableAddRowAfter',
-            'tableDeleteRow',
-            'tableMergeCells',
-            'tableSplitCell',
-            'tableToggleHeaderRow',
-            'tableToggleHeaderCell',
-            'tableDelete',
-        ],
-    ])
-    ->fileAttachmentsDisk('public')
-    ->fileAttachmentsDirectory('country-pages/editor')
-    ->fileAttachmentsVisibility('public')
-    ->columnSpanFull(),
-
-    Section::make('Country Overview Content')
-    ->description(
-        'Country overview ka complete formatted content yahan add karein.'
-    )
-    ->icon('heroicon-o-document-text')
-    ->columnSpanFull()
-    ->schema([
-        RichEditor::make('overview_content')
-            ->label('Overview Content')
-            ->placeholder(
-                'Country trademark registration overview content...'
-            )
-            ->toolbarButtons([
-                ['bold', 'italic', 'underline', 'strike'],
-                ['h2', 'h3', 'h4', 'h5', 'h6'],
-                ['bulletList', 'orderedList', 'blockquote'],
-                ['link', 'table', 'attachFiles'],
-                ['undo', 'redo'],
-            ])
-            ->fileAttachmentsDisk('public')
-            ->fileAttachmentsDirectory('country-pages/overview')
-            ->fileAttachmentsVisibility('public')
-            ->columnSpanFull(),
-    ]),
-
-        Repeater::make('country_overview_items')
-            ->label('Country Overview Items')
-            ->helperText(
-                'Country overview ke liye heading aur value add karein.'
-            )
-            ->schema([
-                TextInput::make('heading')
-                    ->label('Heading')
-                    ->placeholder('Example: Trademark Authority')
-                    ->maxLength(255),
-
-                TextInput::make('value')
-                    ->label('Value / Subheading')
-                    ->placeholder('Example: Department of Industry')
-                    ->maxLength(500),
-            ])
-            ->columns(2)
-            ->defaultItems(0)
-            ->minItems(0)
-            ->addActionLabel('Add Overview Item')
-            ->reorderable()
-            ->collapsible()
-            ->cloneable()
-            ->itemLabel(
-                fn (array $state): ?string =>
-                    $state['heading'] ?? 'Overview Item'
-            )
-            ->columnSpanFull(),
-        ]),
+                                TextInput::make('value')
+                                    ->label('Value / Subheading')
+                                    ->placeholder('Example: Department of Industry')
+                                    ->maxLength(500),
+                            ])
+                            ->columns(2)
+                            ->defaultItems(0)
+                            ->minItems(0)
+                            ->addActionLabel('Add Overview Item')
+                            ->reorderable()
+                            ->collapsible()
+                            ->cloneable()
+                            ->itemLabel(
+                                fn(array $state): ?string =>
+                                $state['heading'] ?? 'Overview Item'
+                            )
+                            ->columnSpanFull(),
+                    ]),
                 /*
                 |--------------------------------------------------------------------------
                 | Why Register Section
@@ -294,7 +333,7 @@ RichEditor::make('hero_description')
 
                 Section::make('Why Register Section')
                     ->description(
-                        'Why register section ki heading aur list points manage karein.'
+                        'Manage the heading, introduction and list items for this section.'
                     )
                     ->icon('heroicon-o-check-circle')
                     ->columnSpanFull()
@@ -304,7 +343,7 @@ RichEditor::make('hero_description')
                             ->placeholder('Why Register a Trademark in Nepal?')
                             ->maxLength(255)
                             ->columnSpanFull(),
-                            Textarea::make('why_register_subheading')
+                        Textarea::make('why_register_subheading')
                             ->label('Subheading / Introduction')
                             ->placeholder(
                                 'Explain briefly why trademark registration is important...'
@@ -340,17 +379,17 @@ RichEditor::make('hero_description')
 
                 Section::make('Legal Information Section')
                     ->description(
-                        'Governing law aur applicant eligibility ka content manage karein.'
+                        'Manage the governing law and applicant eligibility content.'
                     )
                     ->icon('heroicon-o-building-library')
                     ->columnSpanFull()
                     ->columns(2)
                     ->schema([
                         /*
-        |--------------------------------------------------------------------------
-        | Governing Law Card
-        |--------------------------------------------------------------------------
-        */
+                        |--------------------------------------------------------------------------
+                        | Governing Law Card
+                        |--------------------------------------------------------------------------
+                        */
                         Section::make('Governing Law Card')
                             ->columnSpan(1)
                             ->schema([
@@ -374,11 +413,11 @@ RichEditor::make('hero_description')
                             ]),
 
                         /*
-        |--------------------------------------------------------------------------
-        | Who Can Apply Card
-        |--------------------------------------------------------------------------
-        */
-                 Section::make('Who Can Apply Card')
+                        |--------------------------------------------------------------------------
+                        | Who Can Apply Card
+                        |--------------------------------------------------------------------------
+                        */
+                        Section::make('Who Can Apply Card')
                             ->columnSpan(1)
                             ->schema([
                                 TextInput::make('who_can_apply_heading')
@@ -415,7 +454,7 @@ RichEditor::make('hero_description')
 
                 Section::make('Required Documents Section')
                     ->description(
-                        'Section heading, introduction, documents list, note and CTA manage karein.'
+                        'Manage the section heading, introduction, document list and important note.'
                     )
                     ->icon('heroicon-o-document-check')
                     ->columnSpanFull()
@@ -455,7 +494,7 @@ RichEditor::make('hero_description')
                                     ->rows(3)
                                     ->maxLength(1500)
                                     ->columnSpanFull(),
-                               ])
+                            ])
                             ->defaultItems(0)
                             ->minItems(0)
                             ->maxItems(20)
@@ -469,7 +508,7 @@ RichEditor::make('hero_description')
                             )
                             ->columnSpanFull(),
 
-                           RichEditor::make('documents_note')
+                        RichEditor::make('documents_note')
                             ->label('Important Note')
                             ->placeholder(
                                 'Documents originating from India typically need to be legalized or notarized...'
@@ -480,460 +519,455 @@ RichEditor::make('hero_description')
                             ])
                             ->columnSpanFull(),
 
-                        ]),
+                    ]),
 
-                        Section::make('Filing Process Section')
-    ->description(
-        'Section heading aur filing process ke steps manage karein.'
-    )
-    ->icon('heroicon-o-list-bullet')
-    ->columnSpanFull()
-    ->schema([
-        TextInput::make('filing_process_heading')
-            ->label('Section Heading')
-            ->placeholder('Step-by-Step Filing Process')
-            ->default('Step-by-Step Filing Process')
-            ->maxLength(255)
-            ->columnSpanFull(),
-
-        Textarea::make('filing_process_subheading')
-    ->label('Filing Process Subheading')
-    ->placeholder('Briefly explain the trademark filing process.')
-    ->rows(3)
-    ->columnSpanFull(),
-    TextInput::make('filing_steps_heading')
-    ->label('Filing Steps Heading')
-    ->placeholder('Trademark Application Steps')
-    ->maxLength(255)
-    ->columnSpanFull(),
-
-Repeater::make('filing_process_steps')
-    ->label('Filing Steps')
-    ->schema([
-        TextInput::make('title')
-            ->label('Step Heading')
-            ->maxLength(255)
-            ->columnSpanFull(),
-
-        Textarea::make('description')
-            ->label('Step Description')
-            ->rows(4)
-            ->columnSpanFull(),
-    ])
-    ->itemLabel(
-        fn (array $state): ?string =>
-            $state['title'] ?? 'New filing step'
-    )
-    ->addActionLabel('Add New Step')
-    ->reorderable()
-    ->collapsible()
-    ->cloneable()
-    ->columnSpanFull(),
-
-FileUpload::make('filing_process_image')
-    ->label('Filing Process Image')
-    ->helperText('Saare filing steps ke baad dikhne wali ek image upload karein.')
-    ->image()
-    ->maxSize(2048)
-    ->disk('public')
-    ->directory('country-pages/filing-process')
-    ->visibility('public')
-    ->columnSpanFull(),
-
-    ]),
-
-    Section::make('Fees and Registration Timeline')
-    ->description(
-        'Government fees aur expected registration timeline manage karein.'
-    )
-    ->icon('heroicon-o-banknotes')
-    ->columnSpanFull()
-    ->columns(2)
-    ->schema([
-        /*
-        |--------------------------------------------------------------------------
-        | Government Fees
-        |--------------------------------------------------------------------------
-        */
-        Section::make('Government Fees')
-            ->columnSpan(1)
-            ->schema([
-                TextInput::make('government_fees_heading')
-                    ->label('Section Heading')
-                    ->placeholder('Government Fees')
-                    ->default('Government Fees')
-                    ->maxLength(255),
-
-                Repeater::make('government_fees_items')
-                    ->label('Fee Items')
-                    ->schema([
-                        TextInput::make('label')
-                            ->label('Fee Name')
-                            ->placeholder('Filing fee')
-                            ->maxLength(255),
-
-                        TextInput::make('amount')
-                            ->label('Fee Amount')
-                            ->placeholder('NPR 1,000')
-                            ->maxLength(100),
-
-                        Textarea::make('description')
-                            ->label('Description')
-                            ->placeholder(
-                                'Payable per class at the time of filing...'
-                            )
-                            ->rows(3)
-                            ->maxLength(1000)
-                            ->columnSpanFull(),
-                    ])
-                    ->columns(2)
-                    ->defaultItems(0)
-                    ->minItems(0)
-                    ->maxItems(15)
-                    ->addActionLabel('Add New Fee')
-                    ->reorderable()
-                    ->collapsible()
-                    ->cloneable()
-                    ->itemLabel(
-                        fn (array $state): ?string =>
-                            $state['label'] ?? 'New fee'
+                Section::make('Filing Process Section')
+                    ->description(
+                        'Manage the section heading, introduction, filing steps and final image.'
                     )
-                    ->columnSpanFull(),
-            ]),
-
-        /*
-        |--------------------------------------------------------------------------
-        | Registration Timeline
-        |--------------------------------------------------------------------------
-        */
-        Section::make('Registration Timeline')
-            ->columnSpan(1)
-            ->schema([
-                TextInput::make('registration_time_heading')
-                    ->label('Section Heading')
-                    ->placeholder('Time Period for Registration')
-                    ->default('Time Period for Registration')
-                    ->maxLength(255),
-
-                Repeater::make('registration_time_items')
-                    ->label('Timeline Summary')
+                    ->icon('heroicon-o-list-bullet')
+                    ->columnSpanFull()
                     ->schema([
-                        TextInput::make('duration')
-                            ->label('Duration')
-                            ->placeholder('12–14')
-                            ->maxLength(100),
-
-                        TextInput::make('unit')
-                            ->label('Duration Unit')
-                            ->placeholder('Months')
-                            ->maxLength(100),
-
-                        TextInput::make('label')
-                            ->label('Summary Label')
-                            ->placeholder('Without opposition')
+                        TextInput::make('filing_process_heading')
+                            ->label('Section Heading')
+                            ->placeholder('Step-by-Step Filing Process')
+                            ->default('Step-by-Step Filing Process')
                             ->maxLength(255)
                             ->columnSpanFull(),
-                    ])
+
+                        Textarea::make('filing_process_subheading')
+                            ->label('Filing Process Subheading')
+                            ->placeholder('Briefly explain the trademark filing process.')
+                            ->rows(3)
+                            ->columnSpanFull(),
+                        TextInput::make('filing_steps_heading')
+                            ->label('Filing Steps Heading')
+                            ->placeholder('Trademark Application Steps')
+                            ->maxLength(255)
+                            ->columnSpanFull(),
+
+                        Repeater::make('filing_process_steps')
+                            ->label('Filing Steps')
+                            ->schema([
+                                TextInput::make('title')
+                                    ->label('Step Heading')
+                                    ->maxLength(255)
+                                    ->columnSpanFull(),
+
+                                Textarea::make('description')
+                                    ->label('Step Description')
+                                    ->rows(4)
+                                    ->columnSpanFull(),
+                            ])
+                            ->itemLabel(
+                                fn(array $state): ?string =>
+                                $state['title'] ?? 'New filing step'
+                            )
+                            ->addActionLabel('Add New Step')
+                            ->reorderable()
+                            ->collapsible()
+                            ->cloneable()
+                            ->columnSpanFull(),
+
+                        FileUpload::make('filing_process_image')
+                            ->label('Filing Process Image')
+                            ->helperText('Upload one image to display after all filing steps.')
+                            ->image()
+                            ->maxSize(2048)
+                            ->disk('public')
+                            ->directory('country-pages/filing-process')
+                            ->visibility('public')
+                            ->columnSpanFull(),
+
+                    ]),
+
+                Section::make('Fees and Registration Timeline')
+                    ->description(
+                        'Manage government fees and the expected registration timeline.'
+                    )
+                    ->icon('heroicon-o-banknotes')
+                    ->columnSpanFull()
                     ->columns(2)
-                    ->defaultItems(0)
-                    ->minItems(0)
-                    ->maxItems(6)
-                    ->addActionLabel('Add Timeline Item')
-                    ->reorderable()
-                    ->collapsible()
-                    ->cloneable()
-                    ->itemLabel(
-                        fn (array $state): ?string =>
-                            ($state['duration'] ?? null)
-                                ? ($state['duration'] . ' ' . ($state['unit'] ?? ''))
-                                : 'New timeline item'
-                    )
-                    ->columnSpanFull(),
-
-                RichEditor::make('registration_time_content')
-                    ->label('Timeline Description')
-                    ->placeholder(
-                        'Trademark registration in Nepal is not a quick process...'
-                    )
-                    ->toolbarButtons([
-                        ['bold', 'italic', 'underline'],
-                        ['link', 'undo', 'redo'],
-                    ])
-                    ->columnSpanFull(),
-            ]),
-    ]),
-
-    Section::make('Validity and Renewal Section')
-    ->description(
-        'Registration validity aur renewal conditions manage karein.'
-    )
-    ->icon('heroicon-o-arrow-path')
-    ->columnSpanFull()
-    ->columns(2)
-    ->schema([
-        /*
-        |--------------------------------------------------------------------------
-        | Validity Summary
-        |--------------------------------------------------------------------------
-        */
-        Section::make('Validity Summary')
-            ->columnSpan(1)
-            ->columns(2)
-            ->schema([
-                TextInput::make('validity_renewal_heading')
-                    ->label('Section Heading')
-                    ->placeholder('Validity and Renewal')
-                    ->default('Validity and Renewal')
-                    ->maxLength(255)
-                    ->columnSpanFull(),
-
-                TextInput::make('validity_duration')
-                    ->label('Validity Duration')
-                    ->placeholder('7')
-                    ->maxLength(100),
-
-                TextInput::make('validity_unit')
-                    ->label('Duration Unit')
-                    ->placeholder('Years')
-                    ->maxLength(100),
-
-                TextInput::make('validity_label')
-                    ->label('Validity Label')
-                    ->placeholder('Registration validity')
-                    ->maxLength(255)
-                    ->columnSpanFull(),
-            ]),
-
-        /*
-        |--------------------------------------------------------------------------
-        | Renewal Details
-        |--------------------------------------------------------------------------
-        */
-        Section::make('Renewal Details')
-            ->columnSpan(1)
-            ->schema([
-                Repeater::make('renewal_items')
-                    ->label('Renewal Points')
                     ->schema([
-                        Textarea::make('content')
-                            ->label('Point Content')
-                            ->placeholder(
-                                'A trademark registered in Nepal is valid for 7 years...'
-                            )
-                            ->rows(3)
-                            ->maxLength(2000)
-                            ->columnSpanFull(),
-                    ])
-                    ->defaultItems(0)
-                    ->minItems(0)
-                    ->maxItems(20)
-                    ->addActionLabel('Add Renewal Point')
-                    ->reorderable()
-                    ->collapsible()
-                    ->cloneable()
-                    ->itemLabel(
-                        fn (array $state): ?string =>
-                            isset($state['content'])
-                                ? str($state['content'])->limit(60)->toString()
-                                : 'New renewal point'
+                        /*
+                        |--------------------------------------------------------------------------
+                        | Government Fees
+                        |--------------------------------------------------------------------------
+                        */
+                        Section::make('Government Fees')
+                            ->columnSpan(1)
+                            ->schema([
+                                TextInput::make('government_fees_heading')
+                                    ->label('Section Heading')
+                                    ->placeholder('Government Fees')
+                                    ->default('Government Fees')
+                                    ->maxLength(255),
+
+                                Repeater::make('government_fees_items')
+                                    ->label('Fee Items')
+                                    ->schema([
+                                        TextInput::make('label')
+                                            ->label('Fee Name')
+                                            ->placeholder('Filing fee')
+                                            ->maxLength(255),
+
+                                        TextInput::make('amount')
+                                            ->label('Fee Amount')
+                                            ->placeholder('NPR 1,000')
+                                            ->maxLength(100),
+
+                                        Textarea::make('description')
+                                            ->label('Description')
+                                            ->placeholder(
+                                                'Payable per class at the time of filing...'
+                                            )
+                                            ->rows(3)
+                                            ->maxLength(1000)
+                                            ->columnSpanFull(),
+                                    ])
+                                    ->columns(2)
+                                    ->defaultItems(0)
+                                    ->minItems(0)
+                                    ->maxItems(15)
+                                    ->addActionLabel('Add New Fee')
+                                    ->reorderable()
+                                    ->collapsible()
+                                    ->cloneable()
+                                    ->itemLabel(
+                                        fn(array $state): ?string =>
+                                        $state['label'] ?? 'New fee'
+                                    )
+                                    ->columnSpanFull(),
+                            ]),
+
+                        /*
+                        |--------------------------------------------------------------------------
+                        | Registration Timeline
+                        |--------------------------------------------------------------------------
+                        */
+                        Section::make('Registration Timeline')
+                            ->columnSpan(1)
+                            ->schema([
+                                TextInput::make('registration_time_heading')
+                                    ->label('Section Heading')
+                                    ->placeholder('Time Period for Registration')
+                                    ->default('Time Period for Registration')
+                                    ->maxLength(255),
+
+                                Repeater::make('registration_time_items')
+                                    ->label('Timeline Summary')
+                                    ->schema([
+                                        TextInput::make('duration')
+                                            ->label('Duration')
+                                            ->placeholder('12–14')
+                                            ->maxLength(100),
+
+                                        TextInput::make('unit')
+                                            ->label('Duration Unit')
+                                            ->placeholder('Months')
+                                            ->maxLength(100),
+
+                                        TextInput::make('label')
+                                            ->label('Summary Label')
+                                            ->placeholder('Without opposition')
+                                            ->maxLength(255)
+                                            ->columnSpanFull(),
+                                    ])
+                                    ->columns(2)
+                                    ->defaultItems(0)
+                                    ->minItems(0)
+                                    ->maxItems(6)
+                                    ->addActionLabel('Add Timeline Item')
+                                    ->reorderable()
+                                    ->collapsible()
+                                    ->cloneable()
+                                    ->itemLabel(
+                                        fn(array $state): ?string => ($state['duration'] ?? null)
+                                            ? ($state['duration'] . ' ' . ($state['unit'] ?? ''))
+                                            : 'New timeline item'
+                                    )
+                                    ->columnSpanFull(),
+
+                                RichEditor::make('registration_time_content')
+                                    ->label('Timeline Description')
+                                    ->placeholder(
+                                        'Trademark registration in Nepal is not a quick process...'
+                                    )
+                                    ->toolbarButtons([
+                                        ['bold', 'italic', 'underline'],
+                                        ['link', 'undo', 'redo'],
+                                    ])
+                                    ->columnSpanFull(),
+                            ]),
+                    ]),
+
+                Section::make('Validity and Renewal Section')
+                    ->description(
+                        'Manage registration validity and renewal conditions.'
                     )
-                    ->columnSpanFull(),
-            ]),
-    ]),
-
-Section::make('Grounds for Refusal Section')
-    ->description(
-        'Section heading, introduction aur refusal grounds manage karein.'
-    )
-    ->icon('heroicon-o-shield-exclamation')
-    ->columnSpanFull()
-    ->schema([
-        TextInput::make('refusal_heading')
-            ->label('Section Heading')
-            ->placeholder('Grounds for Refusal')
-            ->default('Grounds for Refusal')
-            ->maxLength(255)
-            ->columnSpanFull(),
-
-        Textarea::make('refusal_intro')
-            ->label('Introduction')
-            ->placeholder(
-                'The DOI can refuse an application where the mark:'
-            )
-            ->rows(2)
-            ->maxLength(1000)
-            ->columnSpanFull(),
-
-        Repeater::make('refusal_items')
-            ->label('Refusal Grounds')
-            ->schema([
-                Textarea::make('content')
-                    ->label('Ground Content')
-                    ->placeholder(
-                        'Is identical or confusingly similar to an existing registered trademark'
-                    )
-                    ->rows(3)
-                    ->maxLength(2000)
-                    ->columnSpanFull(),
-            ])
-            ->defaultItems(0)
-            ->minItems(0)
-            ->maxItems(20)
-            ->addActionLabel('Add Refusal Ground')
-            ->reorderable()
-            ->collapsible()
-            ->cloneable()
-            ->itemLabel(
-                fn (array $state): ?string =>
-                    filled($state['content'] ?? null)
-                        ? str($state['content'])->limit(70)->toString()
-                        : 'New refusal ground'
-            )
-            ->columnSpanFull(),
-    ]),
-
-Section::make('Additional Content Section')
-    ->description(
-        'Country page ke liye additional headings, content, tables aur images add karein.'
-    )
-    ->icon('heroicon-o-document-text')
-    ->columnSpanFull()
-    ->schema([
-        RichEditor::make('additional_content')
-            ->label('Additional Content')
-            ->placeholder(
-                'Add headings, paragraphs, lists, tables and images...'
-            )
-            ->toolbarButtons([
-                ['h2', 'h3', 'h4', 'h5', 'h6'],
-                ['bold', 'italic', 'underline', 'strike'],
-                ['bulletList', 'orderedList', 'blockquote'],
-                ['link', 'table', 'attachFiles'],
-                ['undo', 'redo'],
-            ])
-            ->fileAttachmentsDisk('public')
-            ->fileAttachmentsDirectory(
-                'country-pages/additional-content'
-            )
-            ->fileAttachmentsVisibility('public')
-            ->columnSpanFull(),
-    ]),
-
-
-    Section::make('Blue Inkk Help and CTA Section')
-    ->description(
-        'Country-wise filing support, services, CTA and legal disclaimer manage karein.'
-    )
-    ->icon('heroicon-o-lifebuoy')
-    ->columnSpanFull()
-    ->schema([
-
-        Section::make('Help Section Content')
-            ->columns(2)
-            ->schema([
-                TextInput::make('help_label')
-                    ->label('Support Label')
-                    ->placeholder('Complete Filing Support')
-                    ->maxLength(255),
-
-                TextInput::make('help_heading')
-                    ->label('Section Heading')
-                    ->placeholder('How Blue Inkk Can Help')
-                    ->maxLength(255),
-
-                RichEditor::make('help_content')
-                    ->label('Introduction Content')
-                    ->placeholder(
-                        'Explain how Blue Inkk assists applicants in this country...'
-                    )
-                    ->toolbarButtons([
-                        ['bold', 'italic', 'underline'],
-                        ['link', 'undo', 'redo'],
-                    ])
-                    ->columnSpanFull(),
-
-                Repeater::make('help_items')
-                    ->label('Services List')
+                    ->icon('heroicon-o-arrow-path')
+                    ->columnSpanFull()
+                    ->columns(2)
                     ->schema([
-                        Textarea::make('content')
-                            ->label('Service')
-                            ->placeholder(
-                                'Conducting a trademark availability search before filing'
-                            )
-                            ->rows(3)
-                            ->maxLength(2000)
+                        /*
+                        |--------------------------------------------------------------------------
+                        | Validity Summary
+                        |--------------------------------------------------------------------------
+                        */
+                        Section::make('Validity Summary')
+                            ->columnSpan(1)
+                            ->columns(2)
+                            ->schema([
+                                TextInput::make('validity_renewal_heading')
+                                    ->label('Section Heading')
+                                    ->placeholder('Validity and Renewal')
+                                    ->default('Validity and Renewal')
+                                    ->maxLength(255)
+                                    ->columnSpanFull(),
+
+                                TextInput::make('validity_duration')
+                                    ->label('Validity Duration')
+                                    ->placeholder('7')
+                                    ->maxLength(100),
+
+                                TextInput::make('validity_unit')
+                                    ->label('Duration Unit')
+                                    ->placeholder('Years')
+                                    ->maxLength(100),
+
+                                TextInput::make('validity_label')
+                                    ->label('Validity Label')
+                                    ->placeholder('Registration validity')
+                                    ->maxLength(255)
+                                    ->columnSpanFull(),
+                            ]),
+
+                        /*
+                        |--------------------------------------------------------------------------
+                        | Renewal Details
+                        |--------------------------------------------------------------------------
+                        */
+                        Section::make('Renewal Details')
+                            ->columnSpan(1)
+                            ->schema([
+                                Repeater::make('renewal_items')
+                                    ->label('Renewal Points')
+                                    ->schema([
+                                        Textarea::make('content')
+                                            ->label('Point Content')
+                                            ->placeholder(
+                                                'A trademark registered in Nepal is valid for 7 years...'
+                                            )
+                                            ->rows(3)
+                                            ->maxLength(2000)
+                                            ->columnSpanFull(),
+                                    ])
+                                    ->defaultItems(0)
+                                    ->minItems(0)
+                                    ->maxItems(20)
+                                    ->addActionLabel('Add Renewal Point')
+                                    ->reorderable()
+                                    ->collapsible()
+                                    ->cloneable()
+                                    ->itemLabel(
+                                        fn(array $state): ?string =>
+                                        isset($state['content'])
+                                            ? str($state['content'])->limit(60)->toString()
+                                            : 'New renewal point'
+                                    )
+                                    ->columnSpanFull(),
+                            ]),
+                    ]),
+
+                Section::make('Grounds for Refusal Section')
+                    ->description(
+                        'Manage the section heading, introduction and grounds for refusal.'
+                    )
+                    ->icon('heroicon-o-shield-exclamation')
+                    ->columnSpanFull()
+                    ->schema([
+                        TextInput::make('refusal_heading')
+                            ->label('Section Heading')
+                            ->placeholder('Grounds for Refusal')
+                            ->default('Grounds for Refusal')
+                            ->maxLength(255)
                             ->columnSpanFull(),
-                    ])
-                    ->defaultItems(0)
-                    ->minItems(0)
-                    ->maxItems(20)
-                    ->addActionLabel('Add Service')
-                    ->reorderable()
-                    ->collapsible()
-                    ->cloneable()
-                    ->itemLabel(
-                        fn (array $state): ?string =>
-                            filled($state['content'] ?? null)
-                                ? str($state['content'])->limit(70)->toString()
-                                : 'New service'
+
+                        Textarea::make('refusal_intro')
+                            ->label('Introduction')
+                            ->placeholder(
+                                'The DOI can refuse an application where the mark:'
+                            )
+                            ->rows(2)
+                            ->maxLength(1000)
+                            ->columnSpanFull(),
+
+                        Repeater::make('refusal_items')
+                            ->label('Refusal Grounds')
+                            ->schema([
+                                Textarea::make('content')
+                                    ->label('Ground Content')
+                                    ->placeholder(
+                                        'Is identical or confusingly similar to an existing registered trademark'
+                                    )
+                                    ->rows(3)
+                                    ->maxLength(2000)
+                                    ->columnSpanFull(),
+                            ])
+                            ->defaultItems(0)
+                            ->minItems(0)
+                            ->maxItems(20)
+                            ->addActionLabel('Add Refusal Ground')
+                            ->reorderable()
+                            ->collapsible()
+                            ->cloneable()
+                            ->itemLabel(
+                                fn(array $state): ?string =>
+                                filled($state['content'] ?? null)
+                                    ? str($state['content'])->limit(70)->toString()
+                                    : 'New refusal ground'
+                            )
+                            ->columnSpanFull(),
+                    ]),
+
+                Section::make('Additional Content Section')
+                    ->description(
+                        'Add additional headings, paragraphs, tables and images to the country page.'
                     )
-                    ->columnSpanFull(),
-            ]),
-
-        Section::make('Final CTA')
-            ->columns(2)
-            ->schema([
-                TextInput::make('help_cta_heading')
-                    ->label('CTA Heading')
-                    ->placeholder('Protect Your Trademark in Nepal')
-                    ->maxLength(255)
-                    ->columnSpanFull(),
-
-                RichEditor::make('help_cta_content')
-                    ->label('CTA Content')
-                    ->placeholder(
-                        'Invite users to contact the Blue Inkk team...'
+                    ->icon('heroicon-o-document-text')
+                    ->columnSpanFull()
+                    ->schema([
+                        RichEditor::make('additional_content')
+                            ->label('Additional Content')
+                            ->placeholder(
+                                'Add headings, paragraphs, lists, tables and images...'
+                            )
+                            ->toolbarButtons([
+                                ['h2', 'h3', 'h4', 'h5', 'h6'],
+                                ['bold', 'italic', 'underline', 'strike'],
+                                ['bulletList', 'orderedList', 'blockquote'],
+                                ['link', 'table', 'attachFiles'],
+                                ['undo', 'redo'],
+                            ])
+                            ->fileAttachmentsDisk('public')
+                            ->fileAttachmentsDirectory(
+                                'country-pages/additional-content'
+                            )
+                            ->fileAttachmentsVisibility('public')
+                            ->columnSpanFull(),
+                    ]),
+                Section::make('Blue Inkk Help and CTA Section')
+                    ->description(
+                        'Manage country-specific filing support, services, call to action and legal disclaimer.'
                     )
-                    ->toolbarButtons([
-                        ['bold', 'italic', 'underline'],
-                        ['link', 'undo', 'redo'],
-                    ])
-                    ->columnSpanFull(),
+                    ->icon('heroicon-o-lifebuoy')
+                    ->columnSpanFull()
+                    ->schema([
 
-                TextInput::make('help_cta_email')
-                    ->label('Contact Email')
-                    ->placeholder('global.ipr@blueinkk.com')
-                    ->email()
-                    ->maxLength(255),
+                        Section::make('Help Section Content')
+                            ->columns(2)
+                            ->schema([
+                                TextInput::make('help_label')
+                                    ->label('Support Label')
+                                    ->placeholder('Complete Filing Support')
+                                    ->maxLength(255),
 
-                TextInput::make('help_cta_button_text')
-                    ->label('Button Text')
-                    ->placeholder('Connect With Us')
-                    ->default('Connect With Us')
-                    ->maxLength(100),
+                                TextInput::make('help_heading')
+                                    ->label('Section Heading')
+                                    ->placeholder('How Blue Inkk Can Help')
+                                    ->maxLength(255),
 
-                TextInput::make('help_cta_button_url')
-                    ->label('Button URL')
-                    ->placeholder('#connect-with-us')
-                    ->default('#connect-with-us')
-                    ->maxLength(500)
-                    ->columnSpanFull(),
-            ]),
+                                RichEditor::make('help_content')
+                                    ->label('Introduction Content')
+                                    ->placeholder(
+                                        'Explain how Blue Inkk assists applicants in this country...'
+                                    )
+                                    ->toolbarButtons([
+                                        ['bold', 'italic', 'underline'],
+                                        ['link', 'undo', 'redo'],
+                                    ])
+                                    ->columnSpanFull(),
 
-        Section::make('Legal Disclaimer')
-            ->schema([
-                Textarea::make('legal_disclaimer')
-                    ->label('Disclaimer Content')
-                    ->placeholder(
-                        'This page is for general informational purposes and does not constitute legal advice...'
-                    )
-                    ->rows(5)
-                    ->maxLength(5000)
-                    ->columnSpanFull(),
-            ]),
+                                Repeater::make('help_items')
+                                    ->label('Services List')
+                                    ->schema([
+                                        Textarea::make('content')
+                                            ->label('Service')
+                                            ->placeholder(
+                                                'Conducting a trademark availability search before filing'
+                                            )
+                                            ->rows(3)
+                                            ->maxLength(2000)
+                                            ->columnSpanFull(),
+                                    ])
+                                    ->defaultItems(0)
+                                    ->minItems(0)
+                                    ->maxItems(20)
+                                    ->addActionLabel('Add Service')
+                                    ->reorderable()
+                                    ->collapsible()
+                                    ->cloneable()
+                                    ->itemLabel(
+                                        fn(array $state): ?string =>
+                                        filled($state['content'] ?? null)
+                                            ? str($state['content'])->limit(70)->toString()
+                                            : 'New service'
+                                    )
+                                    ->columnSpanFull(),
+                            ]),
 
+                        Section::make('Final CTA')
+                            ->columns(2)
+                            ->schema([
+                                TextInput::make('help_cta_heading')
+                                    ->label('CTA Heading')
+                                    ->placeholder('Protect Your Trademark in Nepal')
+                                    ->maxLength(255)
+                                    ->columnSpanFull(),
 
-          ]),
+                                RichEditor::make('help_cta_content')
+                                    ->label('CTA Content')
+                                    ->placeholder(
+                                        'Invite users to contact the Blue Inkk team...'
+                                    )
+                                    ->toolbarButtons([
+                                        ['bold', 'italic', 'underline'],
+                                        ['link', 'undo', 'redo'],
+                                    ])
+                                    ->columnSpanFull(),
+
+                                TextInput::make('help_cta_email')
+                                    ->label('Contact Email')
+                                    ->placeholder('global.ipr@blueinkk.com')
+                                    ->email()
+                                    ->maxLength(255),
+
+                                TextInput::make('help_cta_button_text')
+                                    ->label('Button Text')
+                                    ->placeholder('Connect With Us')
+                                    ->default('Connect With Us')
+                                    ->maxLength(100),
+
+                                TextInput::make('help_cta_button_url')
+                                    ->label('Button URL')
+                                    ->placeholder('#connect-with-us')
+                                    ->default('#connect-with-us')
+                                    ->maxLength(500)
+                                    ->columnSpanFull(),
+                            ]),
+
+                        Section::make('Legal Disclaimer')
+                            ->schema([
+                                Textarea::make('legal_disclaimer')
+                                    ->label('Disclaimer Content')
+                                    ->placeholder(
+                                        'This page is for general informational purposes and does not constitute legal advice...'
+                                    )
+                                    ->rows(5)
+                                    ->maxLength(5000)
+                                    ->columnSpanFull(),
+                            ]),
+                    ]),
             ]);
     }
 }
