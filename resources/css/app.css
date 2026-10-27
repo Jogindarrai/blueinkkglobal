@@ -7446,19 +7446,20 @@ text-align:center;
     max-width: 58%;
     overflow-wrap: anywhere;
 }
-
 /* =========================================================
    RICH EDITOR CONTENT
 ========================================================= */
 
 .country-rich-content {
-    overflow-x: auto;
+    width: 100%;
+    max-width: 100%;
+    overflow: visible;
     color: var(--muted);
     font-size: 17px;
     line-height: 1.75;
 }
 
-/* Paragraph */
+/* Paragraphs */
 .country-rich-content p {
     margin: 0 0 14px;
     color: var(--muted);
@@ -7504,12 +7505,11 @@ text-align:center;
     font-size: 17px;
 }
 
-/* First element ke upar extra gap remove */
+/* Remove extra spacing from the first and last elements */
 .country-rich-content > :first-child {
     margin-top: 0;
 }
 
-/* Last element ke neeche extra gap remove */
 .country-rich-content > :last-child {
     margin-bottom: 0;
 }
@@ -7532,14 +7532,14 @@ text-align:center;
     text-decoration-color: var(--primary);
 }
 
-/* Bold text */
+/* Bold Text */
 .country-rich-content strong,
 .country-rich-content b {
     color: var(--text);
     font-weight: 700;
 }
 
-/* Italic text */
+/* Italic Text */
 .country-rich-content em,
 .country-rich-content i {
     line-height: inherit;
@@ -7552,7 +7552,16 @@ text-align:center;
     padding-left: 26px;
 }
 
+.country-rich-content ul {
+    list-style-type: disc;
+}
+
+.country-rich-content ol {
+    list-style-type: decimal;
+}
+
 .country-rich-content li {
+    display: list-item;
     margin-bottom: 7px;
     padding-left: 4px;
     color: var(--muted);
@@ -7564,7 +7573,7 @@ text-align:center;
     margin-bottom: 0;
 }
 
-/* Nested lists */
+/* Nested Lists */
 .country-rich-content li ul,
 .country-rich-content li ol {
     margin-top: 7px;
@@ -7594,40 +7603,59 @@ text-align:center;
     border-radius: 12px;
 }
 
-/* Responsive Tables */
-.country-rich-content {
-    width: 100%;
-    max-width: 100%;
-}
+/* =========================================================
+   RESPONSIVE TABLES
+========================================================= */
 
+/* Filament Rich Editor table wrapper */
 .country-rich-content .tableWrapper,
 .country-rich-content figure.table {
+    display: block;
     width: 100%;
     max-width: 100%;
     margin: 20px 0;
     overflow-x: auto;
+    overflow-y: hidden;
+    border-radius: 8px;
     -webkit-overflow-scrolling: touch;
 }
 
-.country-rich-content table {
-    display: block;
+/* Tables inside Filament wrappers */
+.country-rich-content .tableWrapper table,
+.country-rich-content figure.table table {
+    display: table;
     width: 100%;
     min-width: 600px;
+    margin: 0;
+    border-collapse: collapse;
+    background: #ffffff;
+}
+
+/* Direct tables without a wrapper */
+.country-rich-content > table {
+    display: block;
+    width: 100%;
     max-width: 100%;
+    min-width: 0;
     margin: 20px 0;
     overflow-x: auto;
+    overflow-y: hidden;
     border-collapse: collapse;
     background: #ffffff;
     -webkit-overflow-scrolling: touch;
 }
 
-.country-rich-content .tableWrapper table,
-.country-rich-content figure.table table {
+/* Preserve direct table width inside its own scroll area */
+.country-rich-content > table > thead,
+.country-rich-content > table > tbody,
+.country-rich-content > table > tfoot {
     display: table;
-    margin: 0;
-    overflow: visible;
+    width: 600px;
+    min-width: 100%;
+    table-layout: fixed;
 }
 
+/* Table Cells */
 .country-rich-content th,
 .country-rich-content td {
     padding: 12px;
@@ -7635,17 +7663,71 @@ text-align:center;
     text-align: left;
     vertical-align: top;
     white-space: normal;
+    overflow-wrap: break-word;
 }
 
+/* Table Headings */
 .country-rich-content th {
     color: var(--text);
     font-weight: 700;
     background: #f5f4fb;
 }
 
+/* Horizontal Rule */
+.country-rich-content hr {
+    margin: 25px 0;
+    border: 0;
+    border-top: 1px solid #dedbea;
+}
+
+/* =========================================================
+   MOBILE RESPONSIVE
+========================================================= */
+
 @media (max-width: 767.98px) {
-    .country-rich-content table {
+    .country-rich-content {
+        font-size: 15px;
+        line-height: 1.65;
+    }
+
+    .country-rich-content p,
+    .country-rich-content li {
+        font-size: 15px;
+    }
+
+    .country-rich-content h1 {
+        font-size: 30px;
+    }
+
+    .country-rich-content h2 {
+        font-size: 26px;
+    }
+
+    .country-rich-content h3 {
+        font-size: 23px;
+    }
+
+    .country-rich-content h4 {
+        font-size: 20px;
+    }
+
+    .country-rich-content h5 {
+        font-size: 18px;
+    }
+
+    .country-rich-content h6 {
+        font-size: 16px;
+    }
+
+    .country-rich-content .tableWrapper table,
+    .country-rich-content figure.table table {
         min-width: 600px;
+    }
+
+    .country-rich-content > table > thead,
+    .country-rich-content > table > tbody,
+    .country-rich-content > table > tfoot {
+        width: 600px;
     }
 
     .country-rich-content th,
@@ -7654,13 +7736,6 @@ text-align:center;
         font-size: 14px;
     }
 }
-/* Horizontal rule */
-.country-rich-content hr {
-    margin: 25px 0;
-    border: 0;
-    border-top: 1px solid #dedbea;
-}
-
 /* =========================================================
    MOBILE RESPONSIVE
 ========================================================= */
